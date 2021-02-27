@@ -54,7 +54,7 @@ att$charCount <- character_count(att$AltText)
 summary(att$charCount)
 ```
 
-<!-- Silvia: Minor change here to include a more specific date range-->
+<!-- Silvia: Minor change here to include a more specific date range -->
 
 Silvia scraped `r nrow(ttTweets4y)` TidyTuesday Tweets posted between `r format(min(ttTweets4y$TweetDate), "%B %d, %Y")` and `r format(max(ttTweets4y$TweetDate), "%B %d, %Y")`. I concatenated them into one data set.
 
@@ -62,6 +62,7 @@ Silvia scraped `r nrow(ttTweets4y)` TidyTuesday Tweets posted between `r format(
 tbl_cross(ttTweets4y, row=Year, col=AltTextCat,
           percent="row")
 ```
+
 
 # Word and character counts
 
@@ -101,3 +102,9 @@ tbl_summary(att, by=Year,
 
 ```
 
+# How many TidyTuesday posts include an external link?
+
+``` {r, results="asasis"}
+tbl_cross(ttTweets4y, row=Year, col=UrlCheck,
+          percent="row")
+```
