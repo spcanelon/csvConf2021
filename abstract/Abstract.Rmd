@@ -5,6 +5,24 @@ date: "2/27/2021"
 output: html_document
 ---
 
+Ideas from HackMD: [csvConf2021/abstract/HackMDIdeas.md](abstract/HackMDIdeas.md)
+
+Maximum abstract length: 300 words
 
 
+# Abstract (292 words)
 
+We all aim to use data to tell a compelling story, and many of us enjoy sharing how we got there by open-sourcing our code, but we don't always share our story with everyone. Even kind, supportive, and open communities like the #TidyTuesday R learning community on Twitter has a ways to go before the content shared can be accessible to everyone. Lived experiences of blind R users tell us that most data visualizations shared for TidyTuesday are inaccessible to screen reading technology because they lack alternative text (i.e. alt text) descriptions. Our goal was to bring this hidden lack of accessibility to the surface by examining the alternative text accompanying data visualizations shared as part of the TidyTuesday social project. 
+We scraped the alternative text from 6,443 TidyTuesday images posted on Twitter between April 2, 2018 and January 31, 2021. The first image attached to each tweet was considered the primary image and was scraped for alternative text. Manual web inspection revealed the CSS class and HTML element corresponding to the primary image, as well as the attribute containing the alternative text. We used this information and the ROpenSci {RSelenium} package to scrape the alternative text.
+Our preliminary analysis found that only 2.4% of the images contained a text description entered by the tweet author compared to 84% which were described by default as "Image". This small group of intentional alternative text descriptions had a median word count of 18 (range: 1-170), and a median character count of 83 (range: 8-788). As a reference point, Twitter allows 240 characters in a single tweet and 1,000 characters for image descriptions.
+This analysis was made possible thanks to a dataset of historical TidyTuesday tweet data collected using the ROpenSci {rtweet} package, and openly available in the TidyTuesday GitHub repository (https://github.com/rfordatascience/tidytuesday).
+
+## Resources/references
+
+- [Quick tip: Using alt text properly - The A11Y Project](https://www.a11yproject.com/posts/2013-01-14-alt-text/)
+- [An alt Decision Tree • Images • WAI Web Accessibility Tutorials](https://www.w3.org/WAI/tutorials/images/decision-tree/)
+- [Writing Alt Text for Data Visualization | by Amy Cesal | Nightingale | Medium](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81)
+- [Why Accessibility Is at the Heart of Data Visualization | by Doug Schepers | Nightingale | Medium](https://medium.com/nightingale/accessibility-is-at-the-heart-of-data-visualization-64a38d6c505b)
+- [Data Visualization Accessibility: Where Are We Now, and What’s Next? | by Melanie Mazanec | Nightingale | Medium](https://medium.com/nightingale/data-visualization-accessibility-where-are-we-now-and-whats-next-b2c9eeac4e8b)
+- [Axess Lab | Alt-texts: The Ultimate Guide](https://axesslab.com/alt-texts/)
+- [WebAIM: Alternative Text](https://webaim.org/techniques/alttext/#basics)
