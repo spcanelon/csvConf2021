@@ -8,7 +8,6 @@ output: html_document
 # Summary: How many TidyTuesday posts have alt text?
 
 
-
 ``` {r, include=FALSE}
 ### don't display chunks in output doc by default
 knitr::opts_chunk$set(echo=FALSE)
