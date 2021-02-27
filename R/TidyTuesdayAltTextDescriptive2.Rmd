@@ -1,0 +1,91 @@
+---
+title: Descriptive Statistics for Tidy Tuesday Alt Text Project
+author: "Silvia P. Canelón, Elizabeth Hare"
+date: February 24, 2021
+output: html_document
+---
+
+# Summary: How many TidyTuesday posts have alt text?
+
+
+
+``` {r, include=FALSE}
+### don't display chunks in output doc by default
+knitr::opts_chunk$set(echo=FALSE)
+knitr::opts_chunk$set(results='hide')
+knitr::opts_chunk$set(fig_path=".")
+library(knitr)
+library(gtsummary)
+library(TidyTuesdayAltText)
+library(qdap) # word_count, character_count
+
+### Access data from the four years
+data(package="TidyTuesdayAltText")
+data(ttTweets2018, ttTweets2019, ttTweets2020, ttTweets2021)
+### concatenate year data.frames into one
+ttTweets4y <- rbind(ttTweets2018, ttTweets2019, ttTweets2020, ttTweets2021)
+table(ttTweets4y$Year)
+
+### create factor variable describing alt text based on the four categories
+### 1. Customized alt text written by author
+### 2, Field contains default text: "Image"
+### 3. Scraping error - Tweet is unavailable (deleted or private)
+### 4. NA Unavailable due to non-static media
+
+
+ttTweets4y$AltTextCat <- ifelse(is.na(ttTweets4y$AltText), "UnavailableNonStatic",
+                         ifelse(ttTweets4y$AltText == "Image", "DefaultDescription",
+                         ifelse(ttTweets4y$AltText == "ScrapingError", "ScrapingError",
+                                "DescriptiveText")))
+table(ttTweets4y$AltTextCat, useNA="ifany")
+### convert AltTextCat to factor for easier analysis
+ttTweets4y$AltTextCat <- as.factor(ttTweets4y$AltTextCat)
+
+
+### make df with only image descriptions = "alt text tweets"
+att <- ttTweets4y[ttTweets4y$AltTextCat == "DescriptiveText", ]
+dim(att)
+
+### cound words using qdap package
+### qdap::word_count, parameters digit.remove=FALSE because we expect numerals
+att$wordCount <- word_count(att$AltText, digit.remove=FALSE)
+summary(att$wordCount)
+
+att$charCount <- character_count(att$AltText)
+summary(att$charCount)
+```
+
+
+Silvia scraped `r nrow(ttTweets4y)' TidyTuesday Tweets posted between 2018 and 2021. I 
+concatenated them into one data set.
+
+``` {r, results="asasis"}
+tbl_cross(ttTweets4y, row=Year, col=AltTextCat,
+          percent="row")
+```
+
+# Word and character counts
+
+## Words
+
+Words were counted using the word_count function in the qdap R package, with
+the option to include digits set to TRUE because numbers have important meaning
+in describing graphs. The median word count for alt text descriptions was 
+`r median(att$charCount)`, with a range of 
+`r min(att$wordCount)` to 
+`r max(att$wordCount)`. 
+The following table presents these statistics by year.
+
+
+``` {r, results="asis"}
+tbl_summary(att, by=Year,
+            include=c("Year, wordCount"),
+            type=all_continuous() ~ "continuous",
+            statistic=all_continuous ~ c("{min}", "{median}", "{max}"))
+
+```
+
+
+
+
+
