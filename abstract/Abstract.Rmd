@@ -5,9 +5,20 @@ date: "2/27/2021"
 output: html_document
 ---
 
-Ideas from HackMD: [csvConf2021/abstract/HackMDIdeas.md](abstract/HackMDIdeas.md)
+Our ideas from HackMD: [csvConf2021/abstract/HackMDIdeas.md](abstract/HackMDIdeas.md)
 
 Maximum abstract length: 300 words
+
+# About csvConf2021
+
+Here's some info from [the conference website](https://csvconf.com/):
+
+> csv, conf is about:
+
+> -  Building Community: csv,conf brings diverse groups together to discuss data topics, and features stories about data sharing and data analysis from science, journalism, government, and open source.
+> -  People who love data: csv,conf is a non-profit community conference run by folks who really love data and sharing knowledge. If you are as passionate about data and its application to society as we are, then this is the conference for you.
+> -  People who love data: csv,conf is a non-profit community conference run by folks who really love data and sharing knowledge. If you are as passionate about data and its application to society as we are, then this is the conference for you.
+
 
 
 # Abstract (292 words)
