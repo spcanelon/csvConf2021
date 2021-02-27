@@ -71,7 +71,7 @@ tbl_cross(ttTweets4y, row=Year, col=AltTextCat,
 Words were counted using the `word_count()` function in the `qdap` R package, with
 the option to include digits set to `TRUE` because numbers have important meaning
 in describing graphs. The median word count for alt text descriptions was 
-`r median(att$charCount)`, with a range of 
+`r median(att$wordCount)`, with a range of 
 `r min(att$wordCount)` to 
 `r max(att$wordCount)`. 
 The following table presents these statistics by year.
