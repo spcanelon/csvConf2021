@@ -1,0 +1,107 @@
+---
+title: Descriptive Statistics for Tidy Tuesday Alt Text Project
+author: "Silvia P. Canelón, Elizabeth Hare"
+date: 
+output: html_document
+---
+
+
+# Exploring Alt-Text Contents
+
+``` {r, setup, include=FALSE, echo=FALSE}
+library(knitr)
+library(TidyTuesdayAltText)
+library(gtsummary)
+
+### what data sets are in updated package?
+data(package="TidyTuesdayAltText")
+data(altTextSubset)
+### load Silvia's annotated file
+annotatedS <- readRDS("data/AltTextSubset_Annotated.rds")
+colnames(annotatedS)
+### add NA columns for rubric because you can't add them in Numbers
+annotatedS$conveysMeaning <- NA
+annotatedS$axisInfo <- NA
+annotatedS$axisOrValueScale <- NA
+annotatedS$plotType <- NA
+annotatedS$repeatTitle <- NA
+
+annotatedL <- annotatedS[ ,c("TweetId", "AltText", "conveysMeaning", "axisInfo",
+                             "axisOrValueScale", "plotType", "repeatTitle",
+                             "TitleText", "SubtitleText",
+                             "OtherText", "AnnotationNotes")]
+### keep only rows with alt-texts
+### how many missing
+dim(annotatedL[is.na(annotatedL$AltText), ])
+### remove "scraping error" in altTExt field
+annotatedL2 <- annotatedL[!annotatedL$AltText == "ScrapingError", ]
+dim(annotatedL2)
+head(annotatedL2[ , 1:3])
+tail(annotatedL2[ ,1:3])
+
+### write file to enter rubric data
+write.csv(annotatedL2, file="annotated.csv", row.names=FALSE)
+
+```
+
+I started with the file "data/AltTextSubset_Annotated.rds" from Silvia. I kept only the columns I needed, 
+excluding the hashtag variable that contained lists that couldn't be written easily to .csv.
+I also removed rows where AltText == "ScrapingError". I ended upwith 
+`r nrow(annotatedL2)` observations.  
+
+I added columns for the rubric because I was having trouble adding rows to the spreadsheet where.
+I evaluated each alt-text on five items:
+
+- ```conveysMeaning``` Can I understand something about what the data is showing from the alt-text (e.g.
+the relationship between variables for a line graph or scatter plot)?
+* ```axisInfo``` Does the alt-text tell me what the axes are? NA if the graphic is something
+like a map or pie chart
+- ```axisOrValueScale``` Does the alt-text contain information on the ranges of the axes, or 
+describe the magnitude of the findings in another way (e.g. individual bar heights on bar charts)?
+- ```plotType``` Does the alt-text tell me what kind of graphic this is (line graph, bar chart, 
+scatterplot, map, pie chart)?
+- ```repeatTitle``` Is the alt-text a repetition of the title or subtitle?  
+
+This is a subjective evaluation in that it is made without any access to the graphic, 
+and I'm sure I'm using my knowledge of different kinds of graphs to fill in some of the gaps.
+Also I'm not familiar with some of the newer, fancier types of plots (waterfall?).  
+
+I saved this as a .csv and filled the rubric item fields in Numbers. I saved my results as a .csv
+and read it back into R.
+
+
+
+``` {r, read in csv with rubric items filled in, include=FALSE, echo=FALSE}
+annotatedRubric <- read.csv("annotatedRubric1.csv")
+### remove if conveys meaning == NA
+### NA if it's a repeat, or I think it is a picture without data
+annotatedRubric <- annotatedRubric[!is.na(annotatedRubric$conveysMeaning), ]
+dim(annotatedRubric)
+table(annotatedRubric$conveysMeaning, useNA="ifany")
+table(annotatedRubric$axisInfo, useNA="ifany")
+table(annotatedRubric$axisOrValueScale, useNA="ifany")
+### 9 is probably typo for 0
+annotatedRubric$axisOrValueScale[annotatedRubric$axisOrValueScale == 9] <- 0
+table(annotatedRubric$plotType, useNA="ifany")
+table(annotatedRubric$repeatTitle, useNA="ifany")
+### 9 is typo for 0
+annotatedRubric$repeatTitle[annotatedRubric$repeatTitle == 9] <- 0
+
+```
+
+After removing duplicate tweets and tweets that seemed to contain only photos or screenshots that 
+didn't contain data visualizations, there were `r nrow(annotatedRubric)` tweets that contained alt-text. The following table contains frequencies of presence (1) or absence (0) of alt-text rubric 
+items.
+
+``` {r, frequency table for rubric items, results="asis", echo=FALSE}
+rubricTab <- tbl_summary(annotatedRubric, 
+                         include=c(conveysMeaning:repeatTitle),
+                         type=everything() ~ "categorical",
+                         statistic=all_categorical() ~ "{n} ({p})",
+                         missing="always",
+                         missing_text="NA")
+rubricTab
+
+
+
+```
