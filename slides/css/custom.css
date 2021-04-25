@@ -1,0 +1,449 @@
+:root {
+/* COLOR VARIABLES */
+/* primary and secondary colors and variants */
+--spc-primary:            #122140; /* primary color */
+--spc-primary-light:      #3d486b; /* primary color, lighter variant */
+--spc-primary-dark:       #00001b; /* primary color, darker variant */
+--spc-secondary:          #e5be00; /* secondary color */
+--spc-secondary-light:    #fff14d; /* secondary color, lighter variant */
+--spc-secondary-dark:     #ae8f00; /* secondary color, darker variant */
+
+/* text colors */
+--spc-text-high:          rgba(255, 255, 255, 0.87); /* high emphasis/high priority, white 87% opacity */
+--spc-text-medium:        rgba(255, 255, 255, 0.60); /* medium emphasis, white 60% opacity */
+--spc-text-low:           rgba(255, 255, 255, 0.45); /* disabled text, white 45% opacity */
+/*--spc-text-low:         rgba(255, 255, 255, 0.38); /* disabled text, white 38% opacity */
+
+/* surface colors */
+--rstudio-bkg: #F8F8F8;
+--spc-bkg-light-std: #EEEEEE;                   /* light mode background */
+--spc-bkg-dark-std: #121212;                    /* dark mode background (00dp elevation level) */
+
+/* COLOR CALCULATIONS */
+/* below from mix(--spc-primary, --spc-bkg-dark-std, 25) */
+--spc-bkg-dark: #12151d;                                 /* custom bkg */
+/* below from mix(--spc-primary, --spc-bkg-dark-std, 40) */
+--spc-00dp: #121824;                                     /* 00dp surface */
+/* below from mix(--spc-00dp, white, 95)                 /* 00dp with 5% white overlay */
+--spc-01dp: #1d232e;
+/* below from mix(--spc-00dp, white, 93)                 /* 00dp with 7% white overlay */
+--spc-02dp: #222833;
+/* below from mix(--spc-00dp, white, 92)                 /* 00dp with 8% white overlay */
+--spc-03dp: #242a35;
+/* below from mix(--spc-00dp, white, 91)                 /* 00dp with 9% white overlay */
+--spc-04dp: #272c37;
+
+/* error colors */
+--spc-error: rgba(169, 5, 51, 1);
+--spc-error-light: rgba(253, 244, 244, 1);
+
+/* Penn colors */
+--Penn-red: #a90533;
+}
+
+/*-- SLIDE CONTENT ---------------------------------------------------------- */
+
+/*-- LINKS/ANCHORS --*/
+a, a > code {
+  color:              var(--Penn-red); /* sets color of links */
+  border-bottom:      2px solid var(--Penn-red);
+  line-height:        1.6rem;
+  text-decoration:    none; /* turns off background coloring of links */
+}
+
+a:hover { border-bottom: none; }
+
+
+/*-- PARAGRAPH TEXT --*/
+.remark-slide-content {
+  /*font-size: 25px;*/
+  font-size: 1.6rem; /* paragraph text only */
+  padding: 1em 3em 1em 3em;
+  line-height: 1.5em;
+}
+
+/*-- HEADINGS --*/
+
+h1 {
+  font-weight:        bold;
+  margin-top:         -5px;
+  margin-right:       0px;
+  margin-left:        0px;
+  color:              var(--Penn-red);
+}
+
+
+h2, h3, h4 {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  text-shadow: none;
+  color: var(--spc-primary);
+  font-weight: 400;
+  margin-left: 00px;
+  margin-bottom: -10px;
+}
+
+.remark-slide-content h1 {
+  /*font-size: 45px;*/
+  font-size: 1.7em;
+}
+
+.remark-slide-content h2 {
+  /*font-size: 35px;*/
+  font-size: 1.5em;
+}
+
+.remark-slide-content h3 {
+  /*font-size: 30px;*/
+  font-size: 1.3em;
+}
+
+
+/*-- HORIZONTAL BARS --*/
+hr {
+  content:            '';
+  display:            block;
+  border:             none;
+  background-color:   var(--Penn-red);
+  height:             0.08em;
+}
+
+/*-- TABLES -- */
+.remark-slide table {
+  margin: auto;
+  border-top: 1px solid #666;
+  border-bottom: 1px solid #666;
+}
+
+.remark-slide table thead th { border-bottom: 1px solid #ddd; }
+
+th, td { padding: 5px; }
+
+.remark-slide thead, .remark-slide tfoot, .remark-slide tr:nth-child(even) {
+  background: none;
+}
+
+.lightable-paper td {
+  padding: 1px 1px;
+}
+
+/*-- BOTTOM-OF-SLIDE PROPERTIES ----------------------------------------------*/
+
+.remark-slide-number {
+  font-size:          13pt;
+  color:              var(--spc-00dp);
+  opacity:            1;
+}
+
+/*-- Footnote --*/
+.footnote {
+  position:           absolute;
+  bottom:             2em;
+  padding-right:      4em;
+  font-size:          70%;
+  line-height:        1em;
+}
+
+/*-- Persistent link in footer --*/
+/* https://github.com/rstudio-education/teaching-in-production/blob/master/slides/assets/css/my-theme.css */
+
+a.footer-link {
+    position:         absolute;
+    bottom:           -5px;
+    right:            0px;
+    left:             75px;
+    height:           40px;
+    width:            1210px;
+    color:            var(--Penn-red);
+    /*opacity:          0.75;*/
+    background-color: none;
+    font-size:        0.7em;
+    border-bottom:    none;
+    text-align:       left;
+}
+
+a.footer-link:hover {
+  color:            var(--spc-primary);
+}
+
+.inverse a.footer-link {
+  color:            var(--spc-text-medium);
+  border-bottom:    none;
+}
+
+.inverse a.footer-link:hover {
+  color:            var(--spc-text-high);
+}
+
+div.footer-link {
+    background-color: none;
+    position:         absolute;
+    bottom:           0px;
+    left:             0px;
+    height:           30px;
+    width:            100%;
+}
+
+/*-- PROGRESS BAR IN FOOTER --------------------------------------------------*/
+/* https://github.com/yihui/xaringan/wiki/Progressbar */
+
+.remark-slide-number { position: inherit; }
+
+.remark-slide-number .progress-bar-container {
+  position:           absolute;
+  bottom:             0;
+  height:             5px;
+  display:            block;
+  left:               0;
+  right:              0;
+}
+
+.remark-slide-number .progress-bar {
+  height: 100%;
+  background-color: var(--spc-primary);
+  opacity: 0.75;
+}
+
+/*-- CODE TEXT ---------------------------------------------------------------*/
+
+/*-- In-line highlighting within text --*/
+.remark-code, .remark-inline-code {
+  font-size:          80%;
+  color:              var(--spc-primary);
+  border-radius:      5px;
+  background-color:   #f4f4f4;
+  padding:            1px 1px 1px 1px;
+}
+
+/*-- Line highlighting within code --*/
+.remark-code-line-highlighted {
+  background-color:   var(--spc-text-low);
+}
+
+/*-- CODE CHUNKS --*/
+
+/*-- Code chunk background layer --*/
+pre {
+  /*border: 2px solid rgba(204, 189, 204, 0.8); /* code chunk border*/
+  border:             2px solid var(--spc-text-low);
+  box-shadow:         2px 2px 2px 2px var(--spc-text-low);
+  padding:            0.1em;                    /* padding between code chunk and border */
+  background:         none !important;
+  overflow-x:         auto;                     /* enable horizontal scrolling with overflow */
+  border-radius:      1px;                      /* modify rounding of corners*/
+}
+
+/*-- Code chunk --*/
+pre code {
+  background:         none;
+  font-size:          18px !important;
+}
+
+/*-- INVERSE SLIDE MODIFICATIONS ---------------------------------------------*/
+
+/*-- Slide background and text (inverse) --*/
+.inverse {
+  background-color:   var(--spc-primary);
+  color:              var(--spc-text-high);
+  text-shadow:        none;
+}
+
+/*-- Headings (inverse) --*/
+.inverse h1, .inverse h2, .inverse h3 { color: var(--spc-text-high); }
+
+.inverse a {
+  color:              var(--spc-text-high);
+  border-bottom:      2px solid var(--spc-text-medium);
+}
+
+.inverse a:hover { border-bottom: none;}
+
+/*-- left-column for the 2-column layout --*/
+.inverse .left-column h2:last-of-type, .inverse .left-column h3:last-child {
+  color:              var(--spc-text-high);
+}
+
+/*-- Horizontal bars (inverse) --*/
+.inverse hr { background-color: var(--spc-text-medium); }
+
+.inverse .remark-slide-number {
+  font-size:          13pt;
+  color:              var(--spc-text-low);
+  opacity:            1;
+}
+
+/* -- CUSTOM CLASSES ---------------------------------------------------------*/
+
+/*-- Custom class for the title slide --*/
+
+.title-slide {
+  background-size:    250px;
+  padding-left:       140px;  /* delete this for 4:3 aspect ratio */
+  padding-right:      80px;
+  background-color:   var(--rstudio-bkg);
+  /*border-top: 40px solid var(--rstudio-bkg);*/
+}
+.title-slide h1  {
+  color:              var(--Penn-red);
+  font-size:          1.8em;
+  font-weight:        600;
+  text-align:         left;
+  line-height:        1.2em;
+  margin-left:        40px;
+  margin-right:       40px;
+  padding-top:        3em;
+  /*line-height: 1.2em;*/
+}
+.title-slide h2  {
+  color:              #999999;
+  font-size:          1.2em;
+  font-weight:        500;
+  text-align:         left;
+  margin-top:         -25px;
+  margin-left:        40px;
+  margin-right:       40px;
+}
+.title-slide h3  {
+  font-weight:        400;
+  line-height:        1.1em;
+  text-align:         left;
+  margin-left:        40px;
+  margin-right:       40px;
+  margin-bottom:      -30px;
+}
+
+.title-slide h2::after {
+  margin:             10px 15px 35px 0;
+}
+
+/* turns off slide numbers for title page: */
+/* https://github.com/gnab/remark/issues/298 */
+.title-slide .remark-slide-number {
+  display:           none;
+}
+
+.no-slide-number .remark-slide-number {
+  display: none;
+}
+
+/*-- Slide layout --*/
+.pull-left {
+  float:             left;
+  width:             40%;
+}
+
+.pull-right {
+  float:            right;
+  width:            55%;
+}
+
+.pull-left-equal {
+  float:            left;
+  width:            50%;
+}
+
+.pull-right-equal {
+  float:            right;
+  width:            50%;
+}
+
+.pull-right-equal + * {
+  clear: both;
+}
+
+.right-column {
+  width: 75%;
+  float: right;
+  padding-top: 0em;
+}
+
+/*-- Narrow left, wide right --*/
+
+.left-col-narrow {
+  float: left;
+  width: 20%;
+}
+
+.right-col-wide {
+  float: right;
+  width: 75%;
+}
+
+/*-- 3 column layout --*/
+.left-col {
+  width: 29%;
+  text-align: left;
+  padding-left: 20px;
+  padding-right: 20px;
+  float: left;
+}
+
+.center-col {
+  width: 29%;
+  text-align: left;
+  padding-left: 20px;
+  padding-right: 20px;
+  float: left;
+}
+
+.right-col {
+  width: 29%;
+  text-align: left;
+  padding-left: 20px;
+  padding-right: 20px;
+  float: left;
+}
+
+.white {
+  background-color: white;
+  padding-bottom: 1px;
+}
+
+.highlight {
+  background-color: #edcdd6;
+  /*background-color: rgba(153, 153, 153, .25);*/
+  border-radius: 5px;
+  padding: 0.1em .25em 0.1em 0.25em;
+  font-weight: bold;
+}
+
+/*--PANELSET MODIFICATIONS--*/
+
+.panelset .panel-tabs .panel-tab {
+  min-height: 50px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  /*padding: 0.5em 1em;*/
+  padding: 0.5em 1em;
+  font-family: var(--panel-tab-font-family);
+  opacity: var(--panel-tab-inactive-opacity);
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  color: var(--panel-tab-foreground);
+  background-color: var(--panel-tab-background);
+  list-style: none;
+  z-index: 5;
+}
+
+/*-- highlighting last-of-type --*/
+/*--source: https://www.garrickadenbuie.com/blog/better-progressive-xaringan/?panelset=r-markdown&panelset1=slides2#highlight-last-list-item */
+.highlight-last-item > ul > li,
+.highlight-last-item > ol > li {
+  opacity: 0.5;
+}
+.highlight-last-item > ul > li:last-of-type,
+.highlight-last-item > ol > li:last-of-type {
+  opacity: 1;
+}
+
+/*--editing bullet points--*/
+
+li::marker {
+  content: &#8226;;
+  color: var(--Penn-red);
+}

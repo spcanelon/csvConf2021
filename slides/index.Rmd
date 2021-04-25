@@ -1,0 +1,327 @@
+---
+title: "Revealing Room for Improvement in Accessibility within a Social Media Data Visualization Learning Community"
+subtitle: "csv,conf,v6"
+authors: "Silvia Canelón, PhD & Liz Hare, PhD"
+institute: ""
+date: "May 4, 2021"
+output: 
+  xaringan::moon_reader:
+    seal: false # false removes YAML title slide
+    css: [default, 'css/custom.css', 'css/custom-fonts.css']
+    nature: 
+      highlightStyle: solarized-light
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: 16:9
+      #ratio: 191:100 # for cover image only
+      slideNumberFormat: |
+        <div class="progress-bar-container">
+          <div class="progress-bar" style="width: calc(%current% / %total% * 100%);">
+          </div>
+        </div>
+---
+
+```{r metadata, echo=FALSE}
+# creating HTML metadata to accompany the slides
+library(metathis)
+meta() %>%
+  meta_general(
+    description = "Revealing Room for Improvement in Accessibility within a Social Media Data Visualization Learning Community",
+    generator = "xaringan and remark.js"
+  ) %>% 
+  meta_name("github-repo" = "spcanelon/csvConf2021") %>% 
+  meta_social(
+    title = "2021 csv,conf,v6 | Silvia Canelón & Liz Hare",
+    url = "https://spcanelon.github.io/csvConf2021/slides",
+    image = "",
+    image_alt = "Title slide for the talk presentation",
+    og_type = "website",
+    og_author = "Silvia Canelón & Liz Hare",
+    twitter_card_type = "summary_large_image",
+    twitter_creator = ""
+  )
+```
+
+```{r setup, include=FALSE, eval = TRUE}
+# loading libraries
+library(tidyverse)
+library(knitr)
+library(showtext) # use various fonts in R graphs
+library(fontawesome) # icons
+library(xaringanExtra) # extra xaringan features
+library(TidyTuesdayAltText)
+library(gtsummary)
+
+# specifying xaringanExtra features
+xaringanExtra::use_xaringan_extra(c("tile_view",
+                                    "panelset",
+                                    "share_again",
+                                    "slide_tone"))
+xaringanExtra::style_share_again(
+  share_buttons = c("twitter", "linkedin", "pocket")
+)
+
+# turning off scientific notation
+options(scipen = 999)
+
+# setting knitr code chunk options
+knitr::opts_chunk$set(collapse = TRUE,
+                      fig.retina = 3,
+                      cache = FALSE,
+                      warning = FALSE,
+                      message = FALSE,
+                      echo = FALSE,
+                      comment = NA)
+```
+
+```{r dataImport, include=FALSE, eval=FALSE}
+
+```
+
+name: titleSlide
+class: center, middle
+
+<!--Talk info: Session 0, May 4, 2021 from 10:20 AM to 10:40 PM-->
+
+# Revealing Room for Improvement<br>in Accessibility within a Social Media<br>Data Visualization Learning Community
+
+.pull-left-equal[
+### Silvia Canelón, PhD<br>`r fontawesome::fa("twitter")` @spcanelon
+]
+
+.pull-right-equal[
+### Liz Hare, PhD<br>`r fontawesome::fa("twitter")` @DogGeneticsLLC
+]
+
+## `r rmarkdown::metadata$subtitle`
+
+???
+
+---
+# Outline (for internal use)
+
+.pull-left-equal[
+- [Title slide](#titleSlide)
+- [Who are we?](#hello)
+- [Takeaways](#takeaways)
+- [Motivation](#motivation)
+- [TidyTuesday data collection](#analysisDataCollection)
+- [Alt text data collection](#analysisAltText)
+- [Findings](#analysisResults)
+]
+
+.pull-right-equal[
+- [Other places lacking alt-text](#otherPlaces)
+- [Things are changing](#shiftingTide)
+- [Good alt text](#goodAltText)
+- [Learning resources](#learningResources)
+- [Goodbye slide](#goodbye)
+]
+
+---
+name: hello
+class: middle, center
+
+# Who are we?
+.pull-left-equal[
+
+.center[
+
+<!--HTML code inserting a circular avatar of a square photo-->
+<img style="border-radius: 50%;" src="https://raw.githubusercontent.com/spcanelon/silvia/main/content/authors/silvia/avatar.png" width="170px" alt="Profile of Silvia Canelón"/>
+
+**Postdoctoral Research Scientist<br>University of Pennsylvania**
+
+
+]]
+
+.pull-right-equal[
+.center[
+
+<!--HTML code inserting a circular avatar of a square photo-->
+<img style="border-radius: 50%;" src="/slides/img/Profile_LH.JPG" width="170px" alt="Profile of Liz Hare"/>
+
+**Canine Genetics and Genomics Consultant<br>Dog Genetics, LLC**
+]]
+
+???
+
+---
+layout: true
+
+<!-- this adds the link footer to all slides, depends on footer-link class in css-->
+<a class="footer-link" href="http://bit.ly/TidyTuesday"><strong>bit.ly/TidyTuesday</strong>
+&#8226; Silvia Canelón & Liz Hare &#8226; csv,conf,v6</a>
+
+???
+
+---
+name: takeaways
+class: middle
+
+# Takeaways
+
+----
+
+- what can people expect to walk away with?
+- What is TidyTuesday and how does it work? Connecting it to R for folks that are unfamiliar?
+- What are the essential features of alt-texts
+- Why they shouldn't just repeat what's in the title or caption (in some documents, those thext elements will already be accessible, and they are not adequate to understand what the results.
+
+???
+
+---
+name: motivation
+class: highlight-last-item <!--css class that makes the "current" bullet point bold and the previous points gray-->
+
+# Motivation
+
+- What's this talk about? What motivated the topic?
+
+- What a screen reader is, and what it does and doesn't do (e.g. it reads static text on the screen, not graphics or text in videos (like Zoom screen-sharing).
+- While some OSs and platforms (FaceBook, LinkedIn) have AI image recognition, it is not capable of describing data visualizations.
+- Why do blind people need data visualizatioN? Current examples like Covid incidence maps (public health), election maps, and because blind researchers are out here crunching data, reading the literature, and sharing findings.
+- R does not have the capability of producing readable charts, like SAS and Andy Stefik's program.
+
+???
+
+---
+name: TidyTuesday
+
+# What is TidyTuesday
+
+- What is TidyTuesday and how does it work? 
+- Connecting it to R for folks that are unfamiliar.
+
+- Development of learning communities like R4DS (https://www.rfordatasci.com -- ugh! a bunch of the first links on this page are unlabeled)
+
+---
+name: analysisDataCollection
+
+# TidyTuesday data collection
+
+- How is TidyTuesday data collected? 
+
+---
+name: analysisAltText
+
+# Alt text scraping
+
+- How was alt text scraped from the images?
+
+???
+
+---
+name: analysisResults
+
+# What we found
+
+- What results did we find? This will be a few slides probably.
+
+- Overall and annual numbers of TidyTuesday Tweets
+- Overall and annual percentages of TidyTuesday Tweets containing alt-text at all
+- From my point of view: how many of these alt-texts don't actually tell me what the data are showing analysis according to rubric?
+
+???
+
+---
+name: otherPlaces
+
+# Where else does this show up?
+
+- Online R books made available digitally to people with print disabilities  
+- R package documentation (e.g. gtsummary::tbl_summary has example output with no description)
+- Blogs
+- This shows up at the individual-level and at the corporate-level (e.g. RStudio)
+
+???
+
+---
+name: shiftingTide
+
+# Has the tide started shifting?
+
+- Where are conversations about this happening
+  - Within R: useR!2021, MiR
+  - More broadly: Data Visualization Society, a11y Meetups
+- What changes have we seen generally (e.g. new alt text code chunk option for R Markdown)?
+- What changes have we noticed since announcing our talk?
+- Changes are just starting and slow
+
+???
+Caveats relating to required behavioral changes. For example: The alt-text thing for R Markdown is great, *but*  people will probably have to interrupt their workflow to describe what the data show after creating the graphic! If you want reproducible reports, you will still have to go back in and explain what the data show. This is why people are going to be tempted to put just the title-caption there and leave out the most crucial information.
+
+---
+name: goodAltText
+
+# How to write good alt text for a data visualization
+
+- How exactly do you write good alt text for a data visualization? The rubric!
+- Do you have enough information to understand the purpose of the image without seeing it?
+
+???
+
+---
+name: learningResources
+
+# Where can people learn more?
+
+What's the call to action? And where can people learn more (e.g. a short curated list resources)?
+
+Data visualization alt-text resouces:
+-	Writing alt-text for data visualization: 
+https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81
+
+General alt-text resources:
+- WGBH Guide Guidelines for describing STEM images: 
+https://www.wgbh.org/foundation/ncam/guidelines/guidelines-for-describing-stem-images
+-	Diagram Center Accessible Images: http://diagramcenter.org/making-images-accessible.html
+-	Diagram Center Accessible Math Tricks and Tips: Training:  http://diagramcenter.org/accessible-math-tools-tips-and-training.html#training
+
+???
+
+---
+name: goodbye
+class: left, middle
+
+.left-col-narrow[
+# Thank you!
+
+This presentation was made using the [xaringan](https://github.com/yihui/xaringan#xaringan), and [xaringanExtra](https://github.com/gadenbuie/xaringanExtra#xaringanextra)<br>R packages.
+
+----
+
+`r fontawesome::fa("github")` Analysis repo [spcanelon/csvConf2021](https://github.com/spcanelon/csvConf2021)
+]
+
+.right-col-wide[
+
+.pull-left-equal[
+.right[
+<!--HTML code inserting a circular avatar of a square photo-->
+<img style="border-radius: 50%;" src="https://raw.githubusercontent.com/spcanelon/silvia/main/content/authors/silvia/avatar.png" width="170px" alt="Profile of Silvia Canelón"/>
+
+Silvia Canelón, PhD
+
+<!--Inserting social media links-->
+[`r fontawesome::fa("link")` silvia.rbind.io](https://silvia.rbind.io)<br>
+[`r fontawesome::fa("twitter")` @spcanelon](https://twitter.com/spcanelon)<br>
+[`r fontawesome::fa("github")` @spcanelon](https://github.com/spcanelon)<br>
+
+]]
+
+.pull-right-equal[
+.right[
+<!--HTML code inserting a circular avatar of a square photo-->
+<img style="border-radius: 50%;" src="/slides/img/Profile_LH.JPG" width="170px" alt="Profile of Liz Hare"/>
+
+Liz Hare, PhD
+
+<!--Inserting social media links-->
+[`r fontawesome::fa("link")` doggenetics.com](http://doggenetics.com/)<br>
+[`r fontawesome::fa("twitter")` @DogGeneticsLLC](https://twitter.com/DogGeneticsLLC)<br>
+[`r fontawesome::fa("github")` @LizHareDogs](https://github.com/LizHareDogs)<br>
+[`r fontawesome::fa("envelope")` LizHare@DogGenetics.com](mailto:LizHare@DogGenetics.com)
+]]
+]
+
