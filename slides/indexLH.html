@@ -132,26 +132,18 @@ class: middle
 # Takeaways  
 
 
-- Growth in online learning communities for data science mediated by social networking apps 
-like Twitter  
-
-- [#TidyTuesday](https://www.tidytuesday.com), [GitHub](https://github.com/rfordatascience/tidytuesday)  
-  - [R](https://cran.r-project.org) open-source statistical software  
-  - [Tidyverse](https://www.tidyverse.org) packages for data management and visualization  
-  - [R for Data Science](https://www.rfordatasci.com) book and organization  
+* Recent growth in online learning communities for data science mediated by social networking apps 
+(Twitter, Slack)
+* Context for [#TidyTy on Twitter](https://www.tidytuesday.com), ([TidyTuesday GitHub repository](https://github.com/rfordatascience/tidytuesday))  
+  + [R](https://cran.r-project.org) open-source statistical software  
+  + [Tidyverse](https://www.tidyverse.org) packages for data management and visualization  
+  + [R for Data Science](https://www.rfordatasci.com) book and organization  
   
-  - How accessible are TidyTuesday tweets for peopple who are blind or have low vision?  
-  
-- Alt-text is a method for providing text descriptions of images on Twitter, in HTML, and in other applications that can be read by screen reading software  
-
-- Five essential features of alt-texts  
+* How accessible are TidyTuesday tweets for people who are blind or have low vision?  
+  + Alt-text is a method for providing text descriptions of images on Twitter, in HTML, and in other applications that can be read by screen reading software  
+  + Five essential features of alt-texts  
   
   
-&lt;!-- - what can people expect to walk away with?
-- What is TidyTuesday and how does it work? Connecting it to R for folks that are unfamiliar?
-- What are the essential features of alt-texts
-- Why they shouldn't just repeat what's in the title or caption (in some documents, those thext elements will already be accessible, and they are not adequate to understand what the results.
---&gt;
 
 
 ---
@@ -160,97 +152,62 @@ class: highlight-last-item &lt;!--css class that makes the "current" bullet poin
 
 # Motivation
 
-- Can blind people participate in online data science learning communities? #TidyTuesday as 
+* Can blind people participate in online data science learning communities? #TidyTuesday as 
 an example  
-
-	- Are participants using alt-text to describe their images?  
-	
-    - Do these descriptions provide enough information for the reader to understand the graphic?  
+	+ Are participants using alt-text to describe their images?  
+    + Do these descriptions provide enough information for the reader to understand the graphic?  
 	
 
-- Screen reader basics:  
-
-  - Provides voice or braille access to computer **text** (OS interactions, email, web browsing, 
+* Screen reader basics:  
+  + Provides voice or braille access to computer **text** (OS interactions, email, web browsing, 
   some IDEs, etc.)  
-  
-  - **Cannot** describe images  
+  + **Cannot** describe images  
 
-
-- AI image description  
-
-	- Available on iOS, OSX, LinkedIn, Facebook, etc.  
-	
-	- **Cannot** adequately describe data visualizations  
+* AI image description  
+  + Available on iOS, OSX, LinkedIn, Facebook, etc.
+  + **Cannot** adequately describe data visualizations  
 	
 
-- Why include screen reader users?  
-
-  - Access to information examples  
-  
-	  - Regional COVID-19 incidence information  
-	  
-	  - Election maps  
-	  
-	  - Scientific literature  
-	  
-  - Blind researchers need to  
-  
-	  - Elicit good descriptions from colleagues, so knowing what kinds of graphs are possible is important    
-	  
-	  - Continue learning about advances in data visualization  
-	  
-	  - Create data visualizations for reports and publications  
+* Why include screen reader users?  
+  + Access to information examples  
+	+ Regional COVID-19 incidence information  
+	+ Election maps  
+	+ Scientific literature    
+  + Blind researchers need to  
+	+ Elicit good descriptions from colleagues, so knowing what kinds of graphs are possible is important
+	+ Continue learning about advances in data visualization  
+	+ Create data visualizations for reports and publications  
 	  
 
-- Alt- text is a text description of a graphic that conveys its meaning to screen reading software
+* Alt- text is a text description of a graphic that conveys its meaning to screen reading software
 
-&lt;!--- What's this talk about? What motivated the topic?
-
-- What a screen reader is, and what it does and doesn't do (e.g. it reads static text on the screen, not graphics or text in videos (like Zoom screen-sharing).
-- While some OSs and platforms (FaceBook, LinkedIn) have AI image recognition, it is not capable of describing data visualizations.
-- Why do blind people need data visualizatioN? Current examples like Covid incidence maps (public health), election maps, and because blind researchers are out here crunching data, reading the literature, and sharing findings.
-- R does not have the capability of producing readable charts, like SAS and Andy Stefik's program.
---&gt;
 
 ---
 name: TidyTuesday
 
-# What is TidyTuesday  
+# What is TidyTuesday?  
 
-- Data set information is tweeted on Mondays  
-
-- Participants explore the data, format it according to use with data cleaning, analysis, and 
+* Data set information is tweeted on Mondays  
+* Participants explore the data, format it according to use with data cleaning, analysis, and 
 visualization packages that are part of the Tidyverse group of R packages  
-
-	- Data visualizations can focus on any part of the data, or replicate the visualization 
+	+ Data visualizations can focus on any part of the data, or replicate the visualization 
 	from the original post  
-	
-	- Emphasis is on data organization and visualization, not interpretation
+	+ Emphasis is on data organization and visualization, not interpretation
 
-- TidyTuesday tweets include  
-
-	- A verbal description, often including the author's particular interest in the data 
+* TidyTuesday tweets include  
+	+ A verbal description, often including the author's particular interest in the data 
 	or new methods they learned  
-	
-		- A link to the author's code for producing the visualization is encouraged
-		
-		- The image itself
-		
-		- An alt-text describing the image (guidance to participants on this is recently available)
+	+ A link to the author's code for producing the visualization is encouraged
+	+ The image itself
+	+ An alt-text describing the image (guidance to participants on this is recently available)
 	  
 &lt;!-- on Twitter, Thomas Mock said he had changed the TidyTuesday readme (presumably on GitHub) to 
 include information about alt-text, but I just checked and it's not listed as part of the process 
-I would have linked it here.
---&gt;
+I would have linked it here. --&gt;
 		
-- Feedback from the community is supposed to be positive in line with TidyTuesday's aim to be "safe and supportive"		  
+* Feedback from the community is supposed to be positive in line with TidyTuesday's aim to be "safe and supportive"		  
 
 
-&lt;!-- - What is TidyTuesday and how does it work? 
-- Connecting it to R for folks that are unfamiliar.
-
-- Development of learning communities like R4DS (https://www.rfordatasci.com -- ugh! a bunch of the first links on this page are unlabeled)
---&gt;
 
 ---
 name: analysisDataCollection
@@ -286,7 +243,7 @@ Table: Percentage of TidyTuesday Tweets Containing alt-text by Year
 | 2020|                                    2.9|
 | 2021|                                    7.7|
 
-- How extensive are the alt-texts (Not particularly useful results!)  
+How extensive are the alt-texts (Not particularly useful results!)  
 
 
 Table: Alt-text Lengths in Words and Characters
@@ -298,30 +255,20 @@ Table: Alt-text Lengths in Words and Characters
 
 
 
-&lt;!-- - What results did we find? This will be a few slides probably.
-
-- Overall and annual numbers of TidyTuesday Tweets
-- Overall and annual percentages of TidyTuesday Tweets containing alt-text at all
-- From my point of view: how many of these alt-texts don't actually tell me what the data are showing analysis according to rubric?
---&gt;
 
 ---
 name: analysisResultsRubric
 
-- Five characteristics of visualization alt-text based on personal experience and reading the scraped alt-texts  
+* Five characteristics of visualization alt-text based on personal experience and reading the scraped alt-texts  
 
   1. A description of what can be seen about the data (relationships between 
   x and y variables, histogram shape, appearance of points in residual plots)  
-  
   2. What variables are on the axes?  
-  
   3. What scale are the axes on, or is the scale described within the overall description?  
-  
   4. What type of plot is it (line graph, scatterplot, qq plot, etc)  
-  
   5. Alt-text should contain more information than title and/or subtitle of the plot
     
-- After removing duplicate tweets and tweets that didn't seem to contain data visualizations, there were 196 tweets with alt-text.  
+* After removing duplicate tweets and tweets that did not contain data visualizations, there were 196 tweets with alt-text.  
 
 
 Table: Percentages of Alt-texts Containing Five Types of Information
@@ -336,7 +283,7 @@ Table: Percentages of Alt-texts Containing Five Types of Information
 
 - Conclusion: Many alt-texts are missing information
 
-- Limitations: One person with many years' experience analyzing data in R identified 
+* Limitations: One person with many years' experience analyzing data in R identified 
 these features based on that experience and the TidyTuesday data set, without visual access 
 to the data.  
 
@@ -346,13 +293,13 @@ name: otherPlaces
 
 # Where else does this show up?  
 
-- Online R books made available digitally to people with print disabilities via vy[Bookshare](https://www.bookshare.org/cms/)   
+* Online R books made available digitally to people with print disabilities by [Bookshare](https://www.bookshare.org/cms/)   
 
-- R package documentation (e.g. HTML help for gtsummary::tbl_summary has example output as .png files with no description)  
+* R package documentation (e.g. HTML help for gtsummary::tbl_summary has example output as .png files with no description)  
 
-- Blogs  
+* Blogs  
 
-- This shows up at the individual-level and at the corporate-level (e.g. RStudio rmarkdown documentation)  
+* This shows up at the individual-level and at the corporate-level (e.g. RStudio rmarkdown documentation)  
 
 
 
@@ -376,23 +323,17 @@ name: goodAltText
 
 # How to write good alt text for a data visualization
 
-## Include these four things:  
+Include these four things:  
+1. What kind of plot is it? (line graph, scatterplot, residual plot)  
+   + Describe it further if it's a specialized type of plot  
+2. What variables are on the axes?  
+3. What is the range or scale of the variables?  
+4. What do you see about the relationship between the variables in the plot?  
+	
 
-	1. What kind of plot is it? (line graph, scatterplot, residual plot)  
-	
-		- Describe it further if it's a specialized type of plot  
-		
-	2. What variables are on the axes?  
-	
-	3. What is the range or scale of the variables?  
-	
-	4. What do you see about the relationship between the variables in the plot?  
-	
-## Ask yourself
-
-- Do you have enough information to understand the purpose of the image without seeing it?  
-
-- Is your alt-text a repetition of the title or does it tell me something about the data as well?  
+Ask yourself
+* Do you have enough information to understand the purpose of the image without seeing it?  
+* Is your alt-text a repetition of the title or does it tell me something about the data as well?  
 
 
 ---
@@ -400,20 +341,21 @@ name: learningResources
 
 # Where can people learn more?
 
-- Make your data visualizations accessible everywhere you can by adding alt-text to websites, journalism, scientific publishing, social media  
+* Make your data visualizations accessible everywhere you can by adding alt-text to websites, journalism, scientific publishing, social media  
 
-- Find ways to describe your visualizations in words when alt-text isn't available in your documents or platforms  
+* Find ways to describe your visualizations in words when alt-text isn't available in your documents or platforms  
 
-&lt;!-- What's the call to action? And where can people learn more (e.g. a short curated list resources)?
---&gt;
 
-There is information about adding alt-text to rmarkdown documents in 
-[Chapter 14 of the R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/html-accessibility.html).  
+
 
 Data visualization alt-text resources:  
 
--	[Writing alt-text for data visualizat
-ion](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81)
+*	[Writing alt-text for data visualization](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81)
+
+* There is information about adding alt-text to rmarkdown documents in 
+[Chapter 14 of the R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/html-accessibility.html).  
+
+
 
 General alt-text resources:  
 
@@ -424,9 +366,9 @@ General alt-text resources:
 
 
 Social media alt-text instructions
-- [Twitter](https://help.twitter.com/en/using-twitter/picture-descriptions)
-- [Facebook](https://www.facebook.com/help/214124458607871)
-- [LinkedIn](https://www.linkedin.com/help/linkedin/answer/109799/adding-alternative-text-to-images-for-accessibility?lang=en)
+* [Twitter](https://help.twitter.com/en/using-twitter/picture-descriptions)
+* [Facebook](https://www.facebook.com/help/214124458607871)
+* [LinkedIn](https://www.linkedin.com/help/linkedin/answer/109799/adding-alternative-text-to-images-for-accessibility?lang=en)
 
 
 
