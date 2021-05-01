@@ -27,8 +27,6 @@
     <meta property="article:author" content="Silvia Canelón &amp; Liz Hare"/>
     <link href="index_files/tile-view-0.2.6/tile-view.css" rel="stylesheet" />
     <script src="index_files/tile-view-0.2.6/tile-view.js"></script>
-    <script src="index_files/tone-13.8.34/Tone.js"></script>
-    <script src="index_files/slide-tone-0.2.6/slide-tone.js"></script>
     <link href="index_files/panelset-0.2.6/panelset.css" rel="stylesheet" />
     <script src="index_files/panelset-0.2.6/panelset.js"></script>
     <script src="index_files/clipboard-2.0.6/clipboard.min.js"></script>
@@ -41,7 +39,6 @@
   </head>
   <body>
     <textarea id="source">
-
 
 
 
@@ -72,21 +69,21 @@ class: center, middle
 # Outline (for internal use)
 
 .pull-left-equal[
-- [Title slide](#titleSlide)
-- [Who are we?](#hello)
-- [Takeaways](#takeaways)
-- [Motivation](#motivation)
-- [TidyTuesday data collection](#analysisDataCollection)
-- [Alt text data collection](#analysisAltText)
-- [Findings](#analysisResults)
+* [Title slide](#titleSlide)
+* [Who are we?](#hello)
+* [Takeaways](#takeaways)
+* [Motivation](#motivation)
+* [TidyTuesday data collection](#analysisDataCollection)
+* [Alt text data collection](#analysisAltText)
+* [Findings](#analysisResults)
 ]
 
 .pull-right-equal[
-- [Other places lacking alt-text](#otherPlaces)
-- [Things are changing](#shiftingTide)
-- [Good alt text](#goodAltText)
-- [Learning resources](#learningResources)
-- [Goodbye slide](#goodbye)
+* [Other places lacking alt-text](#otherPlaces)
+* [Things are changing](#shiftingTide)
+* [Good alt text](#goodAltText)
+* [Learning resources](#learningResources)
+* [Goodbye slide](#goodbye)
 ]
 
 ---
@@ -120,7 +117,8 @@ class: middle, center
 ---
 layout: true
 
-&lt;!-- this adds the link footer to all slides, depends on footer-link class in css--&gt;
+&lt;!--this adds the link footer to all slides, depends on footer-link class in css--&gt;
+
 &lt;a class="footer-link" href="http://bit.ly/TidyTuesday"&gt;&lt;strong&gt;bit.ly/TidyTuesday&lt;/strong&gt;
 &amp;#8226; Silvia Canelón &amp; Liz Hare &amp;#8226; csv,conf,v6&lt;/a&gt;
 
@@ -128,96 +126,213 @@ layout: true
 
 ---
 name: takeaways
-class: middle
+class: middle, highlight-last-item
 
 # Takeaways
 
 ----
 
-- what can people expect to walk away with?
-- What is TidyTuesday and how does it work? Connecting it to R for folks that are unfamiliar?
-- What are the essential features of alt-texts
-- Why they shouldn't just repeat what's in the title or caption (in some documents, those thext elements will already be accessible, and they are not adequate to understand what the results.
+* Growth in online learning communities for data science
+
+--
+
+* TidyTuesday: Weekly social project for data visualization in R
+
+--
+
+* 2.4% of the data visualizations shared on Twitter had alternative text
+
+--
+
+* 84% were described by default as "Image"  
+
 
 ???
+Why they shouldn't just repeat what's in the title or caption (in some documents, those thext elements will already be accessible, and they are not adequate to understand what the results.
 
 ---
 name: motivation
-class: highlight-last-item &lt;!--css class that makes the "current" bullet point bold and the previous points gray--&gt;
+class: middle, highlight-last-item
 
-# Motivation
+# Can blind people participate in data viz learning communities?
 
-- What's this talk about? What motivated the topic?
+* Why do blind people need data visualization?
 
-- What a screen reader is, and what it does and doesn't do (e.g. it reads static text on the screen, not graphics or text in videos (like Zoom screen-sharing).
-- While some OSs and platforms (FaceBook, LinkedIn) have AI image recognition, it is not capable of describing data visualizations.
-- Why do blind people need data visualizatioN? Current examples like Covid incidence maps (public health), election maps, and because blind researchers are out here crunching data, reading the literature, and sharing findings.
-- R does not have the capability of producing readable charts, like SAS and Andy Stefik's program.
+--
 
-???
+  * Scientific communication -- add link here?
+  * [Election maps](https://fossheim.io/writing/posts/accessible-dataviz-us-elections/)
+  * [COVID-19 incidence maps &amp; dashboards](https://www.theguardian.com/society/2020/sep/30/visually-impaired-scots-get-sonic-help-with-covid-graphs) -- is there a better resource?
+  * [R](https://cran.r-project.org)/[RStudio]() cannot produce readable charts like [Quorum](https://quorumlanguage.com/evidence.html) or [SAS](https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.5/odsacoutput/n12hxbdrtzec6gn1k913nwfl9o4d.htm) 
+
+--
+
+* Screen readers provide voice or braille access to computer text, **not images**
+
+--
+
+* AI image descriptions **cannot adequately describe data viz**
+
+--
+
+* Can blind people participate in #TidyTuesday?
+
 
 ---
 name: TidyTuesday
+class: middle
 
-# What is TidyTuesday
+.pull-left-equal[
+# What is TidyTuesday?
 
-- What is TidyTuesday and how does it work? 
-- Connecting it to R for folks that are unfamiliar.
+* [Social project](https://github.com/rfordatascience/tidytuesday) providing a new&lt;br&gt;tidy dataset every week
+* Online data viz [R learning community](https://www.rfordatasci.com)
+* Opportunity to practice summarizing&lt;br&gt;and visualizing data with [modern tooling](https://www.rfordatasci.com)
 
-- Development of learning communities like R4DS (https://www.rfordatasci.com -- ugh! a bunch of the first links on this page are unlabeled)
+]
+
+.pull-right-equal[
+
+&lt;blockquote class="twitter-tweet"&gt;&lt;p lang="en" dir="ltr"&gt;The &lt;a href="https://twitter.com/R4DScommunity?ref_src=twsrc%5Etfw"&gt;@R4DScommunity&lt;/a&gt; welcomes you to week 18 of &lt;a href="https://twitter.com/hashtag/TidyTuesday?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#TidyTuesday&lt;/a&gt;! We&amp;#39;re exploring CEO departures!&lt;br&gt;&lt;br&gt;📂 &lt;a href="https://t.co/sElb4fcv3u"&gt;https://t.co/sElb4fcv3u&lt;/a&gt;&lt;br&gt;📰 &lt;a href="https://t.co/mhn5wQ21SE"&gt;https://t.co/mhn5wQ21SE&lt;/a&gt;&lt;a href="https://twitter.com/hashtag/r4ds?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#r4ds&lt;/a&gt; &lt;a href="https://twitter.com/hashtag/tidyverse?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#tidyverse&lt;/a&gt; &lt;a href="https://twitter.com/hashtag/rstats?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#rstats&lt;/a&gt; &lt;a href="https://twitter.com/hashtag/dataviz?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#dataviz&lt;/a&gt; &lt;a href="https://t.co/zVgfq7M88v"&gt;pic.twitter.com/zVgfq7M88v&lt;/a&gt;&lt;/p&gt;&amp;mdash; Tom Mock 💉💉🎉 (@thomas_mock) &lt;a href="https://twitter.com/thomas_mock/status/1386854016550936579?ref_src=twsrc%5Etfw"&gt;April 27, 2021&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt; 
+
+]
 
 ---
-name: analysisDataCollection
+name: TidyTuesdayExample
+class: middle
 
-# TidyTuesday data collection
+.pull-left[
+&lt;blockquote class="twitter-tweet"&gt;&lt;p lang="en" dir="ltr"&gt;Today&amp;#39;s &lt;a href="https://twitter.com/hashtag/TidyTuesday?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#TidyTuesday&lt;/a&gt;:&lt;br&gt;data on artwork from the &lt;a href="https://twitter.com/Tate?ref_src=twsrc%5Etfw"&gt;@Tate&lt;/a&gt; collection, and specifically aspect ratios over time&lt;br&gt;&lt;br&gt;Blue = stat_smooth GAMs (grouped by aspect ratio &amp;gt; 1)&lt;br&gt;Red = golden ratio (±1 + sqrt(5))/2 &lt;a href="https://t.co/PSuBgUp3Ky"&gt;pic.twitter.com/PSuBgUp3Ky&lt;/a&gt;&lt;/p&gt;&amp;mdash; Hao Ye (@Hao_and_Y) &lt;a href="https://twitter.com/Hao_and_Y/status/1349055287169331200?ref_src=twsrc%5Etfw"&gt;January 12, 2021&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt; 
+]
 
-- How is TidyTuesday data collected? 
+.pull-right[
+# What do #TidyTuesday visualization tweets include?
+
+* Verbal description
+    * author's interest
+    * learning process
+    * interpretation of the data
+* Link to the author's source code
+* Data visualization attached as an image
+* Alt text for the image (rarely)
+]
 
 ---
 name: analysisAltText
 
-# Alt text scraping
+# How was the data collected?
 
-- How was alt text scraped from the images?
+.left-column[
+Tweets collected and [made available](https://github.com/rfordatascience/tidytuesday) by Tom Mock using [{rtweet}](https://docs.ropensci.org/rtweet/)
 
-???
+----
+
+Alt text scraped by Silvia Canelón using [{RSelenium}](https://docs.ropensci.org/RSelenium/) and available in the [TidyTuesdayAltText](https://github.com/spcanelon/TidyTuesdayAltText) 📦
+]
+
+.right-column[
+
+&lt;img src="img/webInspection.png" title="Web inspection tool being used to identify the CSS selector corresponding to the image from the example tweet with good alt text. Also shows the actual alt text displayed on Twitter by the Alt or Not extension available for Firefox" alt="Web inspection tool being used to identify the CSS selector corresponding to the image from the example tweet with good alt text. Also shows the actual alt text displayed on Twitter by the Alt or Not extension available for Firefox" width="85%" style="display: block; margin: auto;" /&gt;
+
+]
 
 ---
-name: analysisResults
+name: analysisResultsIncidence
 
-# What we found
+# What did we find?
 
-- What results did we find? This will be a few slides probably.
+Over four years (2018-2021), there were 6443 tweets with the TidyTuesday hashtag. Alt-texts were 
+attached to 2.4% of these Tweets.  
 
-- Overall and annual numbers of TidyTuesday Tweets
-- Overall and annual percentages of TidyTuesday Tweets containing alt-text at all
-- From my point of view: how many of these alt-texts don't actually tell me what the data are showing analysis according to rubric?
 
-???
+Table: Percentage of TidyTuesday Tweets Containing alt-text by Year
+
+| Year| TidyTuesday Tweets Containing Alt-text|
+|----:|--------------------------------------:|
+| 2018|                                    1.1|
+| 2019|                                    1.0|
+| 2020|                                    2.9|
+| 2021|                                    7.7|
+
+
+---
+name: analysis
+
+# How extensive are the alt-texts?
+
+
+Table: Alt-text Lengths in Words and Characters
+
+|           | Median| Minimum| Maximum|
+|:----------|------:|-------:|-------:|
+|Words      |     18|       1|     170|
+|Characters |     93|       8|     788|
+
+---
+name: analysisResultsPlot
+
+# (WIP placeholder for visualization) Use of alt text has increased over time
+
+
+
+
+
+
 
 ---
 name: otherPlaces
 
-# Where else does this show up?
+# Where else is alt text missing?
 
-- Online R books made available digitally to people with print disabilities  
-- R package documentation (e.g. gtsummary::tbl_summary has example output with no description)
-- Blogs
-- This shows up at the individual-level and at the corporate-level (e.g. RStudio)
+* Online R books made available digitally to people with print disabilities by [Bookshare](https://www.bookshare.org/cms/)   
+* R package documentation (e.g. HTML help for gtsummary::tbl_summary has example output as .png files with no description)  
+* R Blogs
+* This shows up at the individual-level and at the corporate-level (e.g. RStudio rmarkdown documentation) 
 
 ???
+
+---
+name: analysisResultsRubric
+
+# Much of the alt text provided is missing information
+
+* Five characteristics
+
+  1. A description of what can be seen about the data (relationships between x and y variables, histogram shape, appearance of points in residual plots)  
+  2. What variables are on the axes?  
+  3. What scale are the axes on, or is the scale described within the overall description?  
+  4. What type of plot is it (line graph, scatterplot, qq plot, etc)  
+  5. Alt-text should contain more information than title and/or subtitle of the plot
+    
+* After removing duplicate tweets and tweets that did not contain data visualizations, there were 196 tweets with alt-text.  
+
+
+Table: Percentages of Alt-texts Containing Five Types of Information
+
+|Characteristic |Description     |Percent of Alt-texts containing this feature |
+|:--------------|:---------------|:--------------------------------------------|
+|1              |Conveys Meaning |34                                           |
+|2              |Axis Variables  |28                                           |
+|3              |Axis Scale      |12                                           |
+|4              |Plot Type       |56                                           |
+|5              |Repeats Title   |9                                            |
 
 ---
 name: shiftingTide
 
 # Has the tide started shifting?
 
-- Where are conversations about this happening
-  - Within R: useR!2021, MiR
-  - More broadly: Data Visualization Society, a11y Meetups
-- What changes have we seen generally (e.g. new alt text code chunk option for R Markdown)?
-- What changes have we noticed since announcing our talk?
-- Changes are just starting and slow
+* Conversations are happening
+  * Within R: useR!2021, MiR
+  * More broadly: Data Visualization Society, a11y Meetups
+
+--
+
+* Tooling is slowly receiving updates
+  * New alt text code chunk option for R Markdown
+  * Shiny app tooling improved thanks to accessibility expertise
+* What changes have we noticed since announcing our talk?
+* Changes are just starting and slow
 
 ???
 Caveats relating to required behavioral changes. For example: The alt-text thing for R Markdown is great, *but*  people will probably have to interrupt their workflow to describe what the data show after creating the graphic! If you want reproducible reports, you will still have to go back in and explain what the data show. This is why people are going to be tempted to put just the title-caption there and leave out the most crucial information.
@@ -227,27 +342,41 @@ name: goodAltText
 
 # How to write good alt text for a data visualization
 
-- How exactly do you write good alt text for a data visualization? The rubric!
-- Do you have enough information to understand the purpose of the image without seeing it?
+Include these four things:
 
-???
+1. What kind of plot is it? (line graph, scatterplot, residual plot)  
+   + Describe it further if it's a specialized type of plot  
+2. What variables are on the axes?  
+3. What is the range or scale of the variables?  
+4. What do you see about the relationship between the variables in the plot?  
+
+Ask yourself
+* Do you have enough information to understand the purpose of the image without seeing it?  
+* Is your alt-text a repetition of the title or does it tell me something about the data as well?  
 
 ---
 name: learningResources
 
-# Where can people learn more?
+# What can we all do?
 
-What's the call to action? And where can people learn more (e.g. a short curated list resources)?
+* Make your data visualizations accessible everywhere you can by adding alt-text to websites, journalism, scientific publishing, social media  
 
-Data visualization alt-text resouces:
--	Writing alt-text for data visualization: 
-https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81
+* Find ways to describe your visualizations in words when alt-text isn't available in your documents or platforms 
 
-General alt-text resources:
-- WGBH Guide Guidelines for describing STEM images: 
-https://www.wgbh.org/foundation/ncam/guidelines/guidelines-for-describing-stem-images
--	Diagram Center Accessible Images: http://diagramcenter.org/making-images-accessible.html
--	Diagram Center Accessible Math Tricks and Tips: Training:  http://diagramcenter.org/accessible-math-tools-tips-and-training.html#training
+.pull-left-equal[
+Data visualization alt-text resources
+
+*	[Writing alt-text for data visualization](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81)
+* [Chartability Data Viz Audit Workbook](https://chartability.fizz.studio/)
+* [a11y Data Viz Accessibility Resources](https://github.com/dataviza11y/resources/blob/main/README.md)
+]
+
+.pull-right-equal[
+Tools for Twitter
+
+* Show alt-text for tweets: [Alt or not, Firefox](https://addons.mozilla.org/en-US/firefox/addon/alt-or-not/)
+* Twitter reminder to add alt-text: [Twitter Required Alt Text, Firefox](https://addons.mozilla.org/en-GB/firefox/addon/twitter-required-alt-text/)
+]
 
 ???
 
@@ -262,7 +391,7 @@ This presentation was made using the [xaringan](https://github.com/yihui/xaringa
 
 ----
 
-&lt;svg style="height:0.8em;top:.04em;position:relative;" viewBox="0 0 496 512"&gt;&lt;path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/&gt;&lt;/svg&gt; Analysis repo [spcanelon/csvConf2021](https://github.com/spcanelon/csvConf2021)
+&lt;svg style="height:0.8em;top:.04em;position:relative;" viewBox="0 0 496 512"&gt;&lt;path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/&gt;&lt;/svg&gt; Analysis repo &amp; resources [spcanelon/csvConf2021](https://github.com/spcanelon/csvConf2021)
 ]
 
 .right-col-wide[
@@ -299,12 +428,13 @@ Liz Hare, PhD
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="https://platform.twitter.com/widgets.js"></script>
 <script>var slideshow = remark.create({
 "highlightStyle": "solarized-light",
 "highlightLines": true,
 "countIncrementalSlides": false,
 "ratio": "16:9",
-"slideNumberFormat": "<div class=\"progress-bar-container\">\n  <div class=\"progress-bar\" style=\"width: calc(%current% / %total% * 100%);\">\n  </div>\n</div>"
+"slideNumberFormat": "<div class=\"progress-bar-container\">\n  <div class=\"progress-bar\" style=\"width: calc(%current% / %total% * 100%);\">\n  </div>\n</div>\n"
 });
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));

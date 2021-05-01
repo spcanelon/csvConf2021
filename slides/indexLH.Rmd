@@ -164,7 +164,7 @@ class: middle
 
 * Recent growth in online learning communities for data science mediated by social networking apps 
 (Twitter, Slack)
-* Context for [#TidyTy on Twitter](https://www.tidytuesday.com), ([TidyTuesday GitHub repository](https://github.com/rfordatascience/tidytuesday))  
+* Context for [#TidyTuesday on Twitter](https://github.com/rfordatascience/tidytuesday)
   + [R](https://cran.r-project.org) open-source statistical software  
   + [Tidyverse](https://www.tidyverse.org) packages for data management and visualization  
   + [R for Data Science](https://www.rfordatasci.com) book and organization  
@@ -258,7 +258,7 @@ name: analysisAltText
 ---
 name: analysisResultsIncidence
 
-# What we found  
+# What did we find? 
 
 Over four years (2018-2021), there were 6443 tweets with the TidyTuesday hashtag. Alt-texts were 
 attached to 2.4% of these Tweets.  
@@ -272,7 +272,10 @@ kable(tab1, row.names=FALSE, caption="Percentage of TidyTuesday Tweets Containin
 
 ```
 
-How extensive are the alt-texts (Not particularly useful results!)  
+
+---
+
+# How extensive are the alt-texts?
 
 ``` {r, Alt-Text lengths, results="asis", echo=FALSE}
 words  <- c(18, 1, 170)
@@ -282,6 +285,12 @@ colnames(tab2) <- c("Median", "Minimum", "Maximum")
 rownames(tab2) <- c("Words", "Characters")
 kable(tab2, caption="Alt-text Lengths in Words and Characters")
 ```
+
+
+---
+name: analysisResultsPlot
+
+# Use of alt text has increased over time
 
 
 
