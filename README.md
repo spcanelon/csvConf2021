@@ -16,16 +16,20 @@ We all aim to use data to tell a compelling story, and many of us enjoy sharing 
 
 ## Alt text resources
 
-Data visualization alt-text resouces:
+### Data visualization
 
 *	[Writing alt-text for data visualization](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81)
+[Amy Cesal—Outlier 2021 Lightning Talk—Writing Alt Text for Data Visualization - YouTube](https://www.youtube.com/watch?v=nBcR95S0F0o)
+* [Frank Elavsky, Larene Le Gassick, Sarah Fossheim—Outlier 2021—Are your visualizations excluding ppl? - YouTube](https://www.youtube.com/watch?v=SWB-KLXN-Ok&list=PLAm5TIX-yz7IkKOUcStM_vl8AD0S9v0co&index=10)
 
-Tools
+### Tools for Twitter
 
-* Show alt-text for tweets: [Alt or not, Firefox](https://addons.mozilla.org/en-US/firefox/addon/alt-or-not/)
-* Twitter reminder to add alt-text: [Twitter Required Alt Text, Firefox](https://addons.mozilla.org/en-GB/firefox/addon/twitter-required-alt-text/)
+* [How to make images accessible for people | Twitter](https://help.twitter.com/en/using-twitter/picture-descriptions)
+* Show alt-text for tweets: [Alt or not | Firefox extension](https://addons.mozilla.org/en-US/firefox/addon/alt-or-not/)
+* Twitter reminder to add alt-text: [Twitter Required Alt Text | Firefox extension](https://addons.mozilla.org/en-GB/firefox/addon/twitter-required-alt-text/)
 
-General alt-text resources:
+### General
+
 * [WGBH Guide Guidelines for describing STEM images](https://www.wgbh.org/foundation/ncam/guidelines/guidelines-for-describing-stem-images)
-*	[Diagram Center Accessible Images](http://diagramcenter.org/making-images-accessible.html)
-*	[Diagram Center Accessible Math Tricks and Tips: Training](http://diagramcenter.org/accessible-math-tools-tips-and-training.html#training)
+*	[Making Images Accessible - DIAGRAM Center](http://diagramcenter.org/making-images-accessible.html)
+*	[Diagram Center Accessible Math Tricks and Tips](http://diagramcenter.org/accessible-math-tools-tips-and-training.html#training)
