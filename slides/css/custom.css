@@ -369,6 +369,10 @@ pre code {
   width: 75%;
 }
 
+.right-col-wide + * {
+  clear: both;
+}
+
 /*-- 3 column layout --*/
 .left-col {
   width: 29%;
