@@ -60,7 +60,7 @@ xaringanExtra::use_xaringan_extra(c("tile_view",
                                     "share_again"))
 
 # enabling audible tone for slide transitions
-#xaringanExtra::use_slide_tone()
+xaringanExtra::use_slide_tone()
 
 # turning off scientific notation
 options(scipen = 999)
