@@ -3,6 +3,8 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
+## Revealing Room for Improvement in Accessibility within a Social Media Data Visualization Learning Community
+
 - Silvia Canelón, PhD ([\@spcanelon](https://www.twitter.com/@spcanelon))
 - Liz Hare, PhD ([\@DogGeneticsLLC](https://www.twitter.com/@DogGeneticsLLC))
 
