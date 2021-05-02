@@ -346,16 +346,23 @@ name: analysisResultsRubric
 
 # Much of the alt text provided is missing information
 
-* Five characteristics
+## Five characteristics
 
-  1. A description of what can be seen about the data (relationships between x and y variables, histogram shape, appearance of points in residual plots)  
-  2. What variables are on the axes?  
-  3. What scale are the axes on, or is the scale described within the overall description?  
-  4. What type of plot is it (line graph, scatterplot, qq plot, etc)  
-  5. Alt-text should contain more information than title and/or subtitle of the plot
+1. A description of what can be seen about the data (relationships between x and y variables, histogram shape, appearance of points in residual plots)
+
+--
+
+2. What variables are on the axes?  
+
+--
+
+3. What scale are the axes on, or is the scale described within the overall description?  
+
+--
+
+4. What type of plot is it (line graph, scatterplot, qq plot, etc)  
+5. Alt-text should contain more information than title and/or subtitle of the plot
     
- 
-
 ---
 
 # After removing duplicate tweets and tweets that did not contain data visualizations, there were 196 tweets with alt-text
@@ -386,7 +393,13 @@ name: shiftingTide
 * Tooling is slowly receiving updates
   * New alt text code chunk option for R Markdown
   * Shiny app tooling improved thanks to accessibility expertise
+  
+--
+
 * What changes have we noticed since announcing our talk?
+
+--
+
 * Changes are just starting and slow
 
 ???
@@ -400,17 +413,16 @@ name: goodAltText
 Include these four things:
 
 1. What kind of plot is it? (line graph, scatterplot, residual plot)  
-   + Describe it further if it's a specialized type of plot  
+   * Describe it further if it's a specialized type of plot  
 2. What variables are on the axes?  
 3. What is the range or scale of the variables?  
 4. What do you see about the relationship between the variables in the plot?  
 
-Ask yourself
+--
+
+Ask yourself...
 * Do you have enough information to understand the purpose of the image without seeing it?  
-* Is your alt-text a repetition of the title or does it tell me something about the data as well?  
-
----
-
+* Is your alt-text a repetition of the title or does it tell us something about the data as well?  
 
 ---
 name: learningResources
@@ -424,8 +436,8 @@ name: learningResources
 .pull-left-equal[
 Data visualization alt-text resources
 
-*	[Writing alt-text for data visualization](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81)
-* [Chartability Data Viz Audit Workbook](https://chartability.fizz.studio/)
+*	[Writing alt-text for data visualization | Amy Cesal](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81)
+* [Chartability Data Viz Audit Workbook | Frank Elavsky](https://chartability.fizz.studio/)
 * [a11y Data Viz Accessibility Resources](https://github.com/dataviza11y/resources/blob/main/README.md)
 ]
 
