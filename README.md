@@ -1,14 +1,15 @@
-# csvConf2021 <a href='https://github.com/spcanelon/csvConf2021'><img src='coverImage.png' align="right" height="138.5" alt='Promotional image created by CSVConf featuring the title of the presentation "Revealing Room for Improvement in Accessibility within a Social Media Data Visualization Learning Community." It also shows the conference name (csv,conf,v6) in the top right next along with the comma CSV Conf logo, and presenter names on the bottom right'/></a>
+# CSV Conf 2021 <a href='https://github.com/spcanelon/csvConf2021'><img src='coverImage.png' align="right" height="138.5" alt='Promotional image created by CSVConf featuring the title of the presentation "Revealing Room for Improvement in Accessibility within a Social Media Data Visualization Learning Community." It also shows the conference name (csv,conf,v6) in the top right next along with the comma CSV Conf logo, and presenter names on the bottom right'/></a>
 
 <!-- badges: start -->
 <!-- badges: end -->
 
-## Revealing Room for Improvement in Accessibility within a Social Media Data Visualization Learning Community
-
 - Silvia Canelón, PhD ([\@spcanelon](https://www.twitter.com/@spcanelon))
 - Liz Hare, PhD ([\@DogGeneticsLLC](https://www.twitter.com/@DogGeneticsLLC))
 
-The goal of this talk for csv,conf,v6 is to share our findings after scraping the alternative (alt) text from data visualization tweets shared as part of the TidyTuesday online learning community.
+The goal of this talk for [csv,conf,v6](https://csvconf.com/speakers/#silvia-canel%C3%B3n-elizabeth-hare) is to share our findings after scraping the alternative (alt) text from data visualization tweets shared as part of the TidyTuesday online learning community.
+
+- Tuesday, May 4, 2021 at 10:20am EST (2:20pm UTC)
+- Session 0 Crowdcast link: [crowdcast.io/e/csvconf6-0-session-0](https://www.crowdcast.io/e/csvconf6-0-session-0)
 
 ### Abstract
 
@@ -19,17 +20,18 @@ We all aim to use data to tell a compelling story, and many of us enjoy sharing 
 ### Data visualization
 
 *	[Writing alt-text for data visualization](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81)
-[Amy Cesal—Outlier 2021 Lightning Talk—Writing Alt Text for Data Visualization - YouTube](https://www.youtube.com/watch?v=nBcR95S0F0o)
-* [Frank Elavsky, Larene Le Gassick, Sarah Fossheim—Outlier 2021—Are your visualizations excluding ppl? - YouTube](https://www.youtube.com/watch?v=SWB-KLXN-Ok&list=PLAm5TIX-yz7IkKOUcStM_vl8AD0S9v0co&index=10)
+[Amy Cesal—Outlier 2021 Lightning Talk—Writing Alt Text for Data Visualization • YouTube](https://www.youtube.com/watch?v=nBcR95S0F0o)
+* [Frank Elavsky, Larene Le Gassick, Sarah Fossheim—Outlier 2021—Are your visualizations excluding ppl? • YouTube](https://www.youtube.com/watch?v=SWB-KLXN-Ok&list=PLAm5TIX-yz7IkKOUcStM_vl8AD0S9v0co&index=10)
 
 ### Tools for Twitter
 
-* [How to make images accessible for people | Twitter](https://help.twitter.com/en/using-twitter/picture-descriptions)
-* Show alt-text for tweets: [Alt or not | Firefox extension](https://addons.mozilla.org/en-US/firefox/addon/alt-or-not/)
-* Twitter reminder to add alt-text: [Twitter Required Alt Text | Firefox extension](https://addons.mozilla.org/en-GB/firefox/addon/twitter-required-alt-text/)
+* [How to make images accessible for people • Twitter](https://help.twitter.com/en/using-twitter/picture-descriptions)
+* Show alt-text for tweets: [Alt or not • Firefox extension](https://addons.mozilla.org/en-US/firefox/addon/alt-or-not/)
+* Twitter reminder to add alt-text: [Twitter Required Alt Text • Firefox extension](https://addons.mozilla.org/en-GB/firefox/addon/twitter-required-alt-text/)
 
 ### General
 
 * [WGBH Guide Guidelines for describing STEM images](https://www.wgbh.org/foundation/ncam/guidelines/guidelines-for-describing-stem-images)
-*	[Making Images Accessible - DIAGRAM Center](http://diagramcenter.org/making-images-accessible.html)
+* [Images Concepts • Images • WAI Web Accessibility Tutorials](https://www.w3.org/WAI/tutorials/images/)
+*	[Making Images Accessible • DIAGRAM Center](http://diagramcenter.org/making-images-accessible.html)
 *	[Diagram Center Accessible Math Tricks and Tips](http://diagramcenter.org/accessible-math-tools-tips-and-training.html#training)
