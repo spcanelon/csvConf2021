@@ -334,7 +334,7 @@ name: analysisResultsRubric
 
 # What does and doesn't make good alt-text?
 
-## There were 196 tweets with alt-text
+### There were 196 data visualization tweets with alt-text
 <br>
 ``` {r, rubric table, results="asis", echo=FALSE}
 meaning <- c(1, "Description conveys meaning in the data", "34%")
