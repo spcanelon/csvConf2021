@@ -19,6 +19,8 @@ output:
           <div class="progress-bar" style="width: calc(%current% / %total% * 100%);">
           </div>
         </div>
+      beforeInit: "https://platform.twitter.com/widgets.js"
+      # source: https://github.com/yihui/xaringan/issues/100#issuecomment-357421886
 ---
 
 ```{r metadata, echo=FALSE}
@@ -55,11 +57,10 @@ library(gtsummary)
 # specifying xaringanExtra features
 xaringanExtra::use_xaringan_extra(c("tile_view",
                                     "panelset",
-                                    "share_again",
-                                    "slide_tone"))
-xaringanExtra::style_share_again(
-  share_buttons = c("twitter", "linkedin", "pocket")
-)
+                                    "share_again"))
+
+# enabling audible tone for slide transitions
+xaringanExtra::use_slide_tone()
 
 # turning off scientific notation
 options(scipen = 999)
@@ -71,20 +72,29 @@ knitr::opts_chunk$set(collapse = TRUE,
                       warning = FALSE,
                       message = FALSE,
                       echo = FALSE,
-                      comment = NA)
+                      comment = NA,
+                      fig.align = "center")
 ```
 
-```{r dataImport, include=FALSE, eval=FALSE}
-
-```
 
 name: titleSlide
-class: center, middle
+class: middle
 
 <!--Talk info: Session 0, May 4, 2021 from 10:20 AM to 10:40 PM-->
 
-# Revealing Room for Improvement<br>in Accessibility within a Social Media<br>Data Visualization Learning Community
+.left-col-narrow[
+```{r out.width="60%", fig.alt='Square CSV Conf logo featuring a black comma against a yellow background'}
+knitr::include_graphics("img/yellowComma.png")
+```
+]
 
+.right-col-wide[
+.left[# `r rmarkdown::metadata$title`]]
+
+----
+
+.right-col-wide[
+.left[
 .pull-left-equal[
 ### Silvia Canelón, PhD<br>`r fontawesome::fa("twitter")` @spcanelon
 ]
@@ -92,31 +102,43 @@ class: center, middle
 .pull-right-equal[
 ### Liz Hare, PhD<br>`r fontawesome::fa("twitter")` @DogGeneticsLLC
 ]
-
-## `r rmarkdown::metadata$subtitle`
+]
+]
 
 ???
 
 ---
+exclude: true
+
 # Outline (for internal use)
 
 .pull-left-equal[
-- [Title slide](#titleSlide)
-- [Who are we?](#hello)
-- [Takeaways](#takeaways)
-- [Motivation](#motivation)
-- [TidyTuesday data collection](#analysisDataCollection)
-- [Alt text data collection](#analysisAltText)
-- [Findings](#analysisResults)
+* [Title slide](#titleSlide)
+* [Who are we?](#hello)
+* [Takeaways](#takeaways)
+* [Motivation](#motivation)
+* [TidyTuesday data collection](#analysisDataCollection)
+* [Alt text data collection](#analysisAltText)
+* [Findings](#analysisResults)
 ]
 
 .pull-right-equal[
-- [Other places lacking alt-text](#otherPlaces)
-- [Things are changing](#shiftingTide)
-- [Good alt text](#goodAltText)
-- [Learning resources](#learningResources)
-- [Goodbye slide](#goodbye)
+* [Other places lacking alt-text](#otherPlaces)
+* [Things are changing](#shiftingTide)
+* [Good alt text](#goodAltText)
+* [Learning resources](#learningResources)
+* [Goodbye slide](#goodbye)
 ]
+
+---
+layout: true
+
+<!--this adds the link footer to all slides, depends on footer-link class in css-->
+
+<a class="footer-link" href="http://bit.ly/TidyTuesday"><strong>bit.ly/TidyTuesday</strong>
+&#8226; Silvia Canelón & Liz Hare &#8226; csv,conf,v6</a>
+
+???
 
 ---
 name: hello
@@ -139,7 +161,7 @@ class: middle, center
 .center[
 
 <!--HTML code inserting a circular avatar of a square photo-->
-<img style="border-radius: 50%;" src="/slides/img/Profile_LH.JPG" width="170px" alt="Profile of Liz Hare"/>
+<img style="border-radius: 50%;" src="slides/img/Profile_LH.JPG" width="170px" alt="Profile of Liz Hare"/>
 
 **Canine Genetics and Genomics Consultant<br>Dog Genetics, LLC**
 ]]
@@ -147,133 +169,146 @@ class: middle, center
 ???
 
 ---
-layout: true
-
-<!-- this adds the link footer to all slides, depends on footer-link class in css-->
-<a class="footer-link" href="http://bit.ly/TidyTuesday"><strong>bit.ly/TidyTuesday</strong>
-&#8226; Silvia Canelón & Liz Hare &#8226; csv,conf,v6</a>
-
-???
-
----
 name: takeaways
 class: middle
 
-# Takeaways  
+# Takeaways
+
+----
+
+* Growth in online learning communities for data science
+* TidyTuesday: Weekly social project for data visualization in R
+* 2.4% of the data visualizations shared on Twitter had alternative text
+* 84% were described by default as "Image"  
 
 
-* Recent growth in online learning communities for data science mediated by social networking apps 
-(Twitter, Slack)
-* Context for [#TidyTuesday on Twitter](https://github.com/rfordatascience/tidytuesday)
-  + [R](https://cran.r-project.org) open-source statistical software  
-  + [Tidyverse](https://www.tidyverse.org) packages for data management and visualization  
-  + [R for Data Science](https://www.rfordatasci.com) book and organization  
-  
-* How accessible are TidyTuesday tweets for people who are blind or have low vision?  
-  + Alt-text is a method for providing text descriptions of images on Twitter, in HTML, and in other applications that can be read by screen reading software  
-  + Five essential features of alt-texts  
-  
-  
-
+???
+Why they shouldn't just repeat what's in the title or caption (in some documents, those thext elements will already be accessible, and they are not adequate to understand what the results.
 
 ---
 name: motivation
-class: highlight-last-item <!--css class that makes the "current" bullet point bold and the previous points gray-->
+class: middle
 
-# Motivation
+# Can blind people participate in data viz learning communities?
 
-* Can blind people participate in online data science learning communities? #TidyTuesday as 
-an example  
-	+ Are participants using alt-text to describe their images?  
-    + Do these descriptions provide enough information for the reader to understand the graphic?  
-	
-
-* Screen reader basics:  
-  + Provides voice or braille access to computer **text** (OS interactions, email, web browsing, 
-  some IDEs, etc.)  
-  + **Cannot** describe images  
-
-* AI image description  
-  + Available on iOS, OSX, LinkedIn, Facebook, etc.
-  + **Cannot** adequately describe data visualizations  
-	
-
-* Why include screen reader users?  
-  + Access to information examples  
-	+ Regional COVID-19 incidence information  
-	+ Election maps  
-	+ Scientific literature    
-  + Blind researchers need to  
-	+ Elicit good descriptions from colleagues, so knowing what kinds of graphs are possible is important
-	+ Continue learning about advances in data visualization  
-	+ Create data visualizations for reports and publications  
-	  
-
-* Alt- text is a text description of a graphic that conveys its meaning to screen reading software
-
+* Why do blind people need data visualization?
+  * Scientific communication -- add link here?
+  * [Election maps](https://fossheim.io/writing/posts/accessible-dataviz-us-elections/)
+  * [COVID-19 incidence maps & dashboards](https://www.theguardian.com/society/2020/sep/30/visually-impaired-scots-get-sonic-help-with-covid-graphs) -- is there a better resource?
+  * [Quorum](https://quorumlanguage.com/evidence.html) or [SAS](https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.5/odsacoutput/n12hxbdrtzec6gn1k913nwfl9o4d.htm) can produce readable charts, but [R](https://cran.r-project.org)/[RStudio]() cannot
+* Screen readers provide voice or braille access to computer text, **not images**
+* AI image descriptions **cannot adequately describe data viz**
+* Can blind people participate in #TidyTuesday?
 
 ---
 name: TidyTuesday
+class: middle
 
-# What is TidyTuesday?  
+.pull-left-equal[
+# What is TidyTuesday?
 
-* Data set information is tweeted on Mondays  
-* Participants explore the data, format it according to use with data cleaning, analysis, and 
-visualization packages that are part of the Tidyverse group of R packages  
-	+ Data visualizations can focus on any part of the data, or replicate the visualization 
-	from the original post  
-	+ Emphasis is on data organization and visualization, not interpretation
+* [Social project](https://github.com/rfordatascience/tidytuesday) providing a new<br>tidy dataset every week
+* Online data viz [R learning community](https://www.rfordatasci.com)
+* Opportunity to practice summarizing<br>and visualizing data with [modern tooling](https://www.rfordatasci.com)
 
-* TidyTuesday tweets include  
-	+ A verbal description, often including the author's particular interest in the data 
-	or new methods they learned  
-	+ A link to the author's code for producing the visualization is encouraged
-	+ The image itself
-	+ An alt-text describing the image (guidance to participants on this is recently available)
-	  
-<!-- on Twitter, Thomas Mock said he had changed the TidyTuesday readme (presumably on GitHub) to 
-include information about alt-text, but I just checked and it's not listed as part of the process 
-I would have linked it here. -->
-		
-* Feedback from the community is supposed to be positive in line with TidyTuesday's aim to be "safe and supportive"		  
+]
 
+.pull-right-equal[
 
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The <a href="https://twitter.com/R4DScommunity?ref_src=twsrc%5Etfw">@R4DScommunity</a> welcomes you to week 18 of <a href="https://twitter.com/hashtag/TidyTuesday?src=hash&amp;ref_src=twsrc%5Etfw">#TidyTuesday</a>! We&#39;re exploring CEO departures!<br><br>📂 <a href="https://t.co/sElb4fcv3u">https://t.co/sElb4fcv3u</a><br>📰 <a href="https://t.co/mhn5wQ21SE">https://t.co/mhn5wQ21SE</a><a href="https://twitter.com/hashtag/r4ds?src=hash&amp;ref_src=twsrc%5Etfw">#r4ds</a> <a href="https://twitter.com/hashtag/tidyverse?src=hash&amp;ref_src=twsrc%5Etfw">#tidyverse</a> <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> <a href="https://twitter.com/hashtag/dataviz?src=hash&amp;ref_src=twsrc%5Etfw">#dataviz</a> <a href="https://t.co/zVgfq7M88v">pic.twitter.com/zVgfq7M88v</a></p>&mdash; Tom Mock 💉💉🎉 (@thomas_mock) <a href="https://twitter.com/thomas_mock/status/1386854016550936579?ref_src=twsrc%5Etfw">April 27, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+
+]
 
 ---
-name: analysisDataCollection
+name: TidyTuesdayExample
+class: middle
 
-# TidyTuesday data collection  
+.pull-left[
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Today&#39;s <a href="https://twitter.com/hashtag/TidyTuesday?src=hash&amp;ref_src=twsrc%5Etfw">#TidyTuesday</a>:<br>data on artwork from the <a href="https://twitter.com/Tate?ref_src=twsrc%5Etfw">@Tate</a> collection, and specifically aspect ratios over time<br><br>Blue = stat_smooth GAMs (grouped by aspect ratio &gt; 1)<br>Red = golden ratio (±1 + sqrt(5))/2 <a href="https://t.co/PSuBgUp3Ky">pic.twitter.com/PSuBgUp3Ky</a></p>&mdash; Hao Ye (@Hao_and_Y) <a href="https://twitter.com/Hao_and_Y/status/1349055287169331200?ref_src=twsrc%5Etfw">January 12, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+]
 
-- How is TidyTuesday data collected? 
+.pull-right[
+# What do #TidyTuesday visualization tweets include?
+
+* Verbal description
+    * author's interest
+    * learning process
+    * interpretation of the data
+* Link to the author's source code
+* Data visualization attached as an image
+* Alt text for the image (rarely)
+]
 
 ---
 name: analysisAltText
 
-# Alt text scraping
+# How was the data collected?
 
-- How was alt text scraped from the images?
+.left-column[
+Tweets collected and [made available](https://github.com/rfordatascience/tidytuesday) by Tom Mock using [{rtweet}](https://docs.ropensci.org/rtweet/)
 
-???
+----
+
+Alt text scraped by Silvia Canelón using [{RSelenium}](https://docs.ropensci.org/RSelenium/) and available in the [TidyTuesdayAltText](https://github.com/spcanelon/TidyTuesdayAltText) `r emo::ji("package")`
+]
+
+.right-column[
+
+```{r, out.width="85%", fig.alt="Web inspection tool being used to identify the CSS selector corresponding to the image from the example tweet with good alt text. Also shows the actual alt text displayed on Twitter by the Alt or Not extension available for Firefox"}
+knitr::include_graphics("img/webInspection.png")
+```
+
+]
 
 ---
 name: analysisResultsIncidence
+class: middle
+exclude: true
 
-# What did we find? 
+.pull-left[
+# What did we find?
 
-Over four years (2018-2021), there were 6443 tweets with the TidyTuesday hashtag. Alt-texts were 
-attached to 2.4% of these Tweets.  
+## Placeholder for the waffle plot 
 
+# Over four years, there were 7136 #TidyTuesday tweets with attached media and alt-texts were attached to 2.4% of them.
+]
+
+.pull-right[
 ``` {r, Alt-text incidence, results="asis", echo=FALSE}
 years <- c(2018, 2019, 2020, 2021)
 pct <- c(1.1, 1.0, 2.9, 7.7)
 tab1 <- data.frame(years, pct)
-colnames(tab1) <-c("Year", "TidyTuesday Tweets Containing Alt-text")
-kable(tab1, row.names=FALSE, caption="Percentage of TidyTuesday Tweets Containing alt-text by Year")
-
+colnames(tab1) <-c("Year", "Tweets with Alt-text")
+kable(tab1, row.names=FALSE)
 ```
+]
+
+---
+name: analysisResultsPlot
+
+# Placeholder for line graph of tweets as well as alt-text over time and highlighting the difference between the two.
+
+## Over four years, there were 7136 #TidyTuesday tweets with attached media and alt-texts were attached to 2.4% of them.
+
+(include a link to the descriptive summary table in the backup slides)
 
 
 ---
+name: otherPlaces
+
+# Where else is alt-text missing?
+
+* R books made available freely online
+* R books made available digitally to people with print disabilities by [Bookshare](https://www.bookshare.org/cms/)   
+* R package documentation  
+* R Blogs
+
+## This shows up at the individual-level and at the corporate-level (e.g. RStudio rmarkdown documentation)
+
+???
+
+---
+name: analysisWords
 
 # How extensive are the alt-texts?
 
@@ -286,28 +321,23 @@ rownames(tab2) <- c("Words", "Characters")
 kable(tab2, caption="Alt-text Lengths in Words and Characters")
 ```
 
-
----
-name: analysisResultsPlot
-
-# Use of alt text has increased over time
-
-
-
-
 ---
 name: analysisResultsRubric
+class:
 
-* Five characteristics of visualization alt-text based on personal experience and reading the scraped alt-texts  
+# Much of the alt text provided is missing information
 
-  1. A description of what can be seen about the data (relationships between 
-  x and y variables, histogram shape, appearance of points in residual plots)  
-  2. What variables are on the axes?  
-  3. What scale are the axes on, or is the scale described within the overall description?  
-  4. What type of plot is it (line graph, scatterplot, qq plot, etc)  
-  5. Alt-text should contain more information than title and/or subtitle of the plot
+## Five characteristics
+
+1. A description of what can be seen about the data (relationships between x and y variables, histogram shape, appearance of points in residual plots)
+2. What variables are on the axes?  
+3. What scale are the axes on, or is the scale described within the overall description?  
+4. What type of plot is it (line graph, scatterplot, qq plot, etc)  
+5. Alt-text should contain more information than title and/or subtitle of the plot
     
-* After removing duplicate tweets and tweets that did not contain data visualizations, there were 196 tweets with alt-text.  
+---
+
+# After removing duplicate tweets and tweets that did not contain data visualizations, there were 196 tweets with alt-text
 
 ``` {r, rubric table, results="asis", echo=FALSE}
 meaning <- c(1, "Conveys Meaning", 34)
@@ -321,96 +351,61 @@ kable(tab3, row.names=FALSE, caption="Percentages of Alt-texts Containing Five T
 
 ```
 
-- Conclusion: Many alt-texts are missing information
-
-* Limitations: One person with many years' experience analyzing data in R identified 
-these features based on that experience and the TidyTuesday data set, without visual access 
-to the data.  
-
-
----
-name: otherPlaces
-
-# Where else does this show up?  
-
-* Online R books made available digitally to people with print disabilities by [Bookshare](https://www.bookshare.org/cms/)   
-
-* R package documentation (e.g. HTML help for gtsummary::tbl_summary has example output as .png files with no description)  
-
-* Blogs  
-
-* This shows up at the individual-level and at the corporate-level (e.g. RStudio rmarkdown documentation)  
-
-
-
 ---
 name: shiftingTide
 
 # Has the tide started shifting?
 
-- Where are conversations about this happening
-  - Within R: useR!2021, MiR
-  - More broadly: Data Visualization Society, a11y Meetups
-- What changes have we seen generally (e.g. new alt text code chunk option for R Markdown)?
-- What changes have we noticed since announcing our talk?
-- Changes are just starting and slow
-
-???
-Caveats relating to required behavioral changes. For example: The alt-text thing for R Markdown is great, *but*  people will probably have to interrupt their workflow to describe what the data show after creating the graphic! If you want reproducible reports, you will still have to go back in and explain what the data show. This is why people are going to be tempted to put just the title-caption there and leave out the most crucial information.
+* Conversations are happening
+  * Within R: useR!2021, MiR
+  * More broadly: Data Visualization Society, a11y Meetups
+* Tooling is slowly receiving updates
+  * New alt text code chunk option for R Markdown
+  * Shiny app tooling improved thanks to accessibility expertise
+* What changes have we noticed since announcing our talk?
+* Changes are just starting and slow
 
 ---
 name: goodAltText
+class: 
 
-# How to write good alt text for a data visualization
+# How to write good alt text for a data visualization?
 
-Include these four things:  
+Include these four things:
+
 1. What kind of plot is it? (line graph, scatterplot, residual plot)  
-   + Describe it further if it's a specialized type of plot  
-2. What variables are on the axes?  
+   * Describe it further if it's a specialized type of plot 
+2. What variables are on the axes?
 3. What is the range or scale of the variables?  
 4. What do you see about the relationship between the variables in the plot?  
-	
 
-Ask yourself
+Ask yourself...
 * Do you have enough information to understand the purpose of the image without seeing it?  
-* Is your alt-text a repetition of the title or does it tell me something about the data as well?  
-
+* Is your alt-text a repetition of the title or does it tell us something about the data as well?  
 
 ---
 name: learningResources
 
-# Where can people learn more?
+# What can you do?
 
-* Make your data visualizations accessible everywhere you can by adding alt-text to websites, journalism, scientific publishing, social media  
+## Make your data visualizations accessible everywhere you can by adding alt-text to websites, journalism, scientific publishing, social media  
 
-* Find ways to describe your visualizations in words when alt-text isn't available in your documents or platforms  
+## Find ways to describe your visualizations in words when alt-text isn't available in your documents or platforms 
+<br>
+.pull-left-equal[
+Data visualization alt-text resources
 
+*	[Writing alt-text for data visualization |<br>Amy Cesal](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81)
+* [Chartability Data Viz Audit Workbook |<br>Frank Elavsky](https://chartability.fizz.studio/)
+* [a11y Data Viz Accessibility Resources](https://github.com/dataviza11y/resources/blob/main/README.md)
+]
 
+.pull-right-equal[
+Tools for Twitter
 
-
-Data visualization alt-text resources:  
-
-*	[Writing alt-text for data visualization](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81)
-
-* There is information about adding alt-text to rmarkdown documents in 
-[Chapter 14 of the R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/html-accessibility.html).  
-
-
-
-General alt-text resources:  
-
-- [WGBH Guide Guidelines for describing STEM images](https://www.wgbh.org/foundation/ncam/guidelines/guidelines-for-describing-stem-images)  
-
--	[Diagram Center Accessible Images](http://diagramcenter.org/making-images-accessible.html)  
--	[Diagram Center Accessible Math Tricks and Tips: Training](http://diagramcenter.org/accessible-math-tools-tips-and-training.html#training)
-
-
-Social media alt-text instructions
-* [Twitter](https://help.twitter.com/en/using-twitter/picture-descriptions)
-* [Facebook](https://www.facebook.com/help/214124458607871)
-* [LinkedIn](https://www.linkedin.com/help/linkedin/answer/109799/adding-alternative-text-to-images-for-accessibility?lang=en)
-
-
+* Show alt-text for tweets: [Alt or not, Firefox](https://addons.mozilla.org/en-US/firefox/addon/alt-or-not/)
+* Twitter reminder to add alt-text: [Twitter Required Alt Text, Firefox](https://addons.mozilla.org/en-GB/firefox/addon/twitter-required-alt-text/)
+]
 
 ???
 
@@ -425,7 +420,7 @@ This presentation was made using the [xaringan](https://github.com/yihui/xaringa
 
 ----
 
-`r fontawesome::fa("github")` Analysis repo [spcanelon/csvConf2021](https://github.com/spcanelon/csvConf2021)
+`r fontawesome::fa("github")` Analysis repo & resources [spcanelon/csvConf2021](https://github.com/spcanelon/csvConf2021)
 ]
 
 .right-col-wide[
@@ -459,3 +454,15 @@ Liz Hare, PhD
 ]]
 ]
 
+---
+name: backupTransition
+class: inverse
+
+# Placeholder to mark a transition into backup slides
+
+---
+name: backupSummaryStatistics
+
+# Placeholder: HTML table with Liz's summary
+
+(include link back to data viz with tweets and alt-text over time)
