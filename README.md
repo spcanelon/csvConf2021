@@ -5,13 +5,13 @@
 
 ## Revealing Room for Improvement in Accessibility within a Social Media Data Visualization Learning Community
 
-- Silvia Canelón, PhD ([\@spcanelon](https://www.twitter.com/@spcanelon))
-- Liz Hare, PhD ([\@DogGeneticsLLC](https://www.twitter.com/@DogGeneticsLLC))
+* Silvia Canelón, PhD ([\@spcanelon](https://www.twitter.com/@spcanelon))
+* Liz Hare, PhD ([\@DogGeneticsLLC](https://www.twitter.com/@DogGeneticsLLC))
 
 The goal of this talk for [csv,conf,v6](https://csvconf.com/speakers/#silvia-canel%C3%B3n-elizabeth-hare) is to share our findings after scraping the alternative (alt) text from data visualization tweets shared as part of the TidyTuesday online learning community.
 
-- Tuesday, May 4, 2021 at 10:20am EST (2:20pm UTC)
-- Session 0 Crowdcast link: [crowdcast.io/e/csvconf6-0-session-0](https://www.crowdcast.io/e/csvconf6-0-session-0)
+* Tuesday, May 4, 2021 at 10:20am EST (2:20pm UTC)
+* Session 0 Crowdcast link: [crowdcast.io/e/csvconf6-0-session-0](https://www.crowdcast.io/e/csvconf6-0-session-0)
 
 ### Abstract
 
@@ -24,6 +24,7 @@ We all aim to use data to tell a compelling story, and many of us enjoy sharing 
 *	[Writing alt-text for data visualization](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81)
 [Amy Cesal—Outlier 2021 Lightning Talk—Writing Alt Text for Data Visualization • YouTube](https://www.youtube.com/watch?v=nBcR95S0F0o)
 * [Frank Elavsky, Larene Le Gassick, Sarah Fossheim—Outlier 2021—Are your visualizations excluding ppl? • YouTube](https://www.youtube.com/watch?v=SWB-KLXN-Ok&list=PLAm5TIX-yz7IkKOUcStM_vl8AD0S9v0co&index=10)
+* [Chartability Data Visualization Accessibility Audit Workbook](https://chartability.fizz.studio/)
 
 ### Tools for Twitter
 
