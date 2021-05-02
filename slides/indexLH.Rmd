@@ -40,7 +40,7 @@ meta() %>%
     og_type = "website",
     og_author = "Silvia Canelón & Liz Hare",
     twitter_card_type = "summary_large_image",
-    twitter_creator = ""
+    twitter_creator = "@spcanelon"
   )
 ```
 
@@ -77,6 +77,26 @@ knitr::opts_chunk$set(collapse = TRUE,
 ```
 
 
+```{r data-import}
+tweets <-
+  ### Access data from the four years
+  dplyr::bind_rows(
+    ttTweets2018,
+    ttTweets2019,
+    ttTweets2020,
+    ttTweets2021) %>%
+  dplyr::mutate(
+    AltTextCategory = dplyr::case_when(
+      AltText == "ScrapingError" ~ "MediaNotAvailable",
+      AltText == "Image" ~ "DefaultDescription",
+      is.na(AltText) == TRUE ~ "UnavailableNonStatic",
+      TRUE ~ "DescriptiveText")) %>%
+  dplyr::mutate(
+    AltTextCategory = forcats::as_factor(AltTextCategory)
+  )
+```
+
+
 name: titleSlide
 class: middle
 
@@ -96,11 +116,11 @@ knitr::include_graphics("img/yellowComma.png")
 .right-col-wide[
 .left[
 .pull-left-equal[
-### Silvia Canelón, PhD<br>`r fontawesome::fa("twitter")` @spcanelon
+### Silvia Canelón, PhD<br> @spcanelon `r fontawesome::fa("twitter")`
 ]
 
 .pull-right-equal[
-### Liz Hare, PhD<br>`r fontawesome::fa("twitter")` @DogGeneticsLLC
+### Liz Hare, PhD<br>@DogGeneticsLLC `r fontawesome::fa("twitter")` 
 ]
 ]
 ]
@@ -145,6 +165,7 @@ name: hello
 class: middle, center
 
 # Who are we?
+
 .pull-left-equal[
 
 .center[
@@ -154,14 +175,13 @@ class: middle, center
 
 **Postdoctoral Research Scientist<br>University of Pennsylvania**
 
-
 ]]
 
 .pull-right-equal[
 .center[
 
 <!--HTML code inserting a circular avatar of a square photo-->
-<img style="border-radius: 50%;" src="slides/img/Profile_LH.JPG" width="170px" alt="Profile of Liz Hare"/>
+<img style="border-radius: 50%;" src="https://raw.githubusercontent.com/spcanelon/csvConf2021/master/slides/img/Profile_LH.JPG?token=AL4Z36OYWGDHOMZMJCKQKK3ATBRBM" width="170px" alt="Profile of Liz Hare"/>
 
 **Canine Genetics and Genomics Consultant<br>Dog Genetics, LLC**
 ]]
@@ -174,11 +194,13 @@ class: middle
 
 # Takeaways
 
+Note for Liz: I ran your analysis on the data up to April 1 2021 and that puts the % with alt text at 3%
+
 ----
 
 * Growth in online learning communities for data science
 * TidyTuesday: Weekly social project for data visualization in R
-* 2.4% of the data visualizations shared on Twitter had alternative text
+* 3% of the data visualizations shared on Twitter had alternative text
 * 84% were described by default as "Image"  
 
 
@@ -192,9 +214,9 @@ class: middle
 # Can blind people participate in data viz learning communities?
 
 * Why do blind people need data visualization?
-  * Scientific communication -- add link here?
+  * Scientific communication
   * [Election maps](https://fossheim.io/writing/posts/accessible-dataviz-us-elections/)
-  * [COVID-19 incidence maps & dashboards](https://www.theguardian.com/society/2020/sep/30/visually-impaired-scots-get-sonic-help-with-covid-graphs) -- is there a better resource?
+  * [COVID-19 incidence maps & dashboards](https://www.theguardian.com/society/2020/sep/30/visually-impaired-scots-get-sonic-help-with-covid-graphs)
   * [Quorum](https://quorumlanguage.com/evidence.html) or [SAS](https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.5/odsacoutput/n12hxbdrtzec6gn1k913nwfl9o4d.htm) can produce readable charts, but [R](https://cran.r-project.org)/[RStudio]() cannot
 * Screen readers provide voice or braille access to computer text, **not images**
 * AI image descriptions **cannot adequately describe data viz**
@@ -261,16 +283,14 @@ knitr::include_graphics("img/webInspection.png")
 ]
 
 ---
-name: analysisResultsIncidence
+name: analysisResultsLine
 class: middle
 exclude: true
 
 .pull-left[
 # What did we find?
 
-## Placeholder for the waffle plot 
-
-# Over four years, there were 7136 #TidyTuesday tweets with attached media and alt-texts were attached to 2.4% of them.
+## Placeholder for line graph of tweets as well as alt-text over time and highlighting the difference between the two.
 ]
 
 .pull-right[
@@ -284,17 +304,17 @@ kable(tab1, row.names=FALSE)
 ]
 
 ---
-name: analysisResultsPlot
+name: analysisResultsWaffle
 
-# Placeholder for line graph of tweets as well as alt-text over time and highlighting the difference between the two.
+# Placeholder for the waffle plot
 
-## Over four years, there were 7136 #TidyTuesday tweets with attached media and alt-texts were attached to 2.4% of them.
+## Over four years, there were 7136 #TidyTuesday tweets with attached media and alt-texts were attached to 3% of them.
 
-(include a link to the descriptive summary table in the backup slides)
-
+[Link to the corresponding table summary](#backupSummary)
 
 ---
 name: otherPlaces
+class: middle
 
 # Where else is alt-text missing?
 
@@ -303,111 +323,69 @@ name: otherPlaces
 * R package documentation  
 * R Blogs
 
-## This shows up at the individual-level and at the corporate-level (e.g. RStudio rmarkdown documentation)
+----
 
-???
-
----
-name: analysisWords
-
-# How extensive are the alt-texts?
-
-``` {r, Alt-Text lengths, results="asis", echo=FALSE}
-words  <- c(18, 1, 170)
-characters <- c(93, 8, 788)
-tab2 <- data.frame(rbind(words, characters))
-colnames(tab2) <- c("Median", "Minimum", "Maximum")
-rownames(tab2) <- c("Words", "Characters")
-kable(tab2, caption="Alt-text Lengths in Words and Characters")
-```
+.right[
+This shows up at the individual-level and at the<br> corporate-level (e.g. RStudio R Markdown documentation)
+]
 
 ---
 name: analysisResultsRubric
-class:
 
-# Much of the alt text provided is missing information
+# What does and doesn't make good alt-text?
 
-## Five characteristics
-
-1. A description of what can be seen about the data (relationships between x and y variables, histogram shape, appearance of points in residual plots)
-2. What variables are on the axes?  
-3. What scale are the axes on, or is the scale described within the overall description?  
-4. What type of plot is it (line graph, scatterplot, qq plot, etc)  
-5. Alt-text should contain more information than title and/or subtitle of the plot
-    
----
-
-# After removing duplicate tweets and tweets that did not contain data visualizations, there were 196 tweets with alt-text
-
+## There were 196 tweets with alt-text
+<br>
 ``` {r, rubric table, results="asis", echo=FALSE}
-meaning <- c(1, "Conveys Meaning", 34)
-axis1 <- c(2, "Axis Variables", 28)
-axis2 <- c(3, "Axis Scale", 12)
-plotType <- c(4, "Plot Type", 56)
-repeatTitle <-c(5, "Repeats Title", 9)
-tab3 <- data.frame(rbind(meaning, axis1, axis2, plotType, repeatTitle))
-colnames(tab3) <- c("Characteristic", "Description", "Percent of Alt-texts containing this feature")
-kable(tab3, row.names=FALSE, caption="Percentages of Alt-texts Containing Five Types of Information")
+meaning <- c(1, "Description conveys meaning in the data", "34%")
+axis1 <- c(2, "Variables included on the axes", "28%")
+axis2 <- c(3, "Scale described within the description", "12%")
+plotType <- c(4, "Type of plot is described", "56%")
+tab3 <- data.frame(rbind(meaning, axis1, axis2, plotType))
+colnames(tab3) <- c("", "Alt-text Feature", "N = 196 tweets")
+kable(tab3, row.names=FALSE)
 
 ```
 
 ---
 name: shiftingTide
+class: left, middle
 
 # Has the tide started shifting?
 
+----
+
 * Conversations are happening
-  * Within R: useR!2021, MiR
-  * More broadly: Data Visualization Society, a11y Meetups
+  * Within R: [useR!2021](https://user2021.r-project.org/participation/accessibility/), [MiR](https://mircommunity.com/about/), [TidyTuesday](https://themockup.blog/posts/2021-04-01-three-years-of-tidytuesday/)
+  * More broadly: [Data Visualization Society](https://www.outlierconf.com/), [a11y](https://www.a11yproject.com/) conferences/meetups
 * Tooling is slowly receiving updates
-  * New alt text code chunk option for R Markdown
-  * Shiny app tooling improved thanks to accessibility expertise
-* What changes have we noticed since announcing our talk?
+  * [New alt text code chunk option](https://blog.rstudio.com/2021/04/20/knitr-fig-alt/) for R Markdown
 * Changes are just starting and slow
-
----
-name: goodAltText
-class: 
-
-# How to write good alt text for a data visualization?
-
-Include these four things:
-
-1. What kind of plot is it? (line graph, scatterplot, residual plot)  
-   * Describe it further if it's a specialized type of plot 
-2. What variables are on the axes?
-3. What is the range or scale of the variables?  
-4. What do you see about the relationship between the variables in the plot?  
-
-Ask yourself...
-* Do you have enough information to understand the purpose of the image without seeing it?  
-* Is your alt-text a repetition of the title or does it tell us something about the data as well?  
 
 ---
 name: learningResources
 
 # What can you do?
 
-## Make your data visualizations accessible everywhere you can by adding alt-text to websites, journalism, scientific publishing, social media  
+.pull-left[
 
-## Find ways to describe your visualizations in words when alt-text isn't available in your documents or platforms 
-<br>
-.pull-left-equal[
-Data visualization alt-text resources
+* Make your data visualizations accessible everywhere you can<br>by adding alt-text to **websites, journalism, scientific publishing, social media**  
 
-*	[Writing alt-text for data visualization |<br>Amy Cesal](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81)
-* [Chartability Data Viz Audit Workbook |<br>Frank Elavsky](https://chartability.fizz.studio/)
-* [a11y Data Viz Accessibility Resources](https://github.com/dataviza11y/resources/blob/main/README.md)
+* **Find ways to describe your visualizations** in words when<br>alt-text isn't available in your documents or platforms 
 ]
 
 .pull-right-equal[
+Data visualization alt-text resources
+
+*	[Writing alt-text for data visualization](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81)
+* [Chartability Data Viz Audit Workbook](https://chartability.fizz.studio/)
+* [a11y Data Viz Accessibility Resources](https://github.com/dataviza11y/resources/blob/main/README.md)
+
 Tools for Twitter
 
 * Show alt-text for tweets: [Alt or not, Firefox](https://addons.mozilla.org/en-US/firefox/addon/alt-or-not/)
 * Twitter reminder to add alt-text: [Twitter Required Alt Text, Firefox](https://addons.mozilla.org/en-GB/firefox/addon/twitter-required-alt-text/)
 ]
-
-???
 
 ---
 name: goodbye
@@ -442,7 +420,7 @@ Silvia Canelón, PhD
 .pull-right-equal[
 .right[
 <!--HTML code inserting a circular avatar of a square photo-->
-<img style="border-radius: 50%;" src="/slides/img/Profile_LH.JPG" width="170px" alt="Profile of Liz Hare"/>
+<img style="border-radius: 50%;" src="img/Profile_LH.JPG" width="170px" alt="Profile of Liz Hare"/>
 
 Liz Hare, PhD
 
@@ -461,8 +439,15 @@ class: inverse
 # Placeholder to mark a transition into backup slides
 
 ---
-name: backupSummaryStatistics
+name: backupSummary
 
 # Placeholder: HTML table with Liz's summary
 
-(include link back to data viz with tweets and alt-text over time)
+(WIP: The table is too wide, need to decrease font size maybe)
+
+[Link to the corresponding data visualization](#analysisResultsWaffle)
+
+```{r results="asis"}
+tbl_cross(tweets, row=Year, col=AltTextCategory,
+          percent="row")
+```
