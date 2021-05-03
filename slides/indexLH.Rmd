@@ -184,7 +184,7 @@ Postdoctoral Research Scientist<br>University of Pennsylvania
 .center[
 
 <!--HTML code inserting a circular avatar of a square photo-->
-<img style="border-radius: 50%;" src="https://raw.githubusercontent.com/spcanelon/csvConf2021/master/slides/img/Profile_LH.JPG?token=AL4Z36OYWGDHOMZMJCKQKK3ATBRBM" width="230px" alt="Profile of Liz Hare"/>
+<img style="border-radius: 50%;" src="img/Profile_LH.JPG" width="230px" alt="Profile of Liz Hare"/>
 
 **Liz Hare**<br>
 Canine Genetics and Genomics Consultant<br>Dog Genetics, LLC
@@ -260,7 +260,7 @@ class: middle
   * interpretation of the data
 * Link to the author's source code
 * Data visualization attached as an image
-* Alt text for the image (rarely)
+* Alt-text for the image (rarely)
 ]
 
 ---
@@ -278,13 +278,6 @@ Alt text scraped by Silvia Canelón using [{RSelenium}](https://docs.ropensci.or
 
 <img src="img/webInspection.png" align="right" width="700px" alt="Web inspection tool being used to identify the CSS selector corresponding to the image from the example tweet with good alt text. Also shows the actual alt text displayed on Twitter by the Alt or Not extension available for Firefox"/>
 
-.right-column[
-.right[
-```{r, out.width="85%", eval=FALSE, fig.alt="Web inspection tool being used to identify the CSS selector corresponding to the image from the example tweet with good alt text. Also shows the actual alt text displayed on Twitter by the Alt or Not extension available for Firefox"}
-knitr::include_graphics("img/webInspection.png")
-```
-]
-]
 
 ---
 name: analysisResultsLine
@@ -294,14 +287,9 @@ class: middle
 
 ## Placeholder for line graph of tweets as well as alt-text over time and highlighting the difference between the two.
 
----
-name: analysisResultsWaffle
+## Over four years, there were 7,136 TidyTuesday tweets with attached media and alt-texts were attached to 3% of them.
 
-# Placeholder for the waffle plot
-
-## Over four years, there were 7136 #TidyTuesday tweets with attached media and alt-texts were attached to 3% of them.
-
-[Link to the corresponding table summary](#backupSummary)
+Find a summary of these findings [in our repo ](https://spcanelon.github.io/csvConf2021/TidyTuesdayAltTextDescriptive3.html#Summary-how-many-tidytuesday-posts-have-alt-text)
 
 ---
 name: otherPlaces
@@ -322,6 +310,7 @@ This shows up at the individual-level and at the<br> corporate-level (e.g. RStud
 
 ---
 name: analysisResultsRubric
+class: middle
 
 # What does and doesn't make good alt-text?
 
@@ -333,7 +322,7 @@ axis1 <- c(2, "Variables included on the axes", "28%")
 axis2 <- c(3, "Scale described within the description", "12%")
 plotType <- c(4, "Type of plot is described", "56%")
 tab3 <- data.frame(rbind(meaning, axis1, axis2, plotType))
-colnames(tab3) <- c("", "Alt-text Feature", "N = 196 tweets")
+colnames(tab3) <- c("", "Alt-text Feature", "")
 kable(tab3, row.names=FALSE)
 
 ```
@@ -431,24 +420,3 @@ Liz Hare, PhD
 [`r fontawesome::fa("envelope")` LizHare@DogGenetics.com](mailto:LizHare@DogGenetics.com)
 ]]<!--end of pull-right-equal-->
 ]<!--end of right-col-wide-->
-
-
----
-name: backupTransition
-class: inverse
-
-# Placeholder to mark a transition into backup slides
-
----
-name: backupSummary
-
-# Placeholder: HTML table with Liz's summary
-
-(WIP: The table is too wide, need to decrease font size maybe)
-
-[Link to the corresponding data visualization](#analysisResultsWaffle)
-
-```{r results="asis"}
-tbl_cross(tweets, row=Year, col=AltTextCategory,
-          percent="row")
-```
