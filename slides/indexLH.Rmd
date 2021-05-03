@@ -198,8 +198,6 @@ class: middle
 
 # Takeaways
 
-Note for Liz: I ran your analysis on the data up to April 1 2021 and that puts the % with alt text at 3%
-
 ----
 
 * Growth in online learning communities for data science
@@ -291,7 +289,6 @@ knitr::include_graphics("img/webInspection.png")
 ---
 name: analysisResultsLine
 class: middle
-exclude: false
 
 # What did we find?
 
