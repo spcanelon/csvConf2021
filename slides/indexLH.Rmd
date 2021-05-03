@@ -388,6 +388,7 @@ Data visualization alt-text resources
 
 Tools for Twitter
 
+* [How to make images accessible for people • Twitter](https://help.twitter.com/en/using-twitter/picture-descriptions)
 * Show alt-text for tweets: [Alt or not, Firefox](https://addons.mozilla.org/en-US/firefox/addon/alt-or-not/)
 * Twitter reminder to add alt-text: [Twitter Required Alt Text, Firefox](https://addons.mozilla.org/en-GB/firefox/addon/twitter-required-alt-text/)
 ]
