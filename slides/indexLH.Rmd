@@ -173,7 +173,8 @@ class: middle, center
 <!--HTML code inserting a circular avatar of a square photo-->
 <img style="border-radius: 50%;" src="https://raw.githubusercontent.com/spcanelon/silvia/main/content/authors/silvia/avatar.png" width="230px" alt="Profile of Silvia Canelón"/>
 
-**Postdoctoral Research Scientist<br>University of Pennsylvania**
+**Silvia Canelón**<br>
+Postdoctoral Research Scientist<br>University of Pennsylvania
 
 ]]
 
@@ -183,7 +184,8 @@ class: middle, center
 <!--HTML code inserting a circular avatar of a square photo-->
 <img style="border-radius: 50%;" src="https://raw.githubusercontent.com/spcanelon/csvConf2021/master/slides/img/Profile_LH.JPG?token=AL4Z36OYWGDHOMZMJCKQKK3ATBRBM" width="230px" alt="Profile of Liz Hare"/>
 
-**Canine Genetics and Genomics Consultant<br>Dog Genetics, LLC**
+**Liz Hare**<br>
+Canine Genetics and Genomics Consultant<br>Dog Genetics, LLC
 ]]
 
 ???
@@ -388,9 +390,9 @@ Data visualization alt-text resources
 
 Tools for Twitter
 
-* [How to make images accessible for people • Twitter](https://help.twitter.com/en/using-twitter/picture-descriptions)
-* Show alt-text for tweets: [Alt or not, Firefox](https://addons.mozilla.org/en-US/firefox/addon/alt-or-not/)
-* Twitter reminder to add alt-text: [Twitter Required Alt Text, Firefox](https://addons.mozilla.org/en-GB/firefox/addon/twitter-required-alt-text/)
+* [How to make images accessible for people](https://help.twitter.com/en/using-twitter/picture-descriptions)
+* Show alt-text for tweets: [Firefox](https://addons.mozilla.org/en-US/firefox/addon/alt-or-not/)
+* Twitter reminder to add alt-text: [Firefox](https://addons.mozilla.org/en-GB/firefox/addon/twitter-required-alt-text/)
 ]
 
 ---
