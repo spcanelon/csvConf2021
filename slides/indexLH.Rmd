@@ -178,7 +178,6 @@ class: middle, center
 
 **Silvia Canelón**<br>
 Postdoctoral Research Scientist<br>University of Pennsylvania
-
 ]]
 
 .pull-right-equal[
