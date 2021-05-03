@@ -98,18 +98,21 @@ tweets <-
 
 
 name: titleSlide
-class: middle
+class: middle, title-slide
 
 <!--Talk info: Session 0, May 4, 2021 from 10:20 AM to 10:40 PM-->
 
-.left-col-narrow[
-```{r out.width="70%", fig.alt='Square CSV Conf logo featuring a black comma against a yellow background'}
+.left-col-narrow[.center[
+```{r out.width="70%", eval=TRUE, fig.alt='Square CSV Conf logo featuring a black comma against a yellow background'}
 knitr::include_graphics("img/yellowComma.png")
 ```
-]
+`r rmarkdown::metadata$subtitle`
+]]
 
 .right-col-wide[
-.left[# `r rmarkdown::metadata$title`]]
+.left[
+# Revealing Room for Improvement in Accessibility within a Social Media<br>Data Visualization Learning Community
+]]
 
 ----
 
@@ -120,10 +123,10 @@ knitr::include_graphics("img/yellowComma.png")
 ]
 
 .pull-right-equal[
-### Liz Hare, PhD<br>@DogGeneticsLLC `r fontawesome::fa("twitter")` 
+### Liz Hare, PhD<br>@DogGeneticsLLC `r fontawesome::fa("twitter")`
+
 ]
-]
-]
+]]
 
 ???
 

@@ -260,45 +260,11 @@ pre code {
 
 /*-- Custom class for the title slide --*/
 
-.title-slide {
-  background-size:    250px;
-  padding-left:       140px;  /* delete this for 4:3 aspect ratio */
-  padding-right:      80px;
-  background-color:   var(--rstudio-bkg);
-  /*border-top: 40px solid var(--rstudio-bkg);*/
-}
 .title-slide h1  {
-  color:              var(--Penn-red);
-  font-size:          1.8em;
-  font-weight:        600;
-  text-align:         left;
-  line-height:        1.2em;
-  margin-left:        40px;
-  margin-right:       40px;
-  padding-top:        3em;
-  /*line-height: 1.2em;*/
-}
-.title-slide h2  {
-  color:              #999999;
-  font-size:          1.2em;
-  font-weight:        500;
-  text-align:         left;
-  margin-top:         -25px;
-  margin-left:        40px;
-  margin-right:       40px;
-}
-.title-slide h3  {
-  font-weight:        400;
-  line-height:        1.1em;
-  text-align:         left;
-  margin-left:        40px;
-  margin-right:       40px;
-  margin-bottom:      -30px;
+  line-height:        1.4em;
+  padding-top:        0.4em;
 }
 
-.title-slide h2::after {
-  margin:             10px 15px 35px 0;
-}
 
 /* turns off slide numbers for title page: */
 /* https://github.com/gnab/remark/issues/298 */
