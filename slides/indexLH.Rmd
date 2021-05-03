@@ -103,7 +103,7 @@ class: middle
 <!--Talk info: Session 0, May 4, 2021 from 10:20 AM to 10:40 PM-->
 
 .left-col-narrow[
-```{r out.width="60%", fig.alt='Square CSV Conf logo featuring a black comma against a yellow background'}
+```{r out.width="70%", fig.alt='Square CSV Conf logo featuring a black comma against a yellow background'}
 knitr::include_graphics("img/yellowComma.png")
 ```
 ]
@@ -171,7 +171,7 @@ class: middle, center
 .center[
 
 <!--HTML code inserting a circular avatar of a square photo-->
-<img style="border-radius: 50%;" src="https://raw.githubusercontent.com/spcanelon/silvia/main/content/authors/silvia/avatar.png" width="170px" alt="Profile of Silvia Canelón"/>
+<img style="border-radius: 50%;" src="https://raw.githubusercontent.com/spcanelon/silvia/main/content/authors/silvia/avatar.png" width="230px" alt="Profile of Silvia Canelón"/>
 
 **Postdoctoral Research Scientist<br>University of Pennsylvania**
 
@@ -181,7 +181,7 @@ class: middle, center
 .center[
 
 <!--HTML code inserting a circular avatar of a square photo-->
-<img style="border-radius: 50%;" src="https://raw.githubusercontent.com/spcanelon/csvConf2021/master/slides/img/Profile_LH.JPG?token=AL4Z36OYWGDHOMZMJCKQKK3ATBRBM" width="170px" alt="Profile of Liz Hare"/>
+<img style="border-radius: 50%;" src="https://raw.githubusercontent.com/spcanelon/csvConf2021/master/slides/img/Profile_LH.JPG?token=AL4Z36OYWGDHOMZMJCKQKK3ATBRBM" width="230px" alt="Profile of Liz Hare"/>
 
 **Canine Genetics and Genomics Consultant<br>Dog Genetics, LLC**
 ]]
@@ -253,9 +253,9 @@ class: middle
 # What do #TidyTuesday visualization tweets include?
 
 * Verbal description
-    * author's interest
-    * learning process
-    * interpretation of the data
+  * author's interest
+  * learning process
+  * interpretation of the data
 * Link to the author's source code
 * Data visualization attached as an image
 * Alt text for the image (rarely)
@@ -264,22 +264,24 @@ class: middle
 ---
 name: analysisAltText
 
-# How was the data collected?
+# How were the data collected?
 
 .left-column[
-Tweets collected and [made available](https://github.com/rfordatascience/tidytuesday) by Tom Mock using [{rtweet}](https://docs.ropensci.org/rtweet/)
+Tweets collected & [made available](https://github.com/rfordatascience/tidytuesday) by Tom Mock using [{rtweet}](https://docs.ropensci.org/rtweet/)
 
 ----
 
-Alt text scraped by Silvia Canelón using [{RSelenium}](https://docs.ropensci.org/RSelenium/) and available in the [TidyTuesdayAltText](https://github.com/spcanelon/TidyTuesdayAltText) `r emo::ji("package")`
+Alt text scraped by Silvia Canelón using [{RSelenium}](https://docs.ropensci.org/RSelenium/) & available in the [TidyTuesdayAltText](https://github.com/spcanelon/TidyTuesdayAltText) `r emo::ji("package")`
 ]
 
-.right-column[
+<img src="img/webInspection.png" align="right" width="700px" alt="Web inspection tool being used to identify the CSS selector corresponding to the image from the example tweet with good alt text. Also shows the actual alt text displayed on Twitter by the Alt or Not extension available for Firefox"/>
 
-```{r, out.width="85%", fig.alt="Web inspection tool being used to identify the CSS selector corresponding to the image from the example tweet with good alt text. Also shows the actual alt text displayed on Twitter by the Alt or Not extension available for Firefox"}
+.right-column[
+.right[
+```{r, out.width="85%", eval=FALSE, fig.alt="Web inspection tool being used to identify the CSS selector corresponding to the image from the example tweet with good alt text. Also shows the actual alt text displayed on Twitter by the Alt or Not extension available for Firefox"}
 knitr::include_graphics("img/webInspection.png")
 ```
-
+]
 ]
 
 ---
@@ -364,12 +366,15 @@ class: left, middle
 
 ---
 name: learningResources
+class: middle
 
 # What can you do?
 
 .pull-left[
 
-* Make your data visualizations accessible everywhere you can<br>by adding alt-text to **websites, journalism, scientific publishing, social media**  
+* **Make your data visualizations accessible everywhere you can**
+
+* **Add alt-text** to websites, journalism, scientific publishing, social media
 
 * **Find ways to describe your visualizations** in words when<br>alt-text isn't available in your documents or platforms 
 ]
@@ -389,17 +394,21 @@ Tools for Twitter
 
 ---
 name: goodbye
-class: left, middle
+class: left, bottom
+layout: false
+
 
 .left-col-narrow[
-# Thank you!
 
-This presentation was made using the [xaringan](https://github.com/yihui/xaringan#xaringan), and [xaringanExtra](https://github.com/gadenbuie/xaringanExtra#xaringanextra)<br>R packages.
+# Thanks!
 
-----
+[Analysis repo & resources](https://github.com/spcanelon/csvConf2021) `r fontawesome::fa("github")`
 
-`r fontawesome::fa("github")` Analysis repo & resources [spcanelon/csvConf2021](https://github.com/spcanelon/csvConf2021)
+.footnote[
+This presentation was made using<br>the [xaringan](https://github.com/yihui/xaringan#xaringan), and   [xaringanExtra](https://github.com/gadenbuie/xaringanExtra#xaringanextra) R packages.
 ]
+
+]<!--end of left-col-narrow-->
 
 .right-col-wide[
 
@@ -415,7 +424,8 @@ Silvia Canelón, PhD
 [`r fontawesome::fa("twitter")` @spcanelon](https://twitter.com/spcanelon)<br>
 [`r fontawesome::fa("github")` @spcanelon](https://github.com/spcanelon)<br>
 
-]]
+]
+]<!--end of pull-left-equal-->
 
 .pull-right-equal[
 .right[
@@ -429,8 +439,9 @@ Liz Hare, PhD
 [`r fontawesome::fa("twitter")` @DogGeneticsLLC](https://twitter.com/DogGeneticsLLC)<br>
 [`r fontawesome::fa("github")` @LizHareDogs](https://github.com/LizHareDogs)<br>
 [`r fontawesome::fa("envelope")` LizHare@DogGenetics.com](mailto:LizHare@DogGenetics.com)
-]]
-]
+]]<!--end of pull-right-equal-->
+]<!--end of right-col-wide-->
+
 
 ---
 name: backupTransition
