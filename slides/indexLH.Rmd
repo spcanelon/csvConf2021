@@ -291,23 +291,11 @@ knitr::include_graphics("img/webInspection.png")
 ---
 name: analysisResultsLine
 class: middle
-exclude: true
+exclude: false
 
-.pull-left[
 # What did we find?
 
 ## Placeholder for line graph of tweets as well as alt-text over time and highlighting the difference between the two.
-]
-
-.pull-right[
-``` {r, Alt-text incidence, results="asis", echo=FALSE}
-years <- c(2018, 2019, 2020, 2021)
-pct <- c(1.1, 1.0, 2.9, 7.7)
-tab1 <- data.frame(years, pct)
-colnames(tab1) <-c("Year", "Tweets with Alt-text")
-kable(tab1, row.names=FALSE)
-```
-]
 
 ---
 name: analysisResultsWaffle
