@@ -16,7 +16,11 @@ The goal of this talk for [csv,conf,v6](https://csvconf.com/speakers/#silvia-can
 ### HTML slide deck
 
 * [Audience version](https://spcanelon.github.io/csvConf2021/slides)
-* [Presenter version](https://spcanelon.github.io/csvConf2021/slides/indexLH.html)
+* [Screenreader-friendly version](https://spcanelon.github.io/csvConf2021/slides/indexLH.html)
+
+### Data
+
+* [TidyTuesdayAltText](https://www.github.com/spcanelon/TidyTuesdayAltText) package <a href='https://github.com/spcanelon/TidyTuesdayAltText#tidytuesdayalttext-'><img src='https://raw.githubusercontent.com/spcanelon/TidyTuesdayAltText/main/man/figures/ttat_hex.png?token=AL4Z36PWXNE5E73MVZQKXA3ATCZWA' align="right" height="50" alt='Hex logo for the package. White with a thick black border. Inside, the TidyTuesday logo on the top half which are the words TidyTuesday in white against a broad brush stroke of black paint. On the bottom half, the words alt = "text" in black against a white background and within angle brackets to simulate html code.'/></a>
 
 ### Abstract
 
@@ -26,10 +30,10 @@ We all aim to use data to tell a compelling story, and many of us enjoy sharing 
 
 ### Data visualization
 
-*	[Writing alt-text for data visualization](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81)
-[Amy Cesal—Outlier 2021 Lightning Talk—Writing Alt Text for Data Visualization • YouTube](https://www.youtube.com/watch?v=nBcR95S0F0o)
-* [Frank Elavsky, Larene Le Gassick, Sarah Fossheim—Outlier 2021—Are your visualizations excluding ppl? • YouTube](https://www.youtube.com/watch?v=SWB-KLXN-Ok&list=PLAm5TIX-yz7IkKOUcStM_vl8AD0S9v0co&index=10)
-* [Chartability Data Visualization Accessibility Audit Workbook](https://chartability.fizz.studio/)
+*	[Writing alt-text for data visualization • Amy Cesal](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81)
+[Amy Cesal • Outlier 2021 Lightning Talk • Writing Alt Text for Data Visualization • YouTube](https://www.youtube.com/watch?v=nBcR95S0F0o)
+* [Frank Elavsky, Larene Le Gassick, Sarah Fossheim • Outlier 2021—Are your visualizations excluding ppl? • YouTube](https://www.youtube.com/watch?v=SWB-KLXN-Ok&list=PLAm5TIX-yz7IkKOUcStM_vl8AD0S9v0co&index=10)
+* [Chartability Data Visualization Accessibility Audit Workbook • Frank  Elavsky](https://chartability.fizz.studio/)
 
 ### Tools for Twitter
 
