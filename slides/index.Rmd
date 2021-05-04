@@ -35,7 +35,7 @@ meta() %>%
   meta_social(
     title = "2021 csv,conf,v6 | Silvia Canelón & Liz Hare",
     url = "https://spcanelon.github.io/csvConf2021/slides",
-    image = "",
+    image = "coverImageSlide.png",
     image_alt = "Title slide for the talk presentation",
     og_type = "website",
     og_author = "Silvia Canelón & Liz Hare",
@@ -73,27 +73,14 @@ knitr::opts_chunk$set(collapse = TRUE,
                       message = FALSE,
                       echo = FALSE,
                       comment = NA,
+                      dpi = 300,
                       fig.align = "center")
 ```
 
 
 ```{r data-import}
-tweets <-
-  ### Access data from the four years
-  dplyr::bind_rows(
-    ttTweets2018,
-    ttTweets2019,
-    ttTweets2020,
-    ttTweets2021) %>%
-  dplyr::mutate(
-    AltTextCategory = dplyr::case_when(
-      AltText == "ScrapingError" ~ "MediaNotAvailable",
-      AltText == "Image" ~ "DefaultDescription",
-      is.na(AltText) == TRUE ~ "UnavailableNonStatic",
-      TRUE ~ "DescriptiveText")) %>%
-  dplyr::mutate(
-    AltTextCategory = forcats::as_factor(AltTextCategory)
-  )
+tweets <- read_rds("data/tweets.Rds")
+plotlineGraph <- read_rds("data/plot.Rds")
 ```
 
 
@@ -184,7 +171,7 @@ Postdoctoral Research Scientist<br>University of Pennsylvania
 .center[
 
 <!--HTML code inserting a circular avatar of a square photo-->
-<img style="border-radius: 50%;" src="https://raw.githubusercontent.com/spcanelon/csvConf2021/master/slides/img/Profile_LH.JPG?token=AL4Z36OYWGDHOMZMJCKQKK3ATBRBM" width="230px" alt="Profile of Liz Hare"/>
+<img style="border-radius: 50%;" src="img/Profile_LH.JPG" width="230px" alt="Profile of Liz Hare"/>
 
 **Liz Hare**<br>
 Canine Genetics and Genomics Consultant<br>Dog Genetics, LLC
@@ -217,6 +204,9 @@ class: middle, highlight-last-item
 * 84% were described by default as "Image"  
 
 
+???
+Why they shouldn't just repeat what's in the title or caption (in some documents, those thext elements will already be accessible, and they are not adequate to understand what the results.
+
 ---
 name: motivation
 class: middle, highlight-last-item
@@ -235,7 +225,7 @@ class: middle, highlight-last-item
   * [Quorum](https://quorumlanguage.com/evidence.html) or [SAS](https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.5/odsacoutput/n12hxbdrtzec6gn1k913nwfl9o4d.htm) can produce readable charts, but [R](https://cran.r-project.org)/[RStudio]() cannot
   
 --
-
+  
 * Screen readers provide voice or braille access to computer text, **not images**
 
 --
@@ -248,7 +238,7 @@ class: middle, highlight-last-item
 
 ---
 name: TidyTuesday
-class: middle
+class: middle, highlight-last-item
 
 .pull-left-equal[
 # What is TidyTuesday?
@@ -263,7 +253,7 @@ class: middle
 
 .pull-right-equal[
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The <a href="https://twitter.com/R4DScommunity?ref_src=twsrc%5Etfw">@R4DScommunity</a> welcomes you to week 18 of <a href="https://twitter.com/hashtag/TidyTuesday?src=hash&amp;ref_src=twsrc%5Etfw">#TidyTuesday</a>! We&#39;re exploring CEO departures!<br><br>📂 <a href="https://t.co/sElb4fcv3u">https://t.co/sElb4fcv3u</a><br>📰 <a href="https://t.co/mhn5wQ21SE">https://t.co/mhn5wQ21SE</a><a href="https://twitter.com/hashtag/r4ds?src=hash&amp;ref_src=twsrc%5Etfw">#r4ds</a> <a href="https://twitter.com/hashtag/tidyverse?src=hash&amp;ref_src=twsrc%5Etfw">#tidyverse</a> <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> <a href="https://twitter.com/hashtag/dataviz?src=hash&amp;ref_src=twsrc%5Etfw">#dataviz</a> <a href="https://t.co/zVgfq7M88v">pic.twitter.com/zVgfq7M88v</a></p>&mdash; Tom Mock 💉💉🎉 (@thomas_mock) <a href="https://twitter.com/thomas_mock/status/1386854016550936579?ref_src=twsrc%5Etfw">April 27, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The <a href="https://twitter.com/R4DScommunity?ref_src=twsrc%5Etfw">@R4DScommunity</a> welcomes you to week 19 of <a href="https://twitter.com/hashtag/TidyTuesday?src=hash&amp;ref_src=twsrc%5Etfw">#TidyTuesday</a>! We&#39;re exploring water access points!<br><br>📂 <a href="https://t.co/sElb4fcv3u">https://t.co/sElb4fcv3u</a><br>📰 <a href="https://t.co/feZnKx4KJE">https://t.co/feZnKx4KJE</a><a href="https://twitter.com/hashtag/r4ds?src=hash&amp;ref_src=twsrc%5Etfw">#r4ds</a> <a href="https://twitter.com/hashtag/tidyverse?src=hash&amp;ref_src=twsrc%5Etfw">#tidyverse</a> <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> <a href="https://twitter.com/hashtag/dataviz?src=hash&amp;ref_src=twsrc%5Etfw">#dataviz</a> <a href="https://t.co/aN6TKtmsjw">pic.twitter.com/aN6TKtmsjw</a></p>&mdash; Tom Mock 💉💉🎉 (@thomas_mock) <a href="https://twitter.com/thomas_mock/status/1389400894224076802?ref_src=twsrc%5Etfw">May 4, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
 
 ]
 
@@ -275,6 +265,8 @@ class: middle
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Today&#39;s <a href="https://twitter.com/hashtag/TidyTuesday?src=hash&amp;ref_src=twsrc%5Etfw">#TidyTuesday</a>:<br>data on artwork from the <a href="https://twitter.com/Tate?ref_src=twsrc%5Etfw">@Tate</a> collection, and specifically aspect ratios over time<br><br>Blue = stat_smooth GAMs (grouped by aspect ratio &gt; 1)<br>Red = golden ratio (±1 + sqrt(5))/2 <a href="https://t.co/PSuBgUp3Ky">pic.twitter.com/PSuBgUp3Ky</a></p>&mdash; Hao Ye (@Hao_and_Y) <a href="https://twitter.com/Hao_and_Y/status/1349055287169331200?ref_src=twsrc%5Etfw">January 12, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
 ]
 
+--
+
 .pull-right[
 # What do #TidyTuesday visualization tweets include?
 
@@ -284,7 +276,7 @@ class: middle
   * interpretation of the data
 * Link to the author's source code
 * Data visualization attached as an image
-* Alt text for the image (rarely)
+* Alt-text for the image (rarely)
 ]
 
 ---
@@ -296,43 +288,87 @@ class: middle
 --
 
 .left-column[
-Tweets collected & [made available](https://github.com/rfordatascience/tidytuesday) by Tom Mock using [{rtweet}](https://docs.ropensci.org/rtweet/)
+Tweets collected & [made available](https://github.com/rfordatascience/tidytuesday) by Tom Mock using [rtweet](https://docs.ropensci.org/rtweet/)
 
 ----
 
-Alt text scraped by Silvia Canelón using [{RSelenium}](https://docs.ropensci.org/RSelenium/) & available in the [TidyTuesdayAltText](https://github.com/spcanelon/TidyTuesdayAltText) `r emo::ji("package")`
+Alt text scraped by Silvia Canelón using [RSelenium](https://docs.ropensci.org/RSelenium/) & available in the [TidyTuesdayAltText](https://github.com/spcanelon/TidyTuesdayAltText) `r emo::ji("package")`
 ]
 
 --
 
-<img src="img/webInspection.png" align="right" width="680px" alt="Web inspection tool being used to identify the CSS selector corresponding to the image from the example tweet with good alt text. Also shows the actual alt text displayed on Twitter by the Alt or Not extension available for Firefox"/>
+<img src="img/webInspection.png" align="right" width="675px" alt="Web inspection tool being used to identify the CSS selector corresponding to the image from the example tweet with good alt text. Also shows the actual alt text displayed on Twitter by the Alt or Not extension available for Firefox"/>
 
-.right-column[
-.right[
-```{r, out.width="80%", eval=FALSE, fig.alt="Web inspection tool being used to identify the CSS selector corresponding to the image from the example tweet with good alt text. Also shows the actual alt text displayed on Twitter by the Alt or Not extension available for Firefox"}
-knitr::include_graphics("img/webInspection.png")
-```
-]
-]
 
 ---
 name: analysisResultsLine
 class: middle
-exclude: false
 
 # What did we find?
 
-## Placeholder for line graph of tweets as well as alt-text over time and highlighting the difference between the two.
+--
 
+> ## Over the 3 years of TidyTuesday, there were 7,136 data viz tweets and **only 215 (3%) of them had alt-text**<br>
+[Summary of these findings](https://spcanelon.github.io/csvConf2021/TidyTuesdayAltTextDescriptive3.html#Summary-how-many-tidytuesday-posts-have-alt-text)
 
 ---
-name: analysisResultsWaffle
+class: top
 
-# Placeholder for the waffle plot
+.left-col-narrow[
+.my-gray[Participation in TidyTuesday] has increased over time but **use of alt-text is recent and remains low**
 
-## Over four years, there were 7136 #TidyTuesday tweets with attached media and alt-texts were attached to 3% of them.
 
-[Link to the corresponding table summary](#backupSummary)
+<br><br><br><br><br>
+The [conversation on Twitter](https://twitter.com/spcanelon/status/1375222124365946881?s=20)
+]
+
+.right-col-wide[
+
+```{r line-graph, out.width="100%", fig.height=5, fig.align='left', fig.alt="Two line graphs shown on the same chart for comparison. The x axis is time and includes April 2018 through April 2021, and the y axis is the number of tweets per week. One of the line graphs corresponds to all TidyTuesday data viz tweets and over time there has been a gradual trend upwards indicating growing participation in TidyTuesday. This line is a light color and values range from 1 to 115 tweets. The second line graph corresponds to only those TidyTuesday data viz tweets that included alt-text and is a bolder line of a dark color. It ranges from 0 to 28 tweets. There has not been much of a trend upwards over time except very recently, coinciding with Liz and Silvia sharing their preliminary findings on Twitter in anticipation of the CSV Conf 2021 talk. This happened on March 25, 2021 and is annotated with text and an arrow on the plot."}
+plotlineGraph +
+  annotate(
+    geom = "text",
+    label = "Preliminary findings\nshared on Twitter\nMarch 25, 2021",
+    hjust = "left",
+    x = as.Date("2020-03-01"),
+    y = 25,
+    color = "#121824"
+    ) +
+  # adding annotation arrow
+  annotate(
+    geom = "curve",
+    x = as.Date('2020-08-01'),
+    xend = as.Date("2021-03-10"),
+    y = 35,
+    yend = 28,
+    curvature = -.5,
+    arrow = arrow(
+      length = unit(2, "mm"),
+      type = "closed"),
+    color = "#121824"
+  ) +
+  annotate(
+    geom = "text",
+    label = "All\ndata viz\ntweets",
+    hjust = "left",
+    x = as.Date("2021-04-30"),
+    y = 79,
+    color = "#9c9c9c",
+    angle = 0
+  ) +
+  annotate(
+    geom = "text",
+    label = "Alt-text\ntweets",
+    hjust = "left",
+    x = as.Date("2021-04-30"),
+    y = 22,
+    color = "#121824", 
+    angle = 0
+  ) +
+  coord_cartesian(clip= 'off') +
+  theme(plot.margin= margin(25, 25, 10, 25))
+```
+]
 
 ---
 name: otherPlaces
@@ -346,7 +382,7 @@ class: middle, highlight-last-item
 
 --
 
-* R books made available digitally to people with print disabilities by [Bookshare](https://www.bookshare.org/cms/)
+* R books made available digitally to people with print disabilities by [Bookshare](https://www.bookshare.org/cms/)   
 
 --
 
@@ -354,7 +390,7 @@ class: middle, highlight-last-item
 
 --
 
-* R Blogs
+* R blogs
 
 --
 
@@ -366,8 +402,11 @@ This shows up at the individual-level and at the<br> corporate-level (e.g. RStud
 
 ---
 name: analysisResultsRubric
+class: middle
 
-# What does and doesn't make good alt-text?
+# What makes good alt-text?
+
+--
 
 ### There were 196 data visualization tweets with alt-text
 <br>
@@ -377,7 +416,7 @@ axis1 <- c(2, "Variables included on the axes", "28%")
 axis2 <- c(3, "Scale described within the description", "12%")
 plotType <- c(4, "Type of plot is described", "56%")
 tab3 <- data.frame(rbind(meaning, axis1, axis2, plotType))
-colnames(tab3) <- c("", "Alt-text Feature", "N = 196 tweets")
+colnames(tab3) <- c("", "Alt-text Feature", "")
 kable(tab3, row.names=FALSE)
 
 ```
@@ -395,7 +434,7 @@ class: left, middle, highlight-last-item
 * Conversations are happening
   * Within R: [useR!2021](https://user2021.r-project.org/participation/accessibility/), [MiR](https://mircommunity.com/about/), [TidyTuesday](https://themockup.blog/posts/2021-04-01-three-years-of-tidytuesday/)
   * More broadly: [Data Visualization Society](https://www.outlierconf.com/), [a11y](https://www.a11yproject.com/) conferences/meetups
-
+  
 --
 
 * Tooling is slowly receiving updates
@@ -443,7 +482,6 @@ name: goodbye
 class: left, bottom
 layout: false
 
-
 .left-col-narrow[
 
 # Thanks!
@@ -487,24 +525,3 @@ Liz Hare, PhD
 [`r fontawesome::fa("envelope")` LizHare@DogGenetics.com](mailto:LizHare@DogGenetics.com)
 ]]<!--end of pull-right-equal-->
 ]<!--end of right-col-wide-->
-
-
----
-name: backupTransition
-class: inverse
-
-# Placeholder to mark a transition into backup slides
-
----
-name: backupSummary
-
-# Placeholder: HTML table with Liz's summary
-
-(WIP: The table is too wide, need to decrease font size maybe)
-
-[Link to the corresponding data visualization](#analysisResultsWaffle)
-
-```{r results="asis"}
-tbl_cross(tweets, row=Year, col=AltTextCategory,
-          percent="row")
-```
