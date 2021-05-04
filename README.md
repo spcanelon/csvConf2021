@@ -26,7 +26,7 @@ We all aim to use data to tell a compelling story, and many of us enjoy sharing 
 
 - [TidyTuesdayAltText](https://www.github.com/spcanelon/TidyTuesdayAltText) package 
 - [Alt-Text Summary](https://spcanelon.github.io/csvConf2021/R/TidyTuesdayAltTextDescriptive3.html)
-- [Exploring Alt-Text Contents](https://spcanelon.github.io/R/csvConf2021/TidyTuesdayEvaluateText.html)
+- [Analysis Exploring Alt-Text Contents](https://spcanelon.github.io/csvConf2021/R/TidyTuesdayEvaluateText.html)
 
 ## Alt text resources
 
