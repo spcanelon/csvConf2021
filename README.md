@@ -32,9 +32,9 @@ We all aim to use data to tell a compelling story, and many of us enjoy sharing 
 
 ### Data visualization
 
-*	[Writing alt-text for data visualization • Amy Cesal • Blog post](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81)
-* [Amy Cesal • Outlier 2021 Lightning Talk • Writing Alt Text for Data Visualization • YouTube](https://www.youtube.com/watch?v=nBcR95S0F0o)
-* [Frank Elavsky, Larene Le Gassick, Sarah Fossheim • Outlier 2021 • Are your visualizations excluding people? • YouTube](https://www.youtube.com/watch?v=SWB-KLXN-Ok&list=PLAm5TIX-yz7IkKOUcStM_vl8AD0S9v0co&index=10)
+*	[Writing alt-text for data visualization • Blog post • Amy Cesal](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81)
+* [Writing Alt Text for Data Visualization • YouTube • Amy Cesal • Outlier 2021 Lightning Talk](https://www.youtube.com/watch?v=nBcR95S0F0o)
+* [Are your visualizations excluding people? • YouTube • Frank Elavsky, Larene Le Gassick, Sarah Fossheim • Outlier 2021](https://www.youtube.com/watch?v=SWB-KLXN-Ok&list=PLAm5TIX-yz7IkKOUcStM_vl8AD0S9v0co&index=10)
 * [Chartability Data Visualization Accessibility Audit Workbook • Frank Elavsky](https://chartability.fizz.studio/)
 
 ### Tools for Twitter
