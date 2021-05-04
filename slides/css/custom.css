@@ -10,17 +10,16 @@
 --spc-link: #905551;
 
 /* surface colors */
---spc-bkg: #f7f4f3;                   /* light mode background */
---spc-bkg-dark: #fff8e7;                    /* dark mode background (00dp elevation level) */
-
+--spc-bkg: #f7f4f3;
+--spc-bkg-dark: #fff8e7;
 
 /* error colors */
 --spc-error: rgba(169, 5, 51, 1);
 --spc-error-light: rgba(253, 244, 244, 1);
 
-/* Penn colors */
---Penn-red: #a90533;
+--spc-gray: #cccccc;
 }
+
 
 /*-- SLIDE CONTENT ---------------------------------------------------------- */
 
@@ -400,4 +399,8 @@ pre code {
 li::marker {
   content: &#8226;;
   color: var(--spc-link);
+}
+
+.my-gray {
+  color: --spc-gray;
 }

@@ -73,6 +73,7 @@ knitr::opts_chunk$set(collapse = TRUE,
                       message = FALSE,
                       echo = FALSE,
                       comment = NA,
+                      dpi = 300,
                       fig.align = "center")
 ```
 
@@ -239,7 +240,7 @@ class: middle
 
 .pull-right-equal[
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The <a href="https://twitter.com/R4DScommunity?ref_src=twsrc%5Etfw">@R4DScommunity</a> welcomes you to week 18 of <a href="https://twitter.com/hashtag/TidyTuesday?src=hash&amp;ref_src=twsrc%5Etfw">#TidyTuesday</a>! We&#39;re exploring CEO departures!<br><br>📂 <a href="https://t.co/sElb4fcv3u">https://t.co/sElb4fcv3u</a><br>📰 <a href="https://t.co/mhn5wQ21SE">https://t.co/mhn5wQ21SE</a><a href="https://twitter.com/hashtag/r4ds?src=hash&amp;ref_src=twsrc%5Etfw">#r4ds</a> <a href="https://twitter.com/hashtag/tidyverse?src=hash&amp;ref_src=twsrc%5Etfw">#tidyverse</a> <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> <a href="https://twitter.com/hashtag/dataviz?src=hash&amp;ref_src=twsrc%5Etfw">#dataviz</a> <a href="https://t.co/zVgfq7M88v">pic.twitter.com/zVgfq7M88v</a></p>&mdash; Tom Mock 💉💉🎉 (@thomas_mock) <a href="https://twitter.com/thomas_mock/status/1386854016550936579?ref_src=twsrc%5Etfw">April 27, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The <a href="https://twitter.com/R4DScommunity?ref_src=twsrc%5Etfw">@R4DScommunity</a> welcomes you to week 19 of <a href="https://twitter.com/hashtag/TidyTuesday?src=hash&amp;ref_src=twsrc%5Etfw">#TidyTuesday</a>! We&#39;re exploring water access points!<br><br>📂 <a href="https://t.co/sElb4fcv3u">https://t.co/sElb4fcv3u</a><br>📰 <a href="https://t.co/feZnKx4KJE">https://t.co/feZnKx4KJE</a><a href="https://twitter.com/hashtag/r4ds?src=hash&amp;ref_src=twsrc%5Etfw">#r4ds</a> <a href="https://twitter.com/hashtag/tidyverse?src=hash&amp;ref_src=twsrc%5Etfw">#tidyverse</a> <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> <a href="https://twitter.com/hashtag/dataviz?src=hash&amp;ref_src=twsrc%5Etfw">#dataviz</a> <a href="https://t.co/aN6TKtmsjw">pic.twitter.com/aN6TKtmsjw</a></p>&mdash; Tom Mock 💉💉🎉 (@thomas_mock) <a href="https://twitter.com/thomas_mock/status/1389400894224076802?ref_src=twsrc%5Etfw">May 4, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
 
 ]
 
@@ -285,11 +286,66 @@ class: middle
 
 # What did we find?
 
-## Placeholder for line graph of tweets as well as alt-text over time and highlighting the difference between the two.
+> ## Over the 3 years of TidyTuesday, there were 7,136 data viz tweets and **only 215 (3%) of them had alt-text**<br>
+[Summary of these findings](https://spcanelon.github.io/csvConf2021/TidyTuesdayAltTextDescriptive3.html#Summary-how-many-tidytuesday-posts-have-alt-text)
 
-## Over four years, there were 7,136 TidyTuesday tweets with attached media and alt-texts were attached to 3% of them.
+---
+class: top
 
-Find a summary of these findings [in our repo ](https://spcanelon.github.io/csvConf2021/TidyTuesdayAltTextDescriptive3.html#Summary-how-many-tidytuesday-posts-have-alt-text)
+.left-col-narrow[
+.my-gray[Participation in TidyTuesday] has increased over time but **use of alt-text is recent and low**
+
+
+<br><br><br><br><br>
+The [conversation on Twitter](https://twitter.com/spcanelon/status/1375222124365946881?s=20)
+]
+
+.right-col-wide[
+```{r, out.width="100%"}
+plotlineGraph <- readRDS("data/plot.Rds")
+```
+
+```{r, fig.height=5, fig.align='right', fig.alt="Two line graphs shown on the same chart for comparison. The x axis is time and includes April 2018 through April 2021, and the y axis is the number of tweets per week. One of the line graphs corresponds to all TidyTuesday data viz tweets and over time there has been a gradual trend upwards indicating growing participation in TidyTuesday. This line is a light color and values range from 1 to 115 tweets. The second line graph corresponds to only those TidyTuesday data viz tweets that included alt-text and is a bolder line of a dark color. It ranges from 0 to 28 tweets. There has not been much of a trend upwards over time except very recently, coinciding with Liz and Silvia sharing their preliminary findings on Twitter in anticipation of the CSV Conf 2021 talk. This happened on March 25, 2021 and is annotated with text and an arrow on the plot."}
+plotlineGraph +
+  annotate(
+    geom = "text",
+    label = "Preliminary findings\nshared on Twitter\nMarch 25, 2021",
+    hjust = "left",
+    x = as.Date("2020-03-01"),
+    y = 25,
+    color = "#121824"
+    ) +
+  # adding annotation arrow
+  annotate(
+    geom = "curve",
+    x = as.Date('2020-08-01'),
+    xend = as.Date("2021-03-10"),
+    y = 35,
+    yend = 28,
+    curvature = -.5,
+    arrow = arrow(
+      length = unit(2, "mm"),
+      type = "closed"),
+    color = "#121824"
+  ) +
+  annotate(
+    geom = "text",
+    label = "All data viz tweets",
+    hjust = "right",
+    x = as.Date("2021-04-01"),
+    y = 115,
+    color = "#9c9c9c"
+  ) +
+  annotate(
+    geom = "text",
+    label = "Alt-text tweets",
+    hjust = "right",
+    x = as.Date("2021-03-10"),
+    y = 11,
+    color = "#121824"
+  )
+```
+]
 
 ---
 name: otherPlaces
