@@ -42,6 +42,7 @@ We all aim to use data to tell a compelling story, and many of us enjoy sharing 
 * How to add alt-text to tweets: [How to make images accessible for people • Twitter](https://help.twitter.com/en/using-twitter/picture-descriptions)
 * Show alt-text for tweets: [Alt or not • Firefox extension](https://addons.mozilla.org/en-US/firefox/addon/alt-or-not/)
 * Twitter reminder to add alt-text: [Twitter Required Alt Text • Firefox extension](https://addons.mozilla.org/en-GB/firefox/addon/twitter-required-alt-text/)
+* Check if your tweets have alt-text: [Twitter Accessibility score](https://twittera11yscore.dav.li/)
 
 ### General
 
