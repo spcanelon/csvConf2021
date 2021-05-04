@@ -25,8 +25,8 @@ We all aim to use data to tell a compelling story, and many of us enjoy sharing 
 ### Data & analysis <a href='https://github.com/spcanelon/TidyTuesdayAltText#tidytuesdayalttext-'><img src='https://raw.githubusercontent.com/spcanelon/TidyTuesdayAltText/main/man/figures/ttat_hex.png?token=AL4Z36PWXNE5E73MVZQKXA3ATCZWA' align="right" height="120" alt='Hex logo for the package. White with a thick black border. Inside, the TidyTuesday logo on the top half which are the words TidyTuesday in white against a broad brush stroke of black paint. On the bottom half, the words alt = "text" in black against a white background and within angle brackets to simulate html code.'/></a>
 
 - [TidyTuesdayAltText](https://www.github.com/spcanelon/TidyTuesdayAltText) package 
-- [Alt text summary]()
-- [Alt text rubric]()
+- [Alt-Text Summary](https://spcanelon.github.io/csvConf2021/TidyTuesdayAltTextDescriptive3.html)
+- [Exploring Alt-Text Contents](https://spcanelon.github.io/csvConf2021/TidyTuesdayEvaluateText.html)
 
 ## Alt text resources
 
