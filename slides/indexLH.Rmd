@@ -300,7 +300,7 @@ class: middle
 * R books made available freely online
 * R books made available digitally to people with print disabilities by [Bookshare](https://www.bookshare.org/cms/)   
 * R package documentation  
-* R Blogs
+* R blogs
 
 ----
 
@@ -375,7 +375,6 @@ Tools for Twitter
 name: goodbye
 class: left, bottom
 layout: false
-
 
 .left-col-narrow[
 
