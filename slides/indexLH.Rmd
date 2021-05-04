@@ -79,22 +79,8 @@ knitr::opts_chunk$set(collapse = TRUE,
 
 
 ```{r data-import}
-tweets <-
-  ### Access data from the four years
-  dplyr::bind_rows(
-    ttTweets2018,
-    ttTweets2019,
-    ttTweets2020,
-    ttTweets2021) %>%
-  dplyr::mutate(
-    AltTextCategory = dplyr::case_when(
-      AltText == "ScrapingError" ~ "MediaNotAvailable",
-      AltText == "Image" ~ "DefaultDescription",
-      is.na(AltText) == TRUE ~ "UnavailableNonStatic",
-      TRUE ~ "DescriptiveText")) %>%
-  dplyr::mutate(
-    AltTextCategory = forcats::as_factor(AltTextCategory)
-  )
+tweets <- read_rds("data/tweets.Rds")
+plotlineGraph <- read_rds("data/plot.Rds")
 ```
 
 
@@ -293,7 +279,7 @@ class: middle
 class: top
 
 .left-col-narrow[
-.my-gray[Participation in TidyTuesday] has increased over time but **use of alt-text is recent and low**
+.my-gray[Participation in TidyTuesday] has increased over time but **use of alt-text is recent and remains low**
 
 
 <br><br><br><br><br>
@@ -301,11 +287,8 @@ The [conversation on Twitter](https://twitter.com/spcanelon/status/1375222124365
 ]
 
 .right-col-wide[
-```{r, out.width="100%"}
-plotlineGraph <- readRDS("data/plot.Rds")
-```
 
-```{r, fig.height=5, fig.align='right', fig.alt="Two line graphs shown on the same chart for comparison. The x axis is time and includes April 2018 through April 2021, and the y axis is the number of tweets per week. One of the line graphs corresponds to all TidyTuesday data viz tweets and over time there has been a gradual trend upwards indicating growing participation in TidyTuesday. This line is a light color and values range from 1 to 115 tweets. The second line graph corresponds to only those TidyTuesday data viz tweets that included alt-text and is a bolder line of a dark color. It ranges from 0 to 28 tweets. There has not been much of a trend upwards over time except very recently, coinciding with Liz and Silvia sharing their preliminary findings on Twitter in anticipation of the CSV Conf 2021 talk. This happened on March 25, 2021 and is annotated with text and an arrow on the plot."}
+```{r line-graph, out.width="100%", fig.height=5, fig.align='left', fig.alt="Two line graphs shown on the same chart for comparison. The x axis is time and includes April 2018 through April 2021, and the y axis is the number of tweets per week. One of the line graphs corresponds to all TidyTuesday data viz tweets and over time there has been a gradual trend upwards indicating growing participation in TidyTuesday. This line is a light color and values range from 1 to 115 tweets. The second line graph corresponds to only those TidyTuesday data viz tweets that included alt-text and is a bolder line of a dark color. It ranges from 0 to 28 tweets. There has not been much of a trend upwards over time except very recently, coinciding with Liz and Silvia sharing their preliminary findings on Twitter in anticipation of the CSV Conf 2021 talk. This happened on March 25, 2021 and is annotated with text and an arrow on the plot."}
 plotlineGraph +
   annotate(
     geom = "text",
@@ -330,20 +313,24 @@ plotlineGraph +
   ) +
   annotate(
     geom = "text",
-    label = "All data viz tweets",
-    hjust = "right",
-    x = as.Date("2021-04-01"),
-    y = 115,
-    color = "#9c9c9c"
+    label = "All\ndata viz\ntweets",
+    hjust = "left",
+    x = as.Date("2021-04-30"),
+    y = 79,
+    color = "#9c9c9c",
+    angle = 0
   ) +
   annotate(
     geom = "text",
-    label = "Alt-text tweets",
-    hjust = "right",
-    x = as.Date("2021-03-10"),
-    y = 11,
-    color = "#121824"
-  )
+    label = "Alt-text\ntweets",
+    hjust = "left",
+    x = as.Date("2021-04-30"),
+    y = 22,
+    color = "#121824", 
+    angle = 0
+  ) +
+  coord_cartesian(clip= 'off') +
+  theme(plot.margin= margin(25, 25, 10, 25))
 ```
 ]
 
@@ -368,7 +355,7 @@ This shows up at the individual-level and at the<br> corporate-level (e.g. RStud
 name: analysisResultsRubric
 class: middle
 
-# What does and doesn't make good alt-text?
+# What makes good alt-text?
 
 ### There were 196 data visualization tweets with alt-text
 <br>

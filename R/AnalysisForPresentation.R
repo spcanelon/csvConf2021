@@ -34,6 +34,8 @@ tweets <-
   dplyr::mutate(SumWeek = n()) %>%
   dplyr::ungroup()
 
+write_rds(tweets, "slides/data/tweets.Rds")
+
 # counting tweets per week for only tweets with alt text
 tweetsAltText <-
   tweets %>%
