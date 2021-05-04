@@ -44,6 +44,8 @@ tweetsAltText <-
   dplyr::mutate(SumWeek = n()) %>%
   dplyr::ungroup()
 
+write_rds(tweetsAltText, "slides/data/tweetsAltText.Rds")
+
 # producing two line graphs within the same plot
 plot <-
   tweets %>%
