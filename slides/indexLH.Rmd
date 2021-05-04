@@ -35,7 +35,7 @@ meta() %>%
   meta_social(
     title = "2021 csv,conf,v6 | Silvia Canelón & Liz Hare",
     url = "https://spcanelon.github.io/csvConf2021/slides",
-    image = "",
+    image = "coverImageSlide.png",
     image_alt = "Title slide for the talk presentation",
     og_type = "website",
     og_author = "Silvia Canelón & Liz Hare",
