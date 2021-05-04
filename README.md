@@ -15,8 +15,8 @@ The goal of this talk for [csv,conf,v6](https://csvconf.com/speakers/#silvia-can
 
 ### HTML slide deck
 
-* [Audience version](https://spcanelon.github.io/csvConf2021/slides)
 * [Screenreader-friendly version](https://spcanelon.github.io/csvConf2021/slides/indexLH.html)
+* [Audience version](https://spcanelon.github.io/csvConf2021/slides)
 
 ### Abstract
 
