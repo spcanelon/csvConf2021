@@ -1,3 +1,4 @@
+[![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
 # CSV Conf 2021 <a href='https://github.com/spcanelon/csvConf2021'><img src='coverImage.png' align="right" height="138.5" alt='Promotional image created by CSVConf featuring the title of the presentation "Revealing Room for Improvement in Accessibility within a Social Media Data Visualization Learning Community." It also shows the conference name (csv,conf,v6) in the top right next along with the comma CSV Conf logo, and presenter names on the bottom right'/></a>
 
 <!-- badges: start -->
@@ -49,3 +50,14 @@ We all aim to use data to tell a compelling story, and many of us enjoy sharing 
 * [Images Concepts • Images • WAI Web Accessibility Tutorials](https://www.w3.org/WAI/tutorials/images/)
 *	[Making Images Accessible • DIAGRAM Center](http://diagramcenter.org/making-images-accessible.html)
 *	[Diagram Center Accessible Math Tricks and Tips • DIAGRAM Center](http://diagramcenter.org/accessible-math-tools-tips-and-training.html#training)
+
+---
+
+[![CC BY-SA 4.0][cc-by-sa-image]][cc-by-sa]
+
+This work is licensed under a
+[Creative Commons Attribution-ShareAlike 4.0 International License][cc-by-sa].
+
+[cc-by-sa]: http://creativecommons.org/licenses/by-sa/4.0/
+[cc-by-sa-image]: https://licensebuttons.net/l/by-sa/4.0/88x31.png
+[cc-by-sa-shield]: https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg
