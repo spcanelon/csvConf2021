@@ -211,7 +211,7 @@ Why they shouldn't just repeat what's in the title or caption (in some documents
 name: motivation
 class: middle, highlight-last-item
 
-# Can blind people participate in data viz learning communities?
+# Can blind people participate in data viz<br>learning communities?
 
 --
 
@@ -325,6 +325,8 @@ The [conversation on Twitter](https://twitter.com/spcanelon/status/1375222124365
 .right-col-wide[
 
 ```{r line-graph, out.width="100%", fig.height=5, fig.align='left', fig.alt="Two line graphs shown on the same chart for comparison. The x axis is time and includes April 2018 through April 2021, and the y axis is the number of tweets per week. One of the line graphs corresponds to all TidyTuesday data viz tweets and over time there has been a gradual trend upwards indicating growing participation in TidyTuesday. This line is a light color and values range from 1 to 115 tweets. The second line graph corresponds to only those TidyTuesday data viz tweets that included alt-text and is a bolder line of a dark color. It ranges from 0 to 28 tweets. There has not been much of a trend upwards over time except very recently, coinciding with Liz and Silvia sharing their preliminary findings on Twitter in anticipation of the CSV Conf 2021 talk. This happened on March 25, 2021 and is annotated with text and an arrow on the plot."}
+
+# adding annotations to saved plot object "plotlineGraph" in order to gauge size and placement on slide
 plotlineGraph +
   annotate(
     geom = "text",
@@ -347,6 +349,7 @@ plotlineGraph +
       type = "closed"),
     color = "#121824"
   ) +
+  # adding y-axis annotation for all tweets together
   annotate(
     geom = "text",
     label = "All\ndata viz\ntweets",
@@ -356,6 +359,7 @@ plotlineGraph +
     color = "#9c9c9c",
     angle = 0
   ) +
+  # adding y-axis annotation for alt-text tweets
   annotate(
     geom = "text",
     label = "Alt-text\ntweets",
@@ -365,6 +369,7 @@ plotlineGraph +
     color = "#121824", 
     angle = 0
   ) +
+  # making adjustments so the y-axis annotations are allowed to expand beyond the predefined box created for the ggplot
   coord_cartesian(clip= 'off') +
   theme(plot.margin= margin(25, 25, 10, 25))
 ```
@@ -408,7 +413,7 @@ class: middle
 
 --
 
-### There were 196 data visualization tweets with alt-text
+### There were 196 data visualization tweets with relevant alt-text
 <br>
 ``` {r, rubric table, results="asis", echo=FALSE}
 meaning <- c(1, "Description conveys meaning in the data", "34%")
