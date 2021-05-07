@@ -1,4 +1,4 @@
-[![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
+[![DOI](https://zenodo.org/badge/342913558.svg)](https://zenodo.org/badge/latestdoi/342913558) [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
 # CSV Conf 2021 <a href='https://github.com/spcanelon/csvConf2021'><img src='coverImage.png' align="right" height="138.5" alt='Promotional image created by CSVConf featuring the title of the presentation "Revealing Room for Improvement in Accessibility within a Social Media Data Visualization Learning Community." It also shows the conference name (csv,conf,v6) in the top right next along with the comma CSV Conf logo, and presenter names on the bottom right'/></a>
 
 <!-- badges: start -->
