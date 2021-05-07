@@ -17,7 +17,7 @@ library(gtsummary)
 data(package="TidyTuesdayAltText")
 data(altTextSubset)
 ### load Silvia's annotated file
-annotatedS <- readRDS("data/AltTextSubset_Annotated.rds")
+annotatedS <- readRDS("../data/AltTextSubset_Annotated.rds")
 colnames(annotatedS)
 ### add NA columns for rubric because you can't add them in Numbers
 annotatedS$conveysMeaning <- NA
@@ -38,13 +38,16 @@ annotatedL2 <- annotatedL[!annotatedL$AltText == "ScrapingError", ]
 dim(annotatedL2)
 head(annotatedL2[ , 1:3])
 tail(annotatedL2[ ,1:3])
+```
 
+``` {r, write csv for blank rubric, eval=FALSE}
 ### write file to enter rubric data
 write.csv(annotatedL2, file="annotated.csv", row.names=FALSE)
 
 ```
 
-I started with the file "data/AltTextSubset_Annotated.rds" from Silvia. I kept only the columns I needed, 
+I started with the file "data/AltTextSubset_Annotated.rdsg5
+" from Silvia. I kept only the columns I needed, 
 excluding the hashtag variable that contained lists that couldn't be written easily to .csv.
 I also removed rows where AltText == "ScrapingError". I ended upwith 
 `r nrow(annotatedL2)` observations.  
