@@ -42,11 +42,11 @@ tail(annotatedL2[ ,1:3])
 
 ``` {r, write csv for blank rubric, eval=FALSE}
 ### write file to enter rubric data
-write.csv(annotatedL2, file="annotated.csv", row.names=FALSE)
+write.csv(annotatedL2, file="../data/annotated.csv", row.names=FALSE)
 
 ```
 
-I started with the file "data/AltTextSubset_Annotated.rdsg5
+I started with the file "data/AltTextSubset_Annotated.rds
 " from Silvia. I kept only the columns I needed, 
 excluding the hashtag variable that contained lists that couldn't be written easily to .csv.
 I also removed rows where AltText == "ScrapingError". I ended upwith 
@@ -75,7 +75,7 @@ and read it back into R.
 
 
 ``` {r, read in csv with rubric items filled in, include=FALSE, echo=FALSE}
-annotatedRubric <- read.csv("annotatedRubric1.csv")
+annotatedRubric <- read.csv("../data/annotatedRubric1.csv")
 ### remove if conveys meaning == NA
 ### NA if it's a repeat, or I think it is a picture without data
 annotatedRubric <- annotatedRubric[!is.na(annotatedRubric$conveysMeaning), ]
