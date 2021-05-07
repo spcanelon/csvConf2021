@@ -26,6 +26,10 @@ data(ttTweets2018, ttTweets2019, ttTweets2020, ttTweets2021)
 ttTweets4y <- rbind(ttTweets2018, ttTweets2019, ttTweets2020, ttTweets2021)
 table(ttTweets4y$Year)
 
+
+### check that you have most recent scrape
+max(ttTweets2021$TweetDate)
+
 ### create factor variable describing alt text based on the four categories
 ### 1. Customized alt text written by author
 ### 2, Field contains default text: "Image"
@@ -57,11 +61,18 @@ summary(att$charCount)
 
 
 Silvia scraped `r nrow(ttTweets4y)' TidyTuesday Tweets posted between 2018 and 2021. I 
-concatenated them into one data set.
+concatenated them into one data set. The four categories for the alt text field were
+
+1. Default Description - Twitter fills in "Image"
+2. Descriptive Text - the user supplied alt-text
+3. Scraping Error - the alt text could not be retrieved
+4. Alt-text unavailable due to non-static content
+
 
 ``` {r, results="asasis"}
 tbl_cross(ttTweets4y, row=Year, col=AltTextCat,
           percent="row")
+
 ```
 
 # Word and character counts
@@ -79,12 +90,18 @@ The following table presents these statistics by year.
 
 ``` {r, results="asis"}
 tbl_summary(att, by=Year,
-            include=c("Year, wordCount"),
-            type=all_continuous() ~ "continuous",
-            statistic=all_continuous ~ c("{min}", "{median}", "{max}"))
+            include=c(Year, wordCount),
+            type=all_continuous() ~ "continuous2",
+            statistic=wordCount ~ c("{min}", "{median}", "{max}"))
 
 ```
 
+## Characters
+```{r, results="asis"}
+tbl_summary(att, by=Year,
+            include=c(Year, charCount),
+            type=all_continuous() ~ "continuous2",
+            statistic=charCount ~ c("{min}", "{median}", "{max}"))
 
 
 
