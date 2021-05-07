@@ -12,23 +12,21 @@
     <meta name="twitter:title" content="2021 csv,conf,v6 | Silvia Canelón &amp; Liz Hare"/>
     <meta name="twitter:description" content="Revealing Room for Improvement in Accessibility within a Social Media Data Visualization Learning Community"/>
     <meta name="twitter:url" content="https://spcanelon.github.io/csvConf2021/slides"/>
-    <meta name="twitter:image:src" content=""/>
+    <meta name="twitter:image:src" content="coverImageSlide.png"/>
     <meta name="twitter:image:alt" content="Title slide for the talk presentation"/>
     <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:creator" content=""/>
-    <meta name="twitter:site" content=""/>
+    <meta name="twitter:creator" content="@spcanelon"/>
+    <meta name="twitter:site" content="@spcanelon"/>
     <meta property="og:title" content="2021 csv,conf,v6 | Silvia Canelón &amp; Liz Hare"/>
     <meta property="og:description" content="Revealing Room for Improvement in Accessibility within a Social Media Data Visualization Learning Community"/>
     <meta property="og:url" content="https://spcanelon.github.io/csvConf2021/slides"/>
-    <meta property="og:image" content=""/>
+    <meta property="og:image" content="coverImageSlide.png"/>
     <meta property="og:image:alt" content="Title slide for the talk presentation"/>
     <meta property="og:type" content="website"/>
     <meta property="og:locale" content="en_US"/>
     <meta property="article:author" content="Silvia Canelón &amp; Liz Hare"/>
     <link href="indexLH_files/tile-view-0.2.6/tile-view.css" rel="stylesheet" />
     <script src="indexLH_files/tile-view-0.2.6/tile-view.js"></script>
-    <script src="indexLH_files/tone-13.8.34/Tone.js"></script>
-    <script src="indexLH_files/slide-tone-0.2.6/slide-tone.js"></script>
     <link href="indexLH_files/panelset-0.2.6/panelset.css" rel="stylesheet" />
     <script src="indexLH_files/panelset-0.2.6/panelset.js"></script>
     <script src="indexLH_files/clipboard-2.0.6/clipboard.min.js"></script>
@@ -36,6 +34,8 @@
     <script src="indexLH_files/shareon-1.4.1/shareon.min.js"></script>
     <link href="indexLH_files/xaringanExtra-shareagain-0.2.6/shareagain.css" rel="stylesheet" />
     <script src="indexLH_files/xaringanExtra-shareagain-0.2.6/shareagain.js"></script>
+    <script src="indexLH_files/tone-13.8.34/Tone.js"></script>
+    <script src="indexLH_files/slide-tone-0.2.6/slide-tone.js"></script>
     <link rel="stylesheet" href="css/custom.css" type="text/css" />
     <link rel="stylesheet" href="css/custom-fonts.css" type="text/css" />
   </head>
@@ -49,80 +49,98 @@
 
 
 
+
+
 name: titleSlide
-class: center, middle
+class: middle, title-slide
 
 &lt;!--Talk info: Session 0, May 4, 2021 from 10:20 AM to 10:40 PM--&gt;
 
-# Revealing Room for Improvement&lt;br&gt;in Accessibility within a Social Media&lt;br&gt;Data Visualization Learning Community
+.left-col-narrow[.center[
+&lt;img src="img/yellowComma.png" title="Square CSV Conf logo featuring a black comma against a yellow background" alt="Square CSV Conf logo featuring a black comma against a yellow background" width="70%" style="display: block; margin: auto;" /&gt;
+csv,conf,v6
+]]
 
+.right-col-wide[
+.left[
+# Revealing Room for Improvement in Accessibility within a Social Media&lt;br&gt;Data Visualization Learning Community
+]]
+
+----
+
+.right-col-wide[
+.left[
 .pull-left-equal[
-### Silvia Canelón, PhD&lt;br&gt;&lt;svg style="height:0.8em;top:.04em;position:relative;" viewBox="0 0 512 512"&gt;&lt;path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/&gt;&lt;/svg&gt; @spcanelon
+### Silvia Canelón, PhD&lt;br&gt; @spcanelon &lt;svg style="height:0.8em;top:.04em;position:relative;" viewBox="0 0 512 512"&gt;&lt;path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/&gt;&lt;/svg&gt;
 ]
 
 .pull-right-equal[
-### Liz Hare, PhD&lt;br&gt;&lt;svg style="height:0.8em;top:.04em;position:relative;" viewBox="0 0 512 512"&gt;&lt;path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/&gt;&lt;/svg&gt; @DogGeneticsLLC
-]
+### Liz Hare, PhD&lt;br&gt;@DogGeneticsLLC &lt;svg style="height:0.8em;top:.04em;position:relative;" viewBox="0 0 512 512"&gt;&lt;path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/&gt;&lt;/svg&gt;
 
-## csv,conf,v6
+]
+]]
 
 ???
 
 ---
+exclude: true
+
 # Outline (for internal use)
 
 .pull-left-equal[
-- [Title slide](#titleSlide)
-- [Who are we?](#hello)
-- [Takeaways](#takeaways)
-- [Motivation](#motivation)
-- [TidyTuesday data collection](#analysisDataCollection)
-- [Alt text data collection](#analysisAltText)
-- [Findings](#analysisResults)
+* [Title slide](#titleSlide)
+* [Who are we?](#hello)
+* [Takeaways](#takeaways)
+* [Motivation](#motivation)
+* [TidyTuesday data collection](#analysisDataCollection)
+* [Alt text data collection](#analysisAltText)
+* [Findings](#analysisResults)
 ]
 
 .pull-right-equal[
-- [Other places lacking alt-text](#otherPlaces)
-- [Things are changing](#shiftingTide)
-- [Good alt text](#goodAltText)
-- [Learning resources](#learningResources)
-- [Goodbye slide](#goodbye)
+* [Other places lacking alt-text](#otherPlaces)
+* [Things are changing](#shiftingTide)
+* [Good alt text](#goodAltText)
+* [Learning resources](#learningResources)
+* [Goodbye slide](#goodbye)
 ]
+
+---
+layout: true
+
+&lt;!--this adds the link footer to all slides, depends on footer-link class in css--&gt;
+
+&lt;a class="footer-link" href="http://bit.ly/TidyTuesday"&gt;&lt;strong&gt;bit.ly/TidyTuesday&lt;/strong&gt;
+&amp;#8226; Silvia Canelón &amp; Liz Hare &amp;#8226; csv,conf,v6&lt;/a&gt;
+
+???
 
 ---
 name: hello
 class: middle, center
 
 # Who are we?
+
 .pull-left-equal[
 
 .center[
 
 &lt;!--HTML code inserting a circular avatar of a square photo--&gt;
-&lt;img style="border-radius: 50%;" src="https://raw.githubusercontent.com/spcanelon/silvia/main/content/authors/silvia/avatar.png" width="170px" alt="Profile of Silvia Canelón"/&gt;
+&lt;img style="border-radius: 50%;" src="https://raw.githubusercontent.com/spcanelon/silvia/main/content/authors/silvia/avatar.png" width="230px" alt="Profile of Silvia Canelón"/&gt;
 
-**Postdoctoral Research Scientist&lt;br&gt;University of Pennsylvania**
-
-
+**Silvia Canelón**&lt;br&gt;
+Postdoctoral Research Scientist&lt;br&gt;University of Pennsylvania
 ]]
 
 .pull-right-equal[
 .center[
 
 &lt;!--HTML code inserting a circular avatar of a square photo--&gt;
-&lt;img style="border-radius: 50%;" src="/slides/img/Profile_LH.JPG" width="170px" alt="Profile of Liz Hare"/&gt;
+&lt;img style="border-radius: 50%;" src="img/Profile_LH.JPG" width="230px" alt="Profile of Liz Hare"/&gt;
 
-**Canine Genetics and Genomics Consultant&lt;br&gt;Dog Genetics, LLC**
+**Liz Hare**&lt;br&gt;
+Canine Genetics and Genomics Consultant&lt;br&gt;Dog Genetics, LLC
 ]]
-
-???
-
----
-layout: true
-
-&lt;!-- this adds the link footer to all slides, depends on footer-link class in css--&gt;
-&lt;a class="footer-link" href="http://bit.ly/TidyTuesday"&gt;&lt;strong&gt;bit.ly/TidyTuesday&lt;/strong&gt;
-&amp;#8226; Silvia Canelón &amp; Liz Hare &amp;#8226; csv,conf,v6&lt;/a&gt;
 
 ???
 
@@ -130,264 +148,207 @@ layout: true
 name: takeaways
 class: middle
 
-# Takeaways  
+# Takeaways
+
+----
+
+* Growth in online learning communities for data science
+* TidyTuesday: Weekly social project for data visualization in R
+* 3% of the data visualizations shared on Twitter had alternative text
+* 84% were described by default as "Image"  
 
 
-* Recent growth in online learning communities for data science mediated by social networking apps 
-(Twitter, Slack)
-* Context for [#TidyTy on Twitter](https://www.tidytuesday.com), ([TidyTuesday GitHub repository](https://github.com/rfordatascience/tidytuesday))  
-  + [R](https://cran.r-project.org) open-source statistical software  
-  + [Tidyverse](https://www.tidyverse.org) packages for data management and visualization  
-  + [R for Data Science](https://www.rfordatasci.com) book and organization  
-  
-* How accessible are TidyTuesday tweets for people who are blind or have low vision?  
-  + Alt-text is a method for providing text descriptions of images on Twitter, in HTML, and in other applications that can be read by screen reading software  
-  + Five essential features of alt-texts  
-  
-  
-
+???
+Why they shouldn't just repeat what's in the title or caption (in some documents, those thext elements will already be accessible, and they are not adequate to understand what the results.
 
 ---
 name: motivation
-class: highlight-last-item &lt;!--css class that makes the "current" bullet point bold and the previous points gray--&gt;
+class: middle
 
-# Motivation
+# Can blind people participate in data viz&lt;br&gt;learning communities?
 
-* Can blind people participate in online data science learning communities? #TidyTuesday as 
-an example  
-	+ Are participants using alt-text to describe their images?  
-    + Do these descriptions provide enough information for the reader to understand the graphic?  
-	
-
-* Screen reader basics:  
-  + Provides voice or braille access to computer **text** (OS interactions, email, web browsing, 
-  some IDEs, etc.)  
-  + **Cannot** describe images  
-
-* AI image description  
-  + Available on iOS, OSX, LinkedIn, Facebook, etc.
-  + **Cannot** adequately describe data visualizations  
-	
-
-* Why include screen reader users?  
-  + Access to information examples  
-	+ Regional COVID-19 incidence information  
-	+ Election maps  
-	+ Scientific literature    
-  + Blind researchers need to  
-	+ Elicit good descriptions from colleagues, so knowing what kinds of graphs are possible is important
-	+ Continue learning about advances in data visualization  
-	+ Create data visualizations for reports and publications  
-	  
-
-* Alt- text is a text description of a graphic that conveys its meaning to screen reading software
-
+* Why do blind people need data visualization?
+  * Scientific communication
+  * [Election maps](https://fossheim.io/writing/posts/accessible-dataviz-us-elections/)
+  * [COVID-19 incidence maps &amp; dashboards](https://www.theguardian.com/society/2020/sep/30/visually-impaired-scots-get-sonic-help-with-covid-graphs)
+  * [Quorum](https://quorumlanguage.com/evidence.html) or [SAS](https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.5/odsacoutput/n12hxbdrtzec6gn1k913nwfl9o4d.htm) can produce readable charts, but [R](https://cran.r-project.org)/[RStudio]() cannot
+* Screen readers provide voice or braille access to computer text, **not images**
+* AI image descriptions **cannot adequately describe data viz**
+* Can blind people participate in #TidyTuesday?
 
 ---
 name: TidyTuesday
+class: middle
 
-# What is TidyTuesday?  
+.pull-left-equal[
+# What is TidyTuesday?
 
-* Data set information is tweeted on Mondays  
-* Participants explore the data, format it according to use with data cleaning, analysis, and 
-visualization packages that are part of the Tidyverse group of R packages  
-	+ Data visualizations can focus on any part of the data, or replicate the visualization 
-	from the original post  
-	+ Emphasis is on data organization and visualization, not interpretation
+* [Social project](https://github.com/rfordatascience/tidytuesday) providing a new&lt;br&gt;tidy dataset every week
+* Online data viz [R learning community](https://www.rfordatasci.com)
+* Opportunity to practice summarizing&lt;br&gt;and visualizing data with [modern tooling](https://www.rfordatasci.com)
 
-* TidyTuesday tweets include  
-	+ A verbal description, often including the author's particular interest in the data 
-	or new methods they learned  
-	+ A link to the author's code for producing the visualization is encouraged
-	+ The image itself
-	+ An alt-text describing the image (guidance to participants on this is recently available)
-	  
-&lt;!-- on Twitter, Thomas Mock said he had changed the TidyTuesday readme (presumably on GitHub) to 
-include information about alt-text, but I just checked and it's not listed as part of the process 
-I would have linked it here. --&gt;
-		
-* Feedback from the community is supposed to be positive in line with TidyTuesday's aim to be "safe and supportive"		  
+]
 
+.pull-right-equal[
 
+&lt;blockquote class="twitter-tweet"&gt;&lt;p lang="en" dir="ltr"&gt;The &lt;a href="https://twitter.com/R4DScommunity?ref_src=twsrc%5Etfw"&gt;@R4DScommunity&lt;/a&gt; welcomes you to week 19 of &lt;a href="https://twitter.com/hashtag/TidyTuesday?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#TidyTuesday&lt;/a&gt;! We&amp;#39;re exploring water access points!&lt;br&gt;&lt;br&gt;📂 &lt;a href="https://t.co/sElb4fcv3u"&gt;https://t.co/sElb4fcv3u&lt;/a&gt;&lt;br&gt;📰 &lt;a href="https://t.co/feZnKx4KJE"&gt;https://t.co/feZnKx4KJE&lt;/a&gt;&lt;a href="https://twitter.com/hashtag/r4ds?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#r4ds&lt;/a&gt; &lt;a href="https://twitter.com/hashtag/tidyverse?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#tidyverse&lt;/a&gt; &lt;a href="https://twitter.com/hashtag/rstats?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#rstats&lt;/a&gt; &lt;a href="https://twitter.com/hashtag/dataviz?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#dataviz&lt;/a&gt; &lt;a href="https://t.co/aN6TKtmsjw"&gt;pic.twitter.com/aN6TKtmsjw&lt;/a&gt;&lt;/p&gt;&amp;mdash; Tom Mock 💉💉🎉 (@thomas_mock) &lt;a href="https://twitter.com/thomas_mock/status/1389400894224076802?ref_src=twsrc%5Etfw"&gt;May 4, 2021&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt; 
+
+]
 
 ---
-name: analysisDataCollection
+name: TidyTuesdayExample
+class: middle
 
-# TidyTuesday data collection  
+.pull-left[
+&lt;blockquote class="twitter-tweet"&gt;&lt;p lang="en" dir="ltr"&gt;Today&amp;#39;s &lt;a href="https://twitter.com/hashtag/TidyTuesday?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#TidyTuesday&lt;/a&gt;:&lt;br&gt;data on artwork from the &lt;a href="https://twitter.com/Tate?ref_src=twsrc%5Etfw"&gt;@Tate&lt;/a&gt; collection, and specifically aspect ratios over time&lt;br&gt;&lt;br&gt;Blue = stat_smooth GAMs (grouped by aspect ratio &amp;gt; 1)&lt;br&gt;Red = golden ratio (±1 + sqrt(5))/2 &lt;a href="https://t.co/PSuBgUp3Ky"&gt;pic.twitter.com/PSuBgUp3Ky&lt;/a&gt;&lt;/p&gt;&amp;mdash; Hao Ye (@Hao_and_Y) &lt;a href="https://twitter.com/Hao_and_Y/status/1349055287169331200?ref_src=twsrc%5Etfw"&gt;January 12, 2021&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt; 
+]
 
-- How is TidyTuesday data collected? 
+.pull-right[
+# What do #TidyTuesday visualization tweets include?
+
+* Verbal description
+  * author's interest
+  * learning process
+  * interpretation of the data
+* Link to the author's source code
+* Data visualization attached as an image
+* Alt-text for the image (rarely)
+]
 
 ---
 name: analysisAltText
 
-# Alt text scraping
+# How were the data collected?
 
-- How was alt text scraped from the images?
-
-???
-
----
-name: analysisResultsIncidence
-
-# What we found  
-
-Over four years (2018-2021), there were 6443 tweets with the TidyTuesday hashtag. Alt-texts were 
-attached to 2.4% of these Tweets.  
-
-
-Table: Percentage of TidyTuesday Tweets Containing alt-text by Year
-
-| Year| TidyTuesday Tweets Containing Alt-text|
-|----:|--------------------------------------:|
-| 2018|                                    1.1|
-| 2019|                                    1.0|
-| 2020|                                    2.9|
-| 2021|                                    7.7|
-
-How extensive are the alt-texts (Not particularly useful results!)  
-
-
-Table: Alt-text Lengths in Words and Characters
-
-|           | Median| Minimum| Maximum|
-|:----------|------:|-------:|-------:|
-|Words      |     18|       1|     170|
-|Characters |     93|       8|     788|
-
-
-
-
----
-name: analysisResultsRubric
-
-* Five characteristics of visualization alt-text based on personal experience and reading the scraped alt-texts  
-
-  1. A description of what can be seen about the data (relationships between 
-  x and y variables, histogram shape, appearance of points in residual plots)  
-  2. What variables are on the axes?  
-  3. What scale are the axes on, or is the scale described within the overall description?  
-  4. What type of plot is it (line graph, scatterplot, qq plot, etc)  
-  5. Alt-text should contain more information than title and/or subtitle of the plot
-    
-* After removing duplicate tweets and tweets that did not contain data visualizations, there were 196 tweets with alt-text.  
-
-
-Table: Percentages of Alt-texts Containing Five Types of Information
-
-|Characteristic |Description     |Percent of Alt-texts containing this feature |
-|:--------------|:---------------|:--------------------------------------------|
-|1              |Conveys Meaning |34                                           |
-|2              |Axis Variables  |28                                           |
-|3              |Axis Scale      |12                                           |
-|4              |Plot Type       |56                                           |
-|5              |Repeats Title   |9                                            |
-
-- Conclusion: Many alt-texts are missing information
-
-* Limitations: One person with many years' experience analyzing data in R identified 
-these features based on that experience and the TidyTuesday data set, without visual access 
-to the data.  
-
-
----
-name: otherPlaces
-
-# Where else does this show up?  
-
-* Online R books made available digitally to people with print disabilities by [Bookshare](https://www.bookshare.org/cms/)   
-
-* R package documentation (e.g. HTML help for gtsummary::tbl_summary has example output as .png files with no description)  
-
-* Blogs  
-
-* This shows up at the individual-level and at the corporate-level (e.g. RStudio rmarkdown documentation)  
-
-
-
----
-name: shiftingTide
-
-# Has the tide started shifting?
-
-- Where are conversations about this happening
-  - Within R: useR!2021, MiR
-  - More broadly: Data Visualization Society, a11y Meetups
-- What changes have we seen generally (e.g. new alt text code chunk option for R Markdown)?
-- What changes have we noticed since announcing our talk?
-- Changes are just starting and slow
-
-???
-Caveats relating to required behavioral changes. For example: The alt-text thing for R Markdown is great, *but*  people will probably have to interrupt their workflow to describe what the data show after creating the graphic! If you want reproducible reports, you will still have to go back in and explain what the data show. This is why people are going to be tempted to put just the title-caption there and leave out the most crucial information.
-
----
-name: goodAltText
-
-# How to write good alt text for a data visualization
-
-Include these four things:  
-1. What kind of plot is it? (line graph, scatterplot, residual plot)  
-   + Describe it further if it's a specialized type of plot  
-2. What variables are on the axes?  
-3. What is the range or scale of the variables?  
-4. What do you see about the relationship between the variables in the plot?  
-	
-
-Ask yourself
-* Do you have enough information to understand the purpose of the image without seeing it?  
-* Is your alt-text a repetition of the title or does it tell me something about the data as well?  
-
-
----
-name: learningResources
-
-# Where can people learn more?
-
-* Make your data visualizations accessible everywhere you can by adding alt-text to websites, journalism, scientific publishing, social media  
-
-* Find ways to describe your visualizations in words when alt-text isn't available in your documents or platforms  
-
-
-
-
-Data visualization alt-text resources:  
-
-*	[Writing alt-text for data visualization](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81)
-
-* There is information about adding alt-text to rmarkdown documents in 
-[Chapter 14 of the R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/html-accessibility.html).  
-
-
-
-General alt-text resources:  
-
-- [WGBH Guide Guidelines for describing STEM images](https://www.wgbh.org/foundation/ncam/guidelines/guidelines-for-describing-stem-images)  
-
--	[Diagram Center Accessible Images](http://diagramcenter.org/making-images-accessible.html)  
--	[Diagram Center Accessible Math Tricks and Tips: Training](http://diagramcenter.org/accessible-math-tools-tips-and-training.html#training)
-
-
-Social media alt-text instructions
-* [Twitter](https://help.twitter.com/en/using-twitter/picture-descriptions)
-* [Facebook](https://www.facebook.com/help/214124458607871)
-* [LinkedIn](https://www.linkedin.com/help/linkedin/answer/109799/adding-alternative-text-to-images-for-accessibility?lang=en)
-
-
-
-???
-
----
-name: goodbye
-class: left, middle
-
-.left-col-narrow[
-# Thank you!
-
-This presentation was made using the [xaringan](https://github.com/yihui/xaringan#xaringan), and [xaringanExtra](https://github.com/gadenbuie/xaringanExtra#xaringanextra)&lt;br&gt;R packages.
+.left-column[
+Tweets collected &amp; [made available](https://github.com/rfordatascience/tidytuesday) by Tom Mock using [{rtweet}](https://docs.ropensci.org/rtweet/)
 
 ----
 
-&lt;svg style="height:0.8em;top:.04em;position:relative;" viewBox="0 0 496 512"&gt;&lt;path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/&gt;&lt;/svg&gt; Analysis repo [spcanelon/csvConf2021](https://github.com/spcanelon/csvConf2021)
+Alt text scraped by Silvia Canelón using [{RSelenium}](https://docs.ropensci.org/RSelenium/) &amp; available in the [TidyTuesdayAltText](https://github.com/spcanelon/TidyTuesdayAltText) 📦
 ]
+
+&lt;img src="img/webInspection.png" align="right" width="700px" alt="Web inspection tool being used to identify the CSS selector corresponding to the image from the example tweet with good alt text. Also shows the actual alt text displayed on Twitter by the Alt or Not extension available for Firefox"/&gt;
+
+
+---
+name: analysisResultsLine
+class: middle
+
+# What did we find?
+
+&gt; ## Over the 3 years of TidyTuesday, there were 7,136 data viz tweets and **only 215 (3%) of them had alt-text**&lt;br&gt;
+[Summary of these findings](https://spcanelon.github.io/csvConf2021/TidyTuesdayAltTextDescriptive3.html#Summary-how-many-tidytuesday-posts-have-alt-text)
+
+---
+class: top
+
+.left-col-narrow[
+.my-gray[Participation in TidyTuesday] has increased over time but **use of alt-text is recent and remains low**
+
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+The [conversation on Twitter](https://twitter.com/spcanelon/status/1375222124365946881?s=20)
+]
+
+.right-col-wide[
+
+&lt;img src="indexLH_files/figure-html/line-graph-1.png" title="Two line graphs shown on the same chart for comparison. The x axis is time and includes April 2018 through April 2021, and the y axis is the number of tweets per week. One of the line graphs corresponds to all TidyTuesday data viz tweets and over time there has been a gradual trend upwards indicating growing participation in TidyTuesday. This line is a light color and values range from 1 to 115 tweets. The second line graph corresponds to only those TidyTuesday data viz tweets that included alt-text and is a bolder line of a dark color. It ranges from 0 to 28 tweets. There has not been much of a trend upwards over time except very recently, coinciding with Liz and Silvia sharing their preliminary findings on Twitter in anticipation of the CSV Conf 2021 talk. This happened on March 25, 2021 and is annotated with text and an arrow on the plot." alt="Two line graphs shown on the same chart for comparison. The x axis is time and includes April 2018 through April 2021, and the y axis is the number of tweets per week. One of the line graphs corresponds to all TidyTuesday data viz tweets and over time there has been a gradual trend upwards indicating growing participation in TidyTuesday. This line is a light color and values range from 1 to 115 tweets. The second line graph corresponds to only those TidyTuesday data viz tweets that included alt-text and is a bolder line of a dark color. It ranges from 0 to 28 tweets. There has not been much of a trend upwards over time except very recently, coinciding with Liz and Silvia sharing their preliminary findings on Twitter in anticipation of the CSV Conf 2021 talk. This happened on March 25, 2021 and is annotated with text and an arrow on the plot." width="100%" style="display: block; margin: auto auto auto 0;" /&gt;
+]
+
+---
+name: otherPlaces
+class: middle
+
+# Where else is alt-text missing?
+
+* R books made available freely online
+* R books made available digitally to people with print disabilities by [Bookshare](https://www.bookshare.org/cms/)   
+* R package documentation  
+* R blogs
+
+----
+
+.right[
+This shows up at the individual-level and at the&lt;br&gt; corporate-level (e.g. RStudio R Markdown documentation)
+]
+
+---
+name: analysisResultsRubric
+class: middle
+
+# What makes good alt-text?
+
+### There were 196 data visualization tweets with relevant alt-text
+&lt;br&gt;
+
+|   |Alt-text Feature                        |    |
+|:--|:---------------------------------------|:---|
+|1  |Description conveys meaning in the data |34% |
+|2  |Variables included on the axes          |28% |
+|3  |Scale described within the description  |12% |
+|4  |Type of plot is described               |56% |
+
+---
+name: shiftingTide
+class: left, middle
+
+# Has the tide started shifting?
+
+----
+
+* Conversations are happening
+  * Within R: [useR!2021](https://user2021.r-project.org/participation/accessibility/), [MiR](https://mircommunity.com/about/), [TidyTuesday](https://themockup.blog/posts/2021-04-01-three-years-of-tidytuesday/)
+  * More broadly: [Data Visualization Society](https://www.outlierconf.com/), [a11y](https://www.a11yproject.com/) conferences/meetups
+* Tooling is slowly receiving updates
+  * [New alt text code chunk option](https://blog.rstudio.com/2021/04/20/knitr-fig-alt/) for R Markdown
+* Changes are just starting and slow
+
+---
+name: learningResources
+class: middle
+
+# What can you do?
+
+.pull-left[
+
+* **Make your data visualizations accessible everywhere you can**
+
+* **Add alt-text** to websites, journalism, scientific publishing, social media
+
+* **Find ways to describe your visualizations** in words when&lt;br&gt;alt-text isn't available in your documents or platforms 
+]
+
+.pull-right-equal[
+Data visualization alt-text resources
+
+*	[Writing alt-text for data visualization](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81)
+* [Chartability Data Viz Audit Workbook](https://chartability.fizz.studio/)
+* [a11y Data Viz Accessibility Resources](https://github.com/dataviza11y/resources/blob/main/README.md)
+
+Tools for Twitter
+
+* [How to make images accessible for people](https://help.twitter.com/en/using-twitter/picture-descriptions)
+* Show alt-text for tweets: [Firefox](https://addons.mozilla.org/en-US/firefox/addon/alt-or-not/)
+* Twitter reminder to add alt-text: [Firefox](https://addons.mozilla.org/en-GB/firefox/addon/twitter-required-alt-text/)
+]
+
+---
+name: goodbye
+class: left, bottom
+layout: false
+
+.left-col-narrow[
+
+# Thanks!
+
+[Analysis repo &amp; resources](https://github.com/spcanelon/csvConf2021) &lt;svg style="height:0.8em;top:.04em;position:relative;" viewBox="0 0 496 512"&gt;&lt;path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/&gt;&lt;/svg&gt;
+
+.footnote[
+This presentation was made using&lt;br&gt;the [xaringan](https://github.com/yihui/xaringan#xaringan), and   [xaringanExtra](https://github.com/gadenbuie/xaringanExtra#xaringanextra) R packages.
+]
+
+]&lt;!--end of left-col-narrow--&gt;
 
 .right-col-wide[
 
@@ -403,12 +364,13 @@ Silvia Canelón, PhD
 [&lt;svg style="height:0.8em;top:.04em;position:relative;" viewBox="0 0 512 512"&gt;&lt;path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/&gt;&lt;/svg&gt; @spcanelon](https://twitter.com/spcanelon)&lt;br&gt;
 [&lt;svg style="height:0.8em;top:.04em;position:relative;" viewBox="0 0 496 512"&gt;&lt;path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/&gt;&lt;/svg&gt; @spcanelon](https://github.com/spcanelon)&lt;br&gt;
 
-]]
+]
+]&lt;!--end of pull-left-equal--&gt;
 
 .pull-right-equal[
 .right[
 &lt;!--HTML code inserting a circular avatar of a square photo--&gt;
-&lt;img style="border-radius: 50%;" src="/slides/img/Profile_LH.JPG" width="170px" alt="Profile of Liz Hare"/&gt;
+&lt;img style="border-radius: 50%;" src="img/Profile_LH.JPG" width="170px" alt="Profile of Liz Hare"/&gt;
 
 Liz Hare, PhD
 
@@ -417,18 +379,18 @@ Liz Hare, PhD
 [&lt;svg style="height:0.8em;top:.04em;position:relative;" viewBox="0 0 512 512"&gt;&lt;path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/&gt;&lt;/svg&gt; @DogGeneticsLLC](https://twitter.com/DogGeneticsLLC)&lt;br&gt;
 [&lt;svg style="height:0.8em;top:.04em;position:relative;" viewBox="0 0 496 512"&gt;&lt;path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/&gt;&lt;/svg&gt; @LizHareDogs](https://github.com/LizHareDogs)&lt;br&gt;
 [&lt;svg style="height:0.8em;top:.04em;position:relative;" viewBox="0 0 512 512"&gt;&lt;path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/&gt;&lt;/svg&gt; LizHare@DogGenetics.com](mailto:LizHare@DogGenetics.com)
-]]
-]
-
+]]&lt;!--end of pull-right-equal--&gt;
+]&lt;!--end of right-col-wide--&gt;
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="https://platform.twitter.com/widgets.js"></script>
 <script>var slideshow = remark.create({
 "highlightStyle": "solarized-light",
 "highlightLines": true,
 "countIncrementalSlides": false,
 "ratio": "16:9",
-"slideNumberFormat": "<div class=\"progress-bar-container\">\n  <div class=\"progress-bar\" style=\"width: calc(%current% / %total% * 100%);\">\n  </div>\n</div>"
+"slideNumberFormat": "<div class=\"progress-bar-container\">\n  <div class=\"progress-bar\" style=\"width: calc(%current% / %total% * 100%);\">\n  </div>\n</div>\n"
 });
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));

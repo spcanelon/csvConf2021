@@ -1,54 +1,34 @@
 :root {
 /* COLOR VARIABLES */
 /* primary and secondary colors and variants */
---spc-primary:            #122140; /* primary color */
+--spc-primary:            #121824; /* primary color */
 --spc-primary-light:      #3d486b; /* primary color, lighter variant */
 --spc-primary-dark:       #00001b; /* primary color, darker variant */
 --spc-secondary:          #e5be00; /* secondary color */
 --spc-secondary-light:    #fff14d; /* secondary color, lighter variant */
 --spc-secondary-dark:     #ae8f00; /* secondary color, darker variant */
-
-/* text colors */
---spc-text-high:          rgba(255, 255, 255, 0.87); /* high emphasis/high priority, white 87% opacity */
---spc-text-medium:        rgba(255, 255, 255, 0.60); /* medium emphasis, white 60% opacity */
---spc-text-low:           rgba(255, 255, 255, 0.45); /* disabled text, white 45% opacity */
-/*--spc-text-low:         rgba(255, 255, 255, 0.38); /* disabled text, white 38% opacity */
+--spc-link: #905551;
 
 /* surface colors */
---rstudio-bkg: #F8F8F8;
---spc-bkg-light-std: #EEEEEE;                   /* light mode background */
---spc-bkg-dark-std: #121212;                    /* dark mode background (00dp elevation level) */
-
-/* COLOR CALCULATIONS */
-/* below from mix(--spc-primary, --spc-bkg-dark-std, 25) */
---spc-bkg-dark: #12151d;                                 /* custom bkg */
-/* below from mix(--spc-primary, --spc-bkg-dark-std, 40) */
---spc-00dp: #121824;                                     /* 00dp surface */
-/* below from mix(--spc-00dp, white, 95)                 /* 00dp with 5% white overlay */
---spc-01dp: #1d232e;
-/* below from mix(--spc-00dp, white, 93)                 /* 00dp with 7% white overlay */
---spc-02dp: #222833;
-/* below from mix(--spc-00dp, white, 92)                 /* 00dp with 8% white overlay */
---spc-03dp: #242a35;
-/* below from mix(--spc-00dp, white, 91)                 /* 00dp with 9% white overlay */
---spc-04dp: #272c37;
+--spc-bkg: #f7f4f3;
+--spc-bkg-dark: #fff8e7;
 
 /* error colors */
 --spc-error: rgba(169, 5, 51, 1);
 --spc-error-light: rgba(253, 244, 244, 1);
 
-/* Penn colors */
---Penn-red: #a90533;
+--spc-gray: #cccccc;
 }
+
 
 /*-- SLIDE CONTENT ---------------------------------------------------------- */
 
 /*-- LINKS/ANCHORS --*/
 a, a > code {
-  color:              var(--Penn-red); /* sets color of links */
-  border-bottom:      2px solid var(--Penn-red);
-  line-height:        1.6rem;
-  text-decoration:    none; /* turns off background coloring of links */
+  color: var(--spc-link); /* sets color of links */
+  border-bottom: 0px solid var(--Penn-red);
+  line-height: 1.6rem;
+  text-decoration: underline; /* turns off background coloring of links */
 }
 
 a:hover { border-bottom: none; }
@@ -60,16 +40,18 @@ a:hover { border-bottom: none; }
   font-size: 1.6rem; /* paragraph text only */
   padding: 1em 3em 1em 3em;
   line-height: 1.5em;
+  background-color: --spc-bkg;
 }
 
 /*-- HEADINGS --*/
 
 h1 {
-  font-weight:        bold;
-  margin-top:         -5px;
-  margin-right:       0px;
-  margin-left:        0px;
-  color:              var(--Penn-red);
+  font-weight: 500;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+  color: var(--spc-primary);
+  line-height: 1.2em;
 }
 
 
@@ -78,9 +60,10 @@ h2, h3, h4 {
   padding-bottom: 0px;
   text-shadow: none;
   color: var(--spc-primary);
-  font-weight: 400;
+  font-weight: 300;
   margin-left: 00px;
   margin-bottom: -10px;
+  line-height: 1.2em;
 }
 
 .remark-slide-content h1 {
@@ -104,7 +87,7 @@ hr {
   content:            '';
   display:            block;
   border:             none;
-  background-color:   var(--Penn-red);
+  background-color:   var(--spc-link);
   height:             0.08em;
 }
 
@@ -154,7 +137,7 @@ a.footer-link {
     left:             75px;
     height:           40px;
     width:            1210px;
-    color:            var(--Penn-red);
+    color:            var(--spc-link);
     /*opacity:          0.75;*/
     background-color: none;
     font-size:        0.7em;
@@ -163,16 +146,16 @@ a.footer-link {
 }
 
 a.footer-link:hover {
-  color:            var(--spc-primary);
+  color:            var(--spc-link);
 }
 
 .inverse a.footer-link {
-  color:            var(--spc-text-medium);
+  color:            var(--spc-primary);
   border-bottom:    none;
 }
 
 .inverse a.footer-link:hover {
-  color:            var(--spc-text-high);
+  color:            var(--spc-primary);
 }
 
 div.footer-link {
@@ -239,12 +222,12 @@ pre code {
   font-size:          18px !important;
 }
 
-/*-- INVERSE SLIDE MODIFICATIONS ---------------------------------------------*/
+/*-- INVERSE SLIDE MODIFICATIONS --------------------------------------------------------------------*/
 
 /*-- Slide background and text (inverse) --*/
 .inverse {
-  background-color:   var(--spc-primary);
-  color:              var(--spc-text-high);
+  background-color:   var(--spc-bkg-dark);
+  color:              var(--spc-primary);
   text-shadow:        none;
 }
 
@@ -276,45 +259,11 @@ pre code {
 
 /*-- Custom class for the title slide --*/
 
-.title-slide {
-  background-size:    250px;
-  padding-left:       140px;  /* delete this for 4:3 aspect ratio */
-  padding-right:      80px;
-  background-color:   var(--rstudio-bkg);
-  /*border-top: 40px solid var(--rstudio-bkg);*/
-}
 .title-slide h1  {
-  color:              var(--Penn-red);
-  font-size:          1.8em;
-  font-weight:        600;
-  text-align:         left;
-  line-height:        1.2em;
-  margin-left:        40px;
-  margin-right:       40px;
-  padding-top:        3em;
-  /*line-height: 1.2em;*/
-}
-.title-slide h2  {
-  color:              #999999;
-  font-size:          1.2em;
-  font-weight:        500;
-  text-align:         left;
-  margin-top:         -25px;
-  margin-left:        40px;
-  margin-right:       40px;
-}
-.title-slide h3  {
-  font-weight:        400;
-  line-height:        1.1em;
-  text-align:         left;
-  margin-left:        40px;
-  margin-right:       40px;
-  margin-bottom:      -30px;
+  line-height:        1.4em;
+  padding-top:        0.4em;
 }
 
-.title-slide h2::after {
-  margin:             10px 15px 35px 0;
-}
 
 /* turns off slide numbers for title page: */
 /* https://github.com/gnab/remark/issues/298 */
@@ -367,6 +316,10 @@ pre code {
 .right-col-wide {
   float: right;
   width: 75%;
+}
+
+.right-col-wide + * {
+  clear: both;
 }
 
 /*-- 3 column layout --*/
@@ -445,5 +398,9 @@ pre code {
 
 li::marker {
   content: &#8226;;
-  color: var(--Penn-red);
+  color: var(--spc-link);
+}
+
+.my-gray {
+  color: --spc-gray;
 }
