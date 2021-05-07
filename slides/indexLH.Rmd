@@ -200,7 +200,7 @@ Why they shouldn't just repeat what's in the title or caption (in some documents
 name: motivation
 class: middle
 
-# Can blind people participate in data viz learning communities?
+# Can blind people participate in data viz<br>learning communities?
 
 * Why do blind people need data visualization?
   * Scientific communication
@@ -357,7 +357,7 @@ class: middle
 
 # What makes good alt-text?
 
-### There were 196 data visualization tweets with alt-text
+### There were 196 data visualization tweets with relevant alt-text
 <br>
 ``` {r, rubric table, results="asis", echo=FALSE}
 meaning <- c(1, "Description conveys meaning in the data", "34%")
