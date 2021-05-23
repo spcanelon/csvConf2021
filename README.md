@@ -12,7 +12,7 @@
 The goal of this talk for [csv,conf,v6](https://csvconf.com/speakers/#silvia-canel%C3%B3n-elizabeth-hare) is to share our findings after scraping the alternative (alt) text from data visualization tweets shared as part of the TidyTuesday online learning community.
 
 * Tuesday, May 4, 2021 at 10:20am EST (2:20pm UTC)
-* Session 0 Crowdcast link: [crowdcast.io/e/csvconf6-0-session-0](https://www.crowdcast.io/e/csvconf6-0-session-0)
+* Recording of the talk (captions available): https://youtu.be/DxLkv2iRdf8
 
 ### HTML slide deck
 
