@@ -1,7 +1,7 @@
 ---
 title: Descriptive Statistics for Tidy Tuesday Alt Text Project
 author: "Silvia P. Canelón, Elizabeth Hare"
-date: 
+date: May 4, 2021
 output: html_document
 ---
 
@@ -49,7 +49,7 @@ write.csv(annotatedL2, file="../data/annotated.csv", row.names=FALSE)
 I started with the file "data/AltTextSubset_Annotated.rds
 " from Silvia. I kept only the columns I needed, 
 excluding the hashtag variable that contained lists that couldn't be written easily to .csv.
-I also removed rows where AltText == "ScrapingError". I ended upwith 
+I also removed rows where AltText == "ScrapingError". I ended up with 
 `r nrow(annotatedL2)` observations.  
 
 I added columns for the rubric because I was having trouble adding rows to the spreadsheet where.
