@@ -161,7 +161,7 @@ class: middle, center
 .center[
 
 <!--HTML code inserting a circular avatar of a square photo-->
-<img style="border-radius: 50%;" src="https://raw.githubusercontent.com/spcanelon/silvia/main/content/authors/silvia/avatar.png" width="230px" alt="Profile of Silvia Canelón"/>
+<img style="border-radius: 50%;" src="https://silvia.rbind.io/authors/silvia/avatar.png" width="230px" alt="Profile of Silvia Canelón"/>
 
 **Silvia Canelón**<br>
 Postdoctoral Research Scientist<br>University of Pennsylvania
@@ -504,7 +504,7 @@ This presentation was made using<br>the [xaringan](https://github.com/yihui/xari
 .pull-left-equal[
 .right[
 <!--HTML code inserting a circular avatar of a square photo-->
-<img style="border-radius: 50%;" src="https://raw.githubusercontent.com/spcanelon/silvia/main/content/authors/silvia/avatar.png" width="170px" alt="Profile of Silvia Canelón"/>
+<img style="border-radius: 50%;" src="https://silvia.rbind.io/authors/silvia/avatar.png" width="170px" alt="Profile of Silvia Canelón"/>
 
 Silvia Canelón, PhD
 
